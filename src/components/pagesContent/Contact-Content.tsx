@@ -12,18 +12,6 @@ const ContactContent = () => {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    // For alert of sucess
-    const notify = () => toast("Message Send Sucessfully!", {
-        theme: "dark",
-        position: "bottom-center"
-    });
-
-    // For alert of error
-    const showError = () => toast.error("Failed to send message. Plese Try again later.", {
-        theme: "dark",
-        position: "bottom-center"
-    });
-
     // Message Send Handler func
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,13 +31,13 @@ const ContactContent = () => {
                     setName("");
                     setEmail("");
                     setMessage("");
-                    notify();
+                    toast.success("Message Send Sucessfully!");
                     console.log("ok");
 
                 },
                 (error) => {
                     console.error('Failed to send message:', error);
-                    showError();
+                    toast.error("Failed to send message. Plese Try again later.");
                 }
             );
 
@@ -64,10 +52,9 @@ const ContactContent = () => {
                 <div className="max-w-2xl mx-auto p-4 relative z-10">
                     {' '}
                     <h1 className="heading">
-                        Let's <span className="text-purple">Work Together</span>
+                        Let&apos;s <span className="text-purple">Work Together</span>
                     </h1>
                     <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center font-semibold">
-
                         I would like to know the final requirements of your project.
                         Please get in touch with me and share details about your project,
                         <span className="font-bold"> Feel Free To Conect With Me.</span>
@@ -103,7 +90,7 @@ const ContactContent = () => {
                         >
                             Send Message
                         </button>
-                        <ToastContainer />
+                        <ToastContainer theme='dark' position='top-center' />
                     </form>
                 </div>
             </div>

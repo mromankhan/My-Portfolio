@@ -2,6 +2,7 @@
 import { BackgroundGradient } from '../ui/background-gradient';
 import { skills } from '@/Data';
 import Navbar from '../Navbar';
+import Image from 'next/image';
 
 const AboutCon = () => {
   return (
@@ -16,10 +17,10 @@ const AboutCon = () => {
           <div className="flex justify-center relative mt-32 my-20 z-10 ">
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
               <h1 className="heading text-center mb-5">
-                Know <span className='text-purple'>Who I'M</span>
+                Know <span className='text-purple'>Who I&apos;M</span>
               </h1>
               <p className="text-center md:leading-10 lg:leading-10 mb-4 text-[25px] md:text-3xl lg:text-3xl">Hi Everyone, I am Muhammad Roman from Karachi, Pakistan.
-                I'm a Software Engineer at @Tech Company, Student of SMIT</p>
+                I&apos;m a Software Engineer at @Tech Company, Student of SMIT</p>
 
             </div>
           </div>
@@ -32,17 +33,16 @@ const AboutCon = () => {
                 <BackgroundGradient className="flex flex-col 
            rounded-[22px] bg-white dark:bg-zinc-900 
            overflow-hidden h-full max-w-sm ">
-                  <img className="p-4 sm:p-6 flex flex-col 
-               items-center text-center flex-grow" src={skill.img} alt={skill.name} height="150px" width="150" />
+                  <Image className="p-4 sm:p-6 flex flex-col 
+               items-center text-center flex-grow" src={skill.img} alt={skill.name} height={150} width={150} />
                 </BackgroundGradient>
               </div>
             ))}
           </div>
         </div>
-        {/* } */}
     </>
   )
 }
 
 export default AboutCon
-{/* <img src={skill.img} alt={skill.name} height="150px" width="150" /> */ }
+

@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Loading = () => {
   return (
@@ -14,11 +13,3 @@ const Loading = () => {
 }
 
 export default Loading
-
-// const Loader = () => {
-//     return (
-     
-//     );
-//   };
-  
-//   export default Loader;

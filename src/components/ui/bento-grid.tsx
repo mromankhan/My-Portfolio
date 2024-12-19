@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
-import { Globe } from "./globe";
 import { GlobeDemo } from "./GridGlobe";
 import animationData from "@/Data/confetti.json";
 import Lottie from "react-lottie";
@@ -54,13 +53,13 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false)
 
   const handleClick = () => {
-    navigator.clipboard.writeText("developerromankhan55@gmail.com");
+    navigator.clipboard.writeText("mromankhan005@gmail.com");
     setCopied(true);
   }
 
-  function handleCopy(): void {
-    throw new Error("Function not implemented.");
-  }
+  // function handleCopy(): void {
+  //   throw new Error("Function not implemented.");
+  // }
 
   return (
     <div
