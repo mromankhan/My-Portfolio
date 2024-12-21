@@ -1,5 +1,5 @@
 "use client";
-// import { BackgroundGradient } from '../ui/background-gradient';
+import { BackgroundGradient } from '../ui/background-gradient';
 import { skills } from '@/Data';
 import Navbar from '../Navbar';
 import Image from 'next/image';
@@ -29,19 +29,13 @@ const AboutCon = () => {
           </div>
           <div className='flex justify-center items-center flex-row flex-wrap gap-10 p-20 md:p-10 sm:p-5'>
             {skills.map((skill) => (
-              <div key={skill.id} className="flex justify-center z-50">
-                   <div className="flex flex-col 
+              <div key={skill.id} className="flex justify-center">
+                <BackgroundGradient className="flex flex-col 
            rounded-[22px] bg-white dark:bg-zinc-900 
            overflow-hidden h-full max-w-sm ">
                   <Image className="p-4 sm:p-6 flex flex-col 
                items-center text-center flex-grow" src={skill.img} alt={skill.name} height={150} width={150} />
-                </div>
-                {/* <BackgroundGradient className="flex flex-col 
-           rounded-[22px] bg-white dark:bg-zinc-900 
-           overflow-hidden h-full max-w-sm ">
-                  <Image className="p-4 sm:p-6 flex flex-col 
-               items-center text-center flex-grow" src={skill.img} alt={skill.name} height={150} width={150} />
-                </BackgroundGradient> */}
+                </BackgroundGradient>
               </div>
             ))}
           </div>
