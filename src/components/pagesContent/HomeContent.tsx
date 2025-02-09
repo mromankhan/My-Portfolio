@@ -8,9 +8,6 @@ import { FiMail } from "react-icons/fi";
 import { MdOutlineFileDownload } from "react-icons/md";
 import TypewriterEffect from "@/components/TypewritingEffect";
 
-// 199.36.158.100
-// hosting-site=mroman-514aa
-
 export default function HomeContent() {
   
       const handleDownload = () => {
