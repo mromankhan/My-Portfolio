@@ -11,10 +11,10 @@ import TypewriterEffect from "@/components/TypewritingEffect";
 export default function HomeContent() {
   
       const handleDownload = () => {
-        const resumePath = "/Roman's Resume.pdf"; // Path to the resume file in the public folder
+        const resumePath = "/Roman_Resume.pdf"; // Path to the resume file in the public folder
         const link = document.createElement("a");
         link.href = resumePath;
-        link.download = "Roman's Resume.pdf"; // Name of the downloaded file
+        link.download = "Roman_Resume.pdf"; // Name of the downloaded file
         link.click();
       };
 

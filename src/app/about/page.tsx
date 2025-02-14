@@ -65,21 +65,26 @@ const skills = [
   },
   {
     id: 13,
+    name: "python",
+    img: "/images/python.svg"
+  },
+  {
+    id: 14,
     name: "html",
     img: "/images/html5.svg"
   },
   {
-    id: 14,
+    id: 15,
     name: "css",
     img: "/images/css3.svg"
   },
   {
-    id: 15,
+    id: 16,
     name: "git",
     img: "/images/git.svg"
   },
   {
-    id: 16,
+    id: 17,
     name: "github",
     img: "/images/github.svg"
   },

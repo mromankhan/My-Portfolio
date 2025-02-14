@@ -33,9 +33,27 @@ const project = [
     title: "Chat Web",
     desc: "Explore your musical potential with our comprehensive online music academy.",
     img: "/images/next.svg",
-    alt: "Weather App Image",
+    alt: "Chat web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
     link: "https://github.com/mromankhan/Chat-Web",
+  },
+  {
+    id: 5,
+    title: "Weather Application",
+    desc: "Weather Application is a React Native app that provides real-time weather updates with a dynamic UI.",
+    img: "/myp5.png",
+    alt: "Weather App Image",
+    iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
+    link: "https://github.com/mromankhan/Weather-Application",
+  },
+  {
+    id: 6,
+    title: "Food Review Application",
+    desc: "FoodieReview is a React Native UI concept for a sleek and modern food review app, designed for an engaging user experience.",
+    img: "/myp6.png",
+    alt: "Food Review App Image",
+    iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
+    link: "https://github.com/mromankhan/Food-Review-Application",
   },
 ];
 
