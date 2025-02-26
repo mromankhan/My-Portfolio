@@ -1,4 +1,4 @@
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Github, Send } from "lucide-react";
 import Image from "next/image";
 
 type propsTypes = {
@@ -7,10 +7,11 @@ type propsTypes = {
     title: string,
     desc: string | undefined,
     iconsList: string[],
-    link: string
+    link: string,
+    liveLink?: string,
 }
 
-const Card = ({ img, alt, title, desc, iconsList, link }: propsTypes) => {
+const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: propsTypes) => {
     return (
         <>
             <div className="max-w-[400px] bg-slate-900/50 rounded-2xl overflow-hidden backdrop-blur-sm border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:scale-105 ease-in">
@@ -55,14 +56,22 @@ const Card = ({ img, alt, title, desc, iconsList, link }: propsTypes) => {
                   </div>
 
                     {/* Button */}
-                    <div className="pt-2">
+                    <div className={liveLink ? "pt-2 flex justify-between" : "pt-2"}>
                     <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group">
+                        <button className={!liveLink ? "w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group" : "bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group" }>
                             Check Code
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             <Github />
                         </button>
                         </a>
+                        {!liveLink ? "" : (<a href={liveLink} target="_blank" rel="noopener noreferrer">
+                        <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group">
+                            Check Live Site
+                            {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
+                            <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </button>
+                        </a>)}
+                    
                     </div>
                 </div>
             </div>

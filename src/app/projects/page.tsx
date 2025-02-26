@@ -3,30 +3,32 @@ import Card from "@/components/Card";
 const project = [
   {
     id: 1,
-    title: "Modern Music Academy Web",
-    desc: "Explore your musical potential with our comprehensive online music academy.",
-    img: "/myp1.jpg",
-    alt: "Music Academy Web Image",
-    iconsList: ["/images/next.svg", "/images/ts.svg", "/images/tail.svg", "/acter.jpg", "/images/fm.svg"],
-    link: "https://github.com/mromankhan/Music-Academy-Web",
-  },
-  {
-    id: 2,
     title: "Personal Blog Web",
     desc: "Dive into my personal journey—exploring tech, thoughts, and tales that inspire.",
     img: "/myp2.jpg",
     alt: "Personal Blog Web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
-    link: "https://github.com/mromankhan/Personal-Blog-Web",
+    githublink: "https://github.com/mromankhan/Personal-Blog-Web",
+    liveLink: "https://blog-app-three-blue.vercel.app"
   },
   {
-    id: 3,
+    id: 2,
     title: "Expense Tracker Web",
     desc: "Explore your musical potential with our comprehensive online music academy.",
     img: "/myp3.jpg",
     alt: "Expense Tracker Web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
-    link: "https://github.com/mromankhan/Expense-Tracker-Web",
+    githublink: "https://github.com/mromankhan/Expense-Tracker-Web",
+    liveLink: "https://expense-tracker-web-ten.vercel.app"
+  },
+  {
+    id: 3,
+    title: "Modern Music Academy Web",
+    desc: "Explore your musical potential with our comprehensive online music academy.",
+    img: "/myp1.jpg",
+    alt: "Music Academy Web Image",
+    iconsList: ["/images/next.svg", "/images/ts.svg", "/images/tail.svg", "/acter.jpg", "/images/fm.svg"],
+    githublink: "https://github.com/mromankhan/Music-Academy-Web",
   },
   {
     id: 4,
@@ -35,7 +37,7 @@ const project = [
     img: "/images/next.svg",
     alt: "Chat web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
-    link: "https://github.com/mromankhan/Chat-Web",
+    githublink: "https://github.com/mromankhan/Chat-Web",
   },
   {
     id: 5,
@@ -44,7 +46,7 @@ const project = [
     img: "/myp5.png",
     alt: "Weather App Image",
     iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
-    link: "https://github.com/mromankhan/Weather-Application",
+    githublink: "https://github.com/mromankhan/Weather-Application",
   },
   {
     id: 6,
@@ -53,7 +55,7 @@ const project = [
     img: "/myp6.png",
     alt: "Food Review App Image",
     iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
-    link: "https://github.com/mromankhan/Food-Review-Application",
+    githublink: "https://github.com/mromankhan/Food-Review-Application",
   },
 ];
 
@@ -77,9 +79,9 @@ const Projects = () => {
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-2 2xl:gap-28 2xl:p-20">
-          {project.map(({ id, title, desc, img, alt, iconsList, link }) => (
+          {project.map(({ id, title, desc, img, alt, iconsList, githublink, liveLink }) => (
             <div key={id}>
-              <Card img={img} alt={alt} title={title} desc={desc} iconsList={iconsList} link={link} />
+              <Card img={img} alt={alt} title={title} desc={desc} iconsList={iconsList} link={githublink} liveLink={liveLink} />
             </div>
           ))}
         </div> 
