@@ -1,5 +1,5 @@
 "use client";
-import { Send } from "lucide-react"
+import { Loader2, Send } from "lucide-react"
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,27 +17,6 @@ const ContactContent = () => {
         e.preventDefault();
         setLoading(true);
         const formData = { name, email, message };
-        // emailjs.send(
-        //     "service_an85omh",
-        //     "template_inxbkhd",
-        //     foamData,
-        //     "kHWlLokuiu3IOhPuj"
-        // )
-        //     .then(
-        //         (result) => {
-        //             console.log("message sent:", result.text);
-        //             // alert("Message Sent Sucessfully");
-        //             setName("");
-        //             setEmail("");
-        //             setMessage("");
-        //             toast.success("Message Send Sucessfully!");
-        //             console.log("ok");
-        //         },
-        //         (error) => {
-        //             console.error('Failed to send message:', error);
-        //             toast.error("Failed to send message. Plese Try again later.");
-        //         }
-        //     );
         try {
             const result = await emailjs.send(
                 "service_an85omh",
@@ -60,7 +39,7 @@ const ContactContent = () => {
 
     return (
         <>
-            <div className="min-h-screen bg-black py-12 pt-24 relative">
+            <div className="min-h-screen bg-[#020817] py-12 pt-24 relative">
                 {' '}
                 <div className="max-w-2xl mx-auto p-4 relative z-10">
                     {' '}
@@ -101,8 +80,8 @@ const ContactContent = () => {
                             disabled={loading}
                             className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg text-white font-semibold focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-2"
                         >
-                            <Send className="inline pr-2" size={28} /> 
-                            {!loading ? "Send Message" : "Sending..."} 
+                            
+                            {!loading ? <span><Send className="inline pr-2" size={28} />Send Message</span> : <span className="flex justify-center items-center"><Loader2 className="size-6 animate-spin" /></span>} 
                         </button>
                         <ToastContainer theme='dark' position='bottom-center' />
                     </form>

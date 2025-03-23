@@ -30,61 +30,66 @@ const skills = [
   },
   {
     id: 6,
+    name: "firebase",
+    img: "/images/firebase.svg"
+  },
+  {
+    id: 7,
     name: "redux",
     img: "/images/redux.svg"
   },
   {
-    id: 7,
+    id: 8,
     name: "bootstrap",
     img: "/images/bootstrap.svg"
   },
   {
-    id: 8,
+    id: 9,
     name: "tailwind",
     img: "/images/tailwindcss.svg"
   },
   {
-    id: 9,
+    id: 10,
     name: "shadcn",
     img: "/images/shadcnui.svg"
   },
   {
-    id: 10,
+    id: 11,
     name: "vercel",
     img: "/images/vercel.svg"
   },
   {
-    id: 11,
+    id: 12,
     name: "javascript",
     img: "/images/javascript.svg"
   },
   {
-    id: 12,
+    id: 13,
     name: "typescript",
     img: "/images/typescript.svg"
   },
   {
-    id: 13,
+    id: 14,
     name: "python",
     img: "/images/python.svg"
   },
   {
-    id: 14,
+    id: 15,
     name: "html",
     img: "/images/html5.svg"
   },
   {
-    id: 15,
+    id: 16,
     name: "css",
     img: "/images/css3.svg"
   },
   {
-    id: 16,
+    id: 17,
     name: "git",
     img: "/images/git.svg"
   },
   {
-    id: 17,
+    id: 18,
     name: "github",
     img: "/images/github.svg"
   },
@@ -93,7 +98,7 @@ const skills = [
 const About = () => {
   return (
     <>
-      <main className="min-h-screen bg-black text-white p-8">
+      <main className="min-h-screen bg-[#020817] text-white p-8">
         <div className="max-w-6xl mx-auto space-y-20 mt-14 sm:mt-28">
           {/* Hero Section */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">

@@ -17,10 +17,10 @@ export default function HomeContent() {
         link.download = "Roman_Resume.pdf"; // Name of the downloaded file
         link.click();
       };
-
-
+      // #020817
+      // 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#020817] text-white">
       <div className="container mx-auto px-4 pt-32 lg:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

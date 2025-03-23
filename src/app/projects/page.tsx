@@ -9,7 +9,7 @@ const project = [
     alt: "Personal Blog Web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Personal-Blog-Web",
-    liveLink: "https://blog-app-three-blue.vercel.app"
+    liveLink: "https://roman-blog.vercel.app"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const project = [
     alt: "Expense Tracker Web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Expense-Tracker-Web",
-    liveLink: "https://expense-tracker-web-ten.vercel.app"
+    liveLink: "https://expenses-tracker-beta-three.vercel.app"
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const project = [
   {
     id: 6,
     title: "Food Review Application",
-    desc: "FoodieReview is a React Native UI concept for a sleek and modern food review app, designed for an engaging user experience.",
+    desc: "FoodieReview is a sleek React Native UI concept for a modern and engaging food review app.",
     img: "/myp6.png",
     alt: "Food Review App Image",
     iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
@@ -62,7 +62,7 @@ const project = [
 const Projects = () => {
   return (
     <>
-      <main className="min-h-screen bg-black text-white pt-24">
+      <main className="min-h-screen bg-[#020817] text-white pt-24">
         <div className="container mx-auto px-4 py-16">
           <div className="flex justify-center relative z-10 mb-20">
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">

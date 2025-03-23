@@ -17,10 +17,10 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Get the current route
+  const pathname = usePathname(); // Get the current route /black80
 
   return (
-    <nav className="fixed w-full bg-black/80 backdrop-blur-sm z-50">
+    <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="text-blue-500 text-3xl font-bold">
@@ -35,9 +35,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center space-x-2 text-lg transition-colors ${
-                    isActive ? "text-blue-500 font-semibold" : "text-gray-300 hover:text-blue-500"
-                  }`}
+                  className={`flex items-center space-x-2 text-lg transition-colors ${isActive ? "text-blue-500 font-semibold" : "text-gray-300 hover:text-blue-500"
+                    }`}
                 >
                   <span>{link.icon}</span>
                   <span>{link.label}</span>
@@ -67,14 +66,13 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`transition-colors ${
-                      isActive ? "text-blue-500 font-semibold" : "text-gray-300 hover:text-blue-500"
-                    }`}
+                    className={`transition-colors ${isActive ? "text-blue-500 font-semibold" : "text-gray-300 hover:text-blue-500"
+                      }`}
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="flex justify-start items-center">
-                    <span className="pr-2">{link.icon}</span>
-                    {link.label}
+                      <span className="pr-2">{link.icon}</span>
+                      {link.label}
                     </span>
                   </Link>
                 );
