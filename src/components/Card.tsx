@@ -66,10 +66,7 @@ const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: propsTypes) 
                         </a>
                         {!liveLink ? "" : (<a href={liveLink} target="_blank" rel="noopener noreferrer">
                             <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-2 rounded-lg flex items-center justify-center gap-2 md:px-6 lg:px-6 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group">
-                                Check Site
-                                {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
-                                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                {/* </span> */}
+                                Check Site <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </a>)}
                     </div>
