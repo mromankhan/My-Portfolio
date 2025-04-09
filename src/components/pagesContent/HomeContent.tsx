@@ -20,7 +20,7 @@ export default function HomeContent() {
       // #020817
       // 
   return (
-    <main className="min-h-screen bg-[#020817] text-white">
+    <main className="min-h-screen bg-[#020817] text-white pb-7 md:pb-3 lg:pb-3">
       <div className="container mx-auto px-4 pt-32 lg:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

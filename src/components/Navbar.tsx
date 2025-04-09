@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-blue-500 text-4xl font-bold">
+          <Link href="/" className="text-blue-500 text-[28px] md:text-4xl lg:text-4xl font-bold">
             Roman Khan
           </Link>
 

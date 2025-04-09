@@ -98,7 +98,7 @@ const skills = [
 const About = () => {
   return (
     <>
-      <main className="min-h-screen bg-[#020817] text-white p-8">
+      <main className="min-h-screen bg-[#020817] text-white p-8 pt-16 md:pt-8 lg:pt-8">
         <div className="max-w-6xl mx-auto space-y-20 mt-14 sm:mt-28">
           {/* Hero Section */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">

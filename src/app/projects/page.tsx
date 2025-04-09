@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 
+
 const project = [
   {
     id: 1,
@@ -14,7 +15,7 @@ const project = [
   {
     id: 2,
     title: "Expense Tracker Web",
-    desc: "Explore your musical potential with our comprehensive online music academy.",
+    desc: "An expense tracker web app to manage and monitor daily spending with real-time updates.",
     img: "/myp3.jpg",
     alt: "Expense Tracker Web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
@@ -32,8 +33,8 @@ const project = [
   },
   {
     id: 4,
-    title: "Chat Web",
-    desc: "Explore your musical potential with our comprehensive online music academy.",
+    title: "Chat Web (Under Development)",
+    desc: "Stay connected in real-time — a modern chat app built for fast, fluid conversations.",
     img: "/images/next.svg",
     alt: "Chat web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/mongoicon.svg", "/images/expicon.svg", "/images/nodejsicon.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
@@ -51,7 +52,7 @@ const project = [
   {
     id: 6,
     title: "Food Review Application",
-    desc: "FoodieReview is a sleek React Native UI concept for a modern and engaging food review app.",
+    desc: "Food Review is a sleek React Native UI concept for a modern and engaging food review app.",
     img: "/myp6.png",
     alt: "Food Review App Image",
     iconsList: ["/expo.png", "/images/re.svg", "/images/tail.svg", "/images/ts.svg"],
