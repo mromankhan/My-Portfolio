@@ -7,7 +7,7 @@ const project = [
     desc: "Dive into my personal journey—exploring tech, thoughts, and tales that inspire.",
     img: "/myp2.jpg",
     alt: "Personal Blog Web Image",
-    iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
+    iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Personal-Blog-Web",
     liveLink: "https://roman-blog.vercel.app"
   },
@@ -17,7 +17,7 @@ const project = [
     desc: "Explore your musical potential with our comprehensive online music academy.",
     img: "/myp3.jpg",
     alt: "Expense Tracker Web Image",
-    iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
+    iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Expense-Tracker-Web",
     liveLink: "https://expenses-tracker-beta-three.vercel.app"
   },
@@ -36,7 +36,7 @@ const project = [
     desc: "Explore your musical potential with our comprehensive online music academy.",
     img: "/images/next.svg",
     alt: "Chat web Image",
-    iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
+    iconsList: ["/images/next.svg", "/images/re.svg", "/images/mongoicon.svg", "/images/expicon.svg", "/images/nodejsicon.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Chat-Web",
   },
   {
@@ -62,7 +62,7 @@ const project = [
 const Projects = () => {
   return (
     <>
-      <main className="min-h-screen bg-[#020817] text-white pt-24">
+      <main className="min-h-screen bg-[#020817] text-white py-24">
         <div className="container mx-auto px-4 py-16">
           <div className="flex justify-center relative z-10 mb-20">
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">

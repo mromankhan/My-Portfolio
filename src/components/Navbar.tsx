@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-blue-500 text-3xl font-bold">
+          <Link href="/" className="text-blue-500 text-4xl font-bold">
             Roman Khan
           </Link>
 
@@ -38,8 +38,8 @@ export default function Navbar() {
                   className={`flex items-center space-x-2 text-lg transition-colors ${isActive ? "text-blue-500 font-semibold" : "text-gray-300 hover:text-blue-500"
                     }`}
                 >
-                  <span>{link.icon}</span>
-                  <span>{link.label}</span>
+                  <span className="text-lg">{link.icon}</span>
+                  <span className="text-xl">{link.label}</span>
                 </Link>
               );
             })}
@@ -70,7 +70,7 @@ export default function Navbar() {
                       }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <span className="flex justify-start items-center">
+                    <span className="flex justify-start items-center text-xl ">
                       <span className="pr-2">{link.icon}</span>
                       {link.label}
                     </span>

@@ -39,40 +39,41 @@ const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: propsTypes) 
                         </p>
                     </div>
 
-<div className="flex items-center justify-between mt-7 mb-3">
-                  <div className="flex items-center">
-                    {iconsList.map((icon, index) => (
-                      <div
-                        key={index}
-                        className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                        style={{
-                          transform: `translateX(-${5 * index + 2}px)`,
-                        }}
-                      >
-                        <Image src={icon} alt="icon5" className="p-2" fill priority/>
-                      </div>
-                    ))}
-                  </div> 
-                  </div>
+                    <div className="flex items-center justify-between mt-7 mb-3">
+                        <div className="flex items-center">
+                            {iconsList.map((icon, index) => (
+                                <div
+                                    key={index}
+                                    className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                                    style={{
+                                        transform: `translateX(-${5 * index + 2}px)`,
+                                    }}
+                                >
+                                    <Image src={icon} alt="icon5" className="p-2" fill priority />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
                     {/* Button */}
                     <div className={liveLink ? "pt-2 flex justify-between" : "pt-2"}>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button className={!liveLink ? "w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group" : "bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group" }>
-                            Check Code
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            <Github />
-                        </button>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                            <button className={!liveLink ? "w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group" : "bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-2 rounded-lg flex items-center justify-center gap-2 md:px-5 lg:px-5 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group"}>
+                                Check Code
+                                {liveLink ? "" : <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                                <Github />
+                            </button>
                         </a>
                         {!liveLink ? "" : (<a href={liveLink} target="_blank" rel="noopener noreferrer">
-                        <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-3 rounded-lg flex items-center justify-center gap-2 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group">
-                            Check Live Site
-                            {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
-                            <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                            <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-2 rounded-lg flex items-center justify-center gap-2 md:px-6 lg:px-6 hover:from-blue-500 hover:to-blue-400 transition-all duration-300 group">
+                                Check Site
+                                {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
+                                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                {/* </span> */}
+                            </button>
                         </a>)}
-                    
                     </div>
+                    {/* Button End */}
                 </div>
             </div>
         </>
