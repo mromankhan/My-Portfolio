@@ -1,24 +1,17 @@
 "use client";
 import Image from "next/image";
 import Button from "@/components/Button";
+import { ArrowRight } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
-import { FiGithub } from "react-icons/fi";
-import { FiLinkedin } from "react-icons/fi";
-import { FiMail } from "react-icons/fi";
-import { MdOutlineFileDownload } from "react-icons/md";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import TypewriterEffect from "@/components/TypewritingEffect";
+import { useRouter } from "next/navigation";
 
 export default function HomeContent() {
-  
-      const handleDownload = () => {
-        const resumePath = "/Roman_Resume.pdf"; // Path to the resume file in the public folder
-        const link = document.createElement("a");
-        link.href = resumePath;
-        link.download = "Roman_Resume.pdf"; // Name of the downloaded file
-        link.click();
-      };
-      // #020817
-      // 
+
+  const router = useRouter();
+  // #020817
+  // 
   return (
     <main className="min-h-screen bg-[#020817] text-white pb-7 md:pb-3 lg:pb-3">
       <div className="container mx-auto px-4 pt-32 lg:pt-32">
@@ -26,16 +19,16 @@ export default function HomeContent() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold">Hi There!</h2>
-              <h1 className="text-4xl lg:text-6xl font-bold">
-                It&apos;s <span className="text-blue-500">Roman Khan</span>
+              <h1 className="text-4xl lg:text-5xl font-bold">
+                It&apos;s <span className="text-blue-500">Muhammad Roman</span>
               </h1>
               <h2 className="text-3xl lg:text-4xl font-semibold">
-               <TypewriterEffect />
-                
+                <TypewriterEffect />
+
               </h2>
             </div>
-            <Button className="bg-blue-500 hover:bg-blue-600" onClick={handleDownload}>
-              <MdOutlineFileDownload className="mr-2 h-6 w-6" /> Download Resume
+            <Button className="bg-blue-500 hover:bg-blue-600" onClick={() => { router.push("/contact") }}>
+              Let&apos;s Connect <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
           </div>
 
@@ -103,11 +96,11 @@ export default function HomeContent() {
             <h2 className="text-2xl font-bold mb-4"><span className="text-blue-500">FIND ME</span> ON</h2>
             <p className="mb-4">Feel free to <span className="text-blue-500">connect with me</span></p>
 
-            <div className="flex justify-center gap-4 mb-6 flex-wrap">
-      <a href={"https://github.com/mromankhan"} className="w-12 h-12 transition-all rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiGithub size={30} className="pt-1" />}</a>
-      <a href={"https://x.com/home"} className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center transition-all text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FaXTwitter size={25} />}</a>
-      <a href={"https://www.linkedin.com/in/mromankhan"} className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiLinkedin size={25} />}</a>
-      <a href={"https://github.com/mromankhan"} className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiMail size={25} />}</a>
+            <div className="flex justify-center gap-5 mb-6 flex-wrap">
+              <a href={"https://github.com/mromankhan"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 transition-all rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiGithub size={30} className="pt-1" />}</a>
+              <a href={"https://x.com/RomanKhan00555"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center transition-all text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FaXTwitter size={25} />}</a>
+              <a href={"https://www.linkedin.com/in/mromankhan"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiLinkedin size={25} />}</a>
+              <a href={"mailto:mromankhan005@gmail.com"} className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiMail size={25} />}</a>
             </div>
           </div>
         </div>

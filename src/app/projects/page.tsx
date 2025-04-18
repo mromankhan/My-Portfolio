@@ -30,11 +30,12 @@ const project = [
     alt: "Music Academy Web Image",
     iconsList: ["/images/next.svg", "/images/ts.svg", "/images/tail.svg", "/acter.jpg", "/images/fm.svg"],
     githublink: "https://github.com/mromankhan/Music-Academy-Web",
+    liveLink: "https://music-academy-web-olive.vercel.app"
   },
   {
     id: 4,
-    title: "Chat Web (Under Development)",
-    desc: "Stay connected in real-time — a modern chat app built for fast, fluid conversations.",
+    title: "Chat Web",
+    desc: "Stay connected in real-time — a modern chat app built for fast, fluid conversations. ( Under Development ).",
     img: "/images/next.svg",
     alt: "Chat web Image",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/mongoicon.svg", "/images/expicon.svg", "/images/nodejsicon.svg", "/images/tail.svg", "/images/ts.svg", "/cn.jpg"],

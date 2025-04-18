@@ -116,7 +116,7 @@ const About = () => {
 
                 <p className="text-lg">
                   I&apos;m a{" "}
-                  <strong className="text-blue-500">Software Engineer</strong> and Student of SMIT.
+                  <strong className="text-blue-500">Software Engineer</strong> and Student of SMIT & PIAIC.
                 </p>
 
                 <div className="mt-8">
