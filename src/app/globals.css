@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -17,20 +15,18 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track{
-  background:  #000000bf;
-  /* background: ; */
+::-webkit-scrollbar-track {
+  background: #000000bf;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3575db; /* Simple color */
-  border-radius: 5px; /* Rounded edges */
+  background-color: #3575db;
+  border-radius: 5px;
 }

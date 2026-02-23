@@ -4,7 +4,7 @@ import  Button  from "@/components/Button";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center p-4">
+    <main className="min-h-screen bg-[#020817] text-white flex items-center justify-center p-4">
       <div className="max-w-2xl mx-auto text-center">
         <div className="relative">
           {/* Glowing effect */}
