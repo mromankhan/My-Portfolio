@@ -20,11 +20,13 @@ export default function Navbar() {
   const pathname = usePathname(); // Get the current route /black80
 
   return (
-    <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50" aria-label="Main navigation">
+    <nav className="fixed w-full bg-[#020817]/90 backdrop-blur-md z-50 border-b border-slate-800/60" aria-label="Main navigation">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-blue-500 text-[28px] md:text-4xl lg:text-[42px] font-bold">
-            Roman.
+          <Link href="/" className="flex items-center gap-1.5 group">
+            <span className="text-slate-500 font-mono text-lg group-hover:text-blue-400 transition-colors">~/</span>
+            <span className="text-blue-500 text-[26px] md:text-3xl lg:text-[36px] font-bold tracking-tight">Roman</span>
+            <span className="text-violet-400 font-mono text-xl animate-pulse">_</span>
           </Link>
 
           {/* Desktop Navigation */}

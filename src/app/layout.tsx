@@ -15,20 +15,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Muhammad Roman | Full Stack Developer",
+    default: "Muhammad Roman | Full Stack · Agentic AI · Cloud Native",
     template: "%s | Muhammad Roman",
   },
-  description: "Full Stack Developer specializing in Next.js, React, and the MERN stack. Building modern, responsive web applications.",
+  description: "Full Stack Developer, Agentic AI Engineer & Cloud Native DevOps specialist. Building intelligent, scalable systems with Next.js, LangChain, Docker, and Kubernetes.",
   openGraph: {
-    title: "Muhammad Roman | Full Stack Developer",
-    description: "Full Stack Developer specializing in Next.js, React, and the MERN stack.",
+    title: "Muhammad Roman | Full Stack · Agentic AI · Cloud Native",
+    description: "Full Stack Developer, Agentic AI Engineer & Cloud Native DevOps specialist from Karachi, Pakistan.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Roman | Full Stack Developer",
-    description: "Full Stack Developer specializing in Next.js, React, and the MERN stack.",
+    title: "Muhammad Roman | Full Stack · Agentic AI · Cloud Native",
+    description: "Full Stack Developer, Agentic AI Engineer & Cloud Native DevOps specialist.",
   },
 };
 
