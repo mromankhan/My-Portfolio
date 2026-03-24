@@ -20,7 +20,7 @@ export default function Navbar() {
   const pathname = usePathname(); // Get the current route /black80
 
   return (
-    <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50">
+    <nav className="fixed w-full bg-[#020817]/80 backdrop-blur-sm z-50" aria-label="Main navigation">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="text-blue-500 text-[28px] md:text-4xl lg:text-[42px] font-bold">
@@ -51,6 +51,8 @@ export default function Navbar() {
             size="icon"
             className="md:hidden text-white hover:bg-black"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>

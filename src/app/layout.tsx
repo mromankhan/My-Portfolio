@@ -14,8 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Roman's Portfolio",
-  description: "Moderan Roman's Portfolio Website",
+  title: {
+    default: "Muhammad Roman | Full Stack Developer",
+    template: "%s | Muhammad Roman",
+  },
+  description: "Full Stack Developer specializing in Next.js, React, and the MERN stack. Building modern, responsive web applications.",
+  openGraph: {
+    title: "Muhammad Roman | Full Stack Developer",
+    description: "Full Stack Developer specializing in Next.js, React, and the MERN stack.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Roman | Full Stack Developer",
+    description: "Full Stack Developer specializing in Next.js, React, and the MERN stack.",
+  },
 };
 
 export default function RootLayout({

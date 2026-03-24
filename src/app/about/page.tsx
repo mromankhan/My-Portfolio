@@ -1,6 +1,11 @@
 import { GraduationCap, Plane, Globe } from "lucide-react";
 import Image from "next/image";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn about Muhammad Roman — a Full Stack Developer from Karachi, Pakistan specializing in modern web technologies.",
+};
 
 const skills = [
   {
@@ -97,7 +102,6 @@ const skills = [
 
 const About = () => {
   return (
-    <>
       <main className="min-h-screen bg-[#020817] text-white p-8 pt-16 md:pt-8 lg:pt-8">
         <div className="max-w-6xl mx-auto space-y-20 mt-14 sm:mt-28">
           {/* Hero Section */}
@@ -146,10 +150,9 @@ const About = () => {
             <div className="flex-1 flex justify-center items-center">
               <Image
                 src="/images/programmingboy.svg"
-                alt="Profile"
+                alt="Illustration of a programmer at work"
                 width={400}
                 height={400}
-                priority
               />
             </div>
           </div>
@@ -171,8 +174,6 @@ const About = () => {
           </div>
         </div>
       </main>
-    </>
-
   );
 }
 

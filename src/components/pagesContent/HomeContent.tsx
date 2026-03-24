@@ -1,17 +1,13 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/Button";
 import { ArrowRight } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import TypewriterEffect from "@/components/TypewritingEffect";
-import { useRouter } from "next/navigation";
 
 export default function HomeContent() {
-
-  const router = useRouter();
-  // #020817
-  // 
   return (
     <main className="min-h-screen bg-[#020817] text-white pb-7 md:pb-3 lg:pb-3">
       <div className="container mx-auto px-4 pt-32 lg:pt-32">
@@ -24,12 +20,13 @@ export default function HomeContent() {
               </h1>
               <h2 className="text-3xl lg:text-4xl font-semibold">
                 <TypewriterEffect />
-
               </h2>
             </div>
-            <Button className="bg-blue-500 hover:bg-blue-600" onClick={() => { router.push("/contact") }}>
-              Let&apos;s Connect <ArrowRight className="ml-2 h-6 w-6" />
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-blue-500 hover:bg-blue-600">
+                Let&apos;s Connect <ArrowRight className="ml-2 h-6 w-6" />
+              </Button>
+            </Link>
           </div>
 
           <div className="relative aspect-square w-3/4 max-w-md mx-auto lg:max-w-none">
@@ -37,7 +34,7 @@ export default function HomeContent() {
             <div className="relative rounded-full overflow-hidden aspect-square">
               <Image
                 src="/images/working.svg"
-                alt="Profile"
+                alt="Developer working illustration"
                 fill
                 className="object-cover"
                 priority
@@ -47,7 +44,6 @@ export default function HomeContent() {
         </div>
       </div>
 
-      {/* intro section */}
       <section className="flex items-center justify-center mt-16 p-4 md:p-8">
         <div className="max-w-2xl w-full space-y-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -56,7 +52,6 @@ export default function HomeContent() {
 
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1 space-y-4">
-
               <p className="text-lg">
                 I&apos;m <span className="text-blue-500">A Passionate Developer</span> with a love for turning ideas into <span className="text-blue-500">impactful digital experiences.</span>
               </p>
@@ -88,7 +83,6 @@ export default function HomeContent() {
                 <span className="text-blue-500 text-[20px] font-bold">Let&apos;s build the future together!</span> <br />
                 From crafting elegant user interfaces to designing seamless user experiences, <span className="text-blue-500">I&apos;m here to create, collaborate, and innovate with you.</span>
               </p>
-
             </div>
           </div>
 
@@ -97,10 +91,10 @@ export default function HomeContent() {
             <p className="mb-4">Feel free to <span className="text-blue-500">connect with me</span></p>
 
             <div className="flex justify-center gap-5 mb-6 flex-wrap">
-              <a href={"https://github.com/mromankhan"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 transition-all rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiGithub size={30} className="pt-1" />}</a>
-              <a href={"https://x.com/RomanKhan00555"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center transition-all text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FaXTwitter size={25} />}</a>
-              <a href={"https://www.linkedin.com/in/mromankhan"} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiLinkedin size={25} />}</a>
-              <a href={"mailto:mromankhan005@gmail.com"} className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600">{<FiMail size={25} />}</a>
+              <a href="https://github.com/mromankhan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-12 h-12 transition-all rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiGithub size={30} className="pt-1" /></a>
+              <a href="https://x.com/RomanKhan00555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center transition-all text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FaXTwitter size={25} /></a>
+              <a href="https://www.linkedin.com/in/mromankhan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiLinkedin size={25} /></a>
+              <a href="mailto:mromankhan005@gmail.com" aria-label="Email" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiMail size={25} /></a>
             </div>
           </div>
         </div>
