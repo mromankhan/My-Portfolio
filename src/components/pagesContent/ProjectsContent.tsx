@@ -2,6 +2,8 @@
 import Card from "@/components/Card";
 import { motion } from "motion/react";
 import { Spotlight } from "@/components/ui/spotlight";
+import BlurText from "@/components/BlurText";
+import ShinyText from "@/components/ShinyText";
 
 const projects = [
   {
@@ -78,18 +80,17 @@ export default function ProjectsContent() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              Portfolio
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              My{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Recent
-              </span>{" "}
-              Works
-            </h1>
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4">Portfolio</p>
+            <BlurText
+              text="My Recent Works"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              animateBy="words"
+              direction="top"
+              delay={80}
+            />
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              A collection of projects I&apos;ve built — from web apps to mobile experiences.
+              A collection of projects I&apos;ve built —{" "}
+              <ShinyText text="from web apps to mobile experiences." color="#94a3b8" shineColor="#ffffff" speed={3} className="inline" />
             </p>
           </motion.div>
 

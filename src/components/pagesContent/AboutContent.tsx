@@ -3,6 +3,10 @@ import Image from "next/image";
 import { GraduationCap, Plane, Globe, Code2, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Spotlight } from "@/components/ui/spotlight";
+import BlurText from "@/components/BlurText";
+import ShinyText from "@/components/ShinyText";
+import CountUp from "@/components/CountUp";
+import GlareHover from "@/components/GlareHover";
 
 const skills = [
   { id: 1, name: "React", img: "/images/react.svg" },
@@ -33,23 +37,25 @@ const interests = [
 ];
 
 const stats = [
-  { value: "2+", label: "Years Experience" },
-  { value: "10+", label: "Projects Built" },
-  { value: "18+", label: "Technologies" },
-  { value: "∞", label: "Coffee Cups" },
+  { value: 2, suffix: "+", label: "Years Experience" },
+  { value: 10, suffix: "+", label: "Projects Built" },
+  { value: 18, suffix: "+", label: "Technologies" },
+  { value: 100, suffix: "%", label: "Dedication" },
 ];
 
 export default function AboutContent() {
   return (
     <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
-      {/* ── Profile Section ── */}
+
+      {/* ── Profile ── */}
       <section className="relative pt-28 pb-20 px-4 overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-40" fill="#3b82f6" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.10),transparent)]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* Left — Content */}
+
+            {/* Left */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -57,46 +63,37 @@ export default function AboutContent() {
               className="flex-1 space-y-8"
             >
               <div>
-                <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-                  About Me
-                </p>
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                  Know{" "}
-                  <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                    Who I&apos;m
-                  </span>
-                </h1>
+                <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">About Me</p>
+                <BlurText
+                  text="Know Who I'm"
+                  className="text-4xl lg:text-5xl font-bold"
+                  animateBy="words"
+                  direction="top"
+                  delay={100}
+                />
               </div>
 
               <div className="space-y-4 text-slate-300 leading-relaxed">
                 <p className="text-lg">
-                  Hi! I am{" "}
-                  <span className="text-blue-400 font-semibold">Muhammad Roman</span>{" "}
-                  from Karachi, Pakistan.
+                  Hi! I am <span className="text-blue-400 font-semibold">Muhammad Roman</span> from Karachi, Pakistan.
                 </p>
                 <p className="text-lg">
-                  A{" "}
-                  <span className="text-blue-400 font-semibold">Software Engineer</span>{" "}
-                  and proud student of{" "}
+                  A <span className="text-blue-400 font-semibold">Software Engineer</span> and proud student of{" "}
                   <span className="text-blue-400 font-semibold">SMIT & PIAIC</span>.
                 </p>
                 <p className="text-slate-400">
-                  I specialize in building scalable web applications with modern
-                  technologies, and I&apos;m deeply passionate about the intersection
-                  of AI and software engineering.
+                  I specialize in building scalable web applications with modern technologies, and I&apos;m deeply passionate about the intersection of AI and software engineering.
                 </p>
               </div>
 
               {/* Interests */}
               <div>
-                <p className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
-                  Beyond Coding
-                </p>
+                <p className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">Beyond Coding</p>
                 <div className="flex flex-wrap gap-3">
                   {interests.map(({ icon, label }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-white/[0.03] text-slate-300 text-sm hover:border-blue-500/30 hover:text-blue-400 transition-all duration-200"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/8 bg-white/[0.03] text-slate-300 text-sm hover:border-blue-500/30 hover:text-blue-400 transition-all"
                     >
                       <span className="text-blue-400">{icon}</span>
                       {label}
@@ -106,7 +103,7 @@ export default function AboutContent() {
               </div>
             </motion.div>
 
-            {/* Right — Image + Stats */}
+            {/* Right */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -117,26 +114,21 @@ export default function AboutContent() {
               <div className="relative">
                 <div className="absolute inset-0 rounded-full bg-blue-600/20 blur-3xl scale-110" />
                 <div className="relative w-64 h-64 rounded-full border-2 border-blue-500/30 overflow-hidden bg-[#0f1729]">
-                  <Image
-                    src="/images/programmingboy.svg"
-                    alt="Muhammad Roman — Programmer illustration"
-                    fill
-                    className="object-cover p-4"
-                  />
+                  <Image src="/images/programmingboy.svg" alt="Muhammad Roman" fill className="object-cover p-4" />
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center border-4 border-[#020817]">
                   <Sparkles size={20} className="text-white" />
                 </div>
               </div>
 
-              {/* Stats */}
+              {/* Animated stats */}
               <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
-                {stats.map(({ value, label }) => (
-                  <div
-                    key={label}
-                    className="text-center p-4 rounded-2xl border border-white/8 bg-white/[0.03] hover:border-blue-500/20 transition-all"
-                  >
-                    <div className="text-2xl font-bold text-blue-400">{value}</div>
+                {stats.map(({ value, suffix, label }) => (
+                  <div key={label} className="text-center p-4 rounded-2xl border border-white/8 bg-white/[0.03] hover:border-blue-500/20 transition-all">
+                    <div className="text-2xl font-bold text-blue-400 flex items-center justify-center gap-0.5">
+                      <CountUp to={value} duration={2} className="tabular-nums" />
+                      <span>{suffix}</span>
+                    </div>
                     <div className="text-xs text-slate-400 mt-1">{label}</div>
                   </div>
                 ))}
@@ -146,7 +138,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Skills Section ── */}
+      {/* ── Skills ── */}
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(59,130,246,0.05),transparent)]" />
 
@@ -155,20 +147,16 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              Tech Stack
-            </p>
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">Tech Stack</p>
             <h2 className="text-4xl md:text-5xl font-bold">
               Professional{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Skillset
-              </span>
+              <ShinyText text="Skillset" color="#60a5fa" shineColor="#ffffff" speed={2} className="font-bold text-4xl md:text-5xl" />
             </h2>
           </motion.div>
 
+          {/* GlareHover skill grid */}
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {skills.map((skill, i) => (
               <motion.div
@@ -177,20 +165,27 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
-                whileHover={{ scale: 1.08, y: -4 }}
-                className="group flex flex-col items-center gap-2 p-4 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-300 cursor-default"
               >
-                <div className="relative w-12 h-12">
-                  <Image
-                    src={skill.img}
-                    alt={skill.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-xs text-slate-400 group-hover:text-blue-300 text-center font-medium transition-colors leading-tight">
-                  {skill.name}
-                </span>
+                <GlareHover
+                  width="100%"
+                  height="100px"
+                  background="#0a1628"
+                  borderRadius="16px"
+                  borderColor="rgba(59,130,246,0.15)"
+                  glareColor="#3b82f6"
+                  glareOpacity={0.15}
+                  glareAngle={-45}
+                  glareSize={200}
+                  transitionDuration={600}
+                  className="flex flex-col items-center justify-center gap-2 cursor-default"
+                >
+                  <div className="relative w-10 h-10">
+                    <Image src={skill.img} alt={skill.name} fill className="object-contain p-1" />
+                  </div>
+                  <span className="text-xs text-slate-400 text-center font-medium leading-tight px-1">
+                    {skill.name}
+                  </span>
+                </GlareHover>
               </motion.div>
             ))}
           </div>

@@ -8,6 +8,10 @@ import { motion } from "motion/react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
+import BlurText from "@/components/BlurText";
+import ShinyText from "@/components/ShinyText";
+import SpotlightCard from "@/components/SpotlightCard";
+import Magnet from "@/components/Magnet";
 
 const contactInfo = [
   {
@@ -78,15 +82,17 @@ const ContactContent = () => {
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
             Get In Touch
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let&apos;s Work{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-              Together
-            </span>
-          </h1>
+          <BlurText
+            text="Let's Work Together"
+            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            animateBy="words"
+            direction="top"
+            delay={100}
+          />
           <p className="text-slate-400 max-w-lg mx-auto">
-            Have a project in mind? I&apos;d love to hear about it. Send me a
-            message and let&apos;s build something amazing.
+            Have a project in mind?{" "}
+            <ShinyText text="I'd love to hear about it." color="#94a3b8" shineColor="#ffffff" speed={3} className="inline" />
+            {" "}Send me a message and let&apos;s build something amazing.
           </p>
         </motion.div>
 
@@ -101,9 +107,10 @@ const ContactContent = () => {
             {/* Info cards */}
             <div className="space-y-4">
               {contactInfo.map(({ icon, label, value, href }) => (
-                <div
+                <SpotlightCard
                   key={label}
-                  className="flex items-start gap-4 p-4 rounded-2xl border border-white/8 bg-white/[0.02]"
+                  spotlightColor="rgba(59, 130, 246, 0.12)"
+                  className="flex items-start gap-4 border border-white/8 bg-white/[0.02] p-4"
                 >
                   <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
                     {icon}
@@ -123,7 +130,7 @@ const ContactContent = () => {
                       <p className="text-slate-300 text-sm">{value}</p>
                     )}
                   </div>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
 
@@ -134,16 +141,17 @@ const ContactContent = () => {
               </p>
               <div className="flex gap-3">
                 {socialLinks.map(({ href, icon, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200"
-                  >
-                    {icon}
-                  </a>
+                  <Magnet key={label} padding={35} magnetStrength={3}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200"
+                    >
+                      {icon}
+                    </a>
+                  </Magnet>
                 ))}
               </div>
             </div>
