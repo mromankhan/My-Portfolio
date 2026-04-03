@@ -3,7 +3,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Muhammad Roman. Share your project details and let's build something great together.",
+  description:
+    "Get in touch with Muhammad Roman. Available for freelance projects, collaborations, and full-time opportunities in AI development and full-stack engineering.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | Muhammad Roman",
+    description:
+      "Available for freelance, collaborations, and full-time opportunities in AI development and full-stack engineering.",
+    url: "/contact",
+  },
 };
 
 const Contact = () => {
