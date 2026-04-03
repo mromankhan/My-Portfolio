@@ -7,8 +7,8 @@ const projects = [
   {
     id: 1,
     title: "Personal Blog Web",
-    desc: "Dive into my personal journey — exploring tech, thoughts, and tales that inspire.",
-    img: "/myp2.jpg",
+    desc: "A modern blog platform with AI-enhanced content experience, built on Next.js & Firebase.",
+    img: "/myp2.png",
     alt: "Personal Blog Web",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Personal-Blog-Web",
@@ -17,8 +17,8 @@ const projects = [
   {
     id: 2,
     title: "Expense Tracker",
-    desc: "An expense tracker app to manage and monitor daily spending with real-time Firebase updates.",
-    img: "/myp3.jpg",
+    desc: "Smart expense tracker with real-time Firebase sync — AI-ready for spending insights.",
+    img: "/myp3.png",
     alt: "Expense Tracker Web",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
     githublink: "https://github.com/mromankhan/Expense-Tracker-Web",
@@ -27,7 +27,7 @@ const projects = [
   {
     id: 3,
     title: "Modern Music Academy",
-    desc: "Explore your musical potential with our comprehensive online music academy platform.",
+    desc: "Explore your musical potential with a modern online music academy platform.",
     img: "/myp1.jpg",
     alt: "Music Academy Web",
     iconsList: ["/images/next.svg", "/images/ts.svg", "/images/tail.svg", "/acter.jpg", "/images/fm.svg"],
@@ -36,11 +36,11 @@ const projects = [
   },
   {
     id: 4,
-    title: "Chat Web",
-    desc: "Stay connected in real-time — a modern chat app built for fast, fluid conversations. (Under Development)",
-    img: "/images/next.svg",
-    alt: "Chat Web",
-    iconsList: ["/images/next.svg", "/images/re.svg", "/images/mongoicon.svg", "/images/expicon.svg", "/images/nodejsicon.svg", "/images/tail.svg", "/images/ts.svg"],
+    title: "Todo",
+    desc: "AI-integrated task manager with a Next.js frontend & FastAPI + PostgreSQL backend.",
+    img: "/myp4.png",
+    alt: "Todo",
+    iconsList: ["/images/next.svg", "/images/re.svg", "/images/psql.svg", "/images/fapi.svg", "/images/tail.svg", "/images/ts.svg"],
     githublink: "https://github.com/mromankhan/Chat-Web",
   },
   {

@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "nextjs-seo": {
+      "source": "laguagu/claude-code-nextjs-skills",
+      "sourceType": "github",
+      "computedHash": "75dd113edabec85c5f0a176f39360ac8b521c408a7729e66c26605636d6d90c6"
+    },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "sourceType": "github",

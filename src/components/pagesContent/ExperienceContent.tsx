@@ -1,343 +1,356 @@
 "use client";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { useRef } from "react";
 import {
   Briefcase,
   GraduationCap,
-  Code2,
-  Star,
   ExternalLink,
   Calendar,
   MapPin,
+  Code2,
+  Zap,
 } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
+import Link from "next/link";
 
-/* ─── Data ─────────────────────────────────────────────────── */
+/* ─── Data ────────────────────────────────────────────────── */
 const experiences = [
   {
     id: 1,
-    type: "work",
-    role: "Freelance Full Stack Developer",
-    company: "Self-Employed",
-    location: "Remote / Karachi, PK",
-    period: "2023 — Present",
+    type: "contract",
+    role: "Agentic AI & Automation Developer",
+    company: "AIByTech",
+    location: "Remote",
+    period: "Jan 2026 — Present",
     current: true,
-    icon: <Briefcase size={18} />,
-    color: "blue",
-    desc: "Building production-grade web & mobile applications for clients. Delivering end-to-end solutions — from UI design to backend APIs and deployment.",
+    icon: <Zap size={18} />,
+    color: "cyan",
+    desc: "Building cutting-edge Agentic AI systems and intelligent automation pipelines for clients. Architecting multi-agent orchestration workflows and integrating LLMs into production-grade products.",
     highlights: [
-      "Developed 6+ client projects using Next.js, React & Firebase",
-      "Built real-time web apps with WebSocket & Firestore",
-      "Deployed scalable apps on Vercel with CI/CD pipelines",
-      "React Native mobile apps for Android & iOS",
+      "Designed and deployed multi-agent AI systems using LangChain & LangGraph",
+      "Built end-to-end automation pipelines reducing manual workflows by 80%",
+      "Integrated OpenAI, Anthropic & open-source LLMs into real products",
+      "Delivered AI-driven automation for enterprise-level clients",
     ],
-    tags: ["Next.js", "React", "Firebase", "TypeScript", "Tailwind CSS"],
+    tags: ["Agentic AI", "LangGraph", "LLMs", "Python", "Automation", "FastAPI", "N8N"],
   },
   {
     id: 2,
+    type: "job",
+    role: "Full Stack Developer & Agentic AI Developer",
+    company: "XponentialAI",
+    location: "Remote",
+    period: "Oct 2025 — Present",
+    current: true,
+    icon: <Briefcase size={18} />,
+    color: "purple",
+    desc: "Full-time role building modern web applications and Voice AI Agents & Agentic AI features. Contributing to both frontend and backend systems while exploring the forefront of AI product development.",
+    highlights: [
+      "Developed production Next.js applications with TypeScript & Tailwind CSS",
+      "Built and integrated Agentic AI features using Python & Livekit",
+      "Collaborated in an agile team shipping AI-powered products",
+      "Maintained and optimized FastAPI & REST API integrations",
+    ],
+    tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "Livekit", "Twilio", "PostgreSQL", "Docker", "RAG", "OpenAI Agents SDK"],
+  },
+  {
+    id: 3,
+    type: "internship",
+    role: "Full Stack Developer & Agentic AI Developer",
+    company: "XponentialAI",
+    location: "Remote",
+    period: "Jul 2025 — Sep 2025",
+    current: false,
+    icon: <Code2 size={18} />,
+    color: "blue",
+    desc: "Started as an intern and rapidly contributed across the full stack. Gained hands-on experience in both modern web development and the emerging Agentic AI space.",
+    highlights: [
+      "Built UI components and full-page features in Next.js & React",
+      "Worked on early-stage Agentic AI feature prototypes",
+      "Integrated third-party APIs and FastAPI services",
+      "Promoted to full-time developer within the internship period",
+    ],
+    tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Python", "FastAPI"],
+  },
+  {
+    id: 4,
     type: "education",
-    role: "Certified Cloud Applied Generative AI Engineer",
+    role: "Certified Cloud Applied Generative AI & Agentic AI Engineer",
     company: "PIAIC — Presidential Initiative for AI & Computing",
     location: "Karachi, Pakistan",
     period: "2024 — Present",
     current: true,
     icon: <GraduationCap size={18} />,
-    color: "purple",
-    desc: "Intensive AI & Cloud engineering program backed by the Government of Pakistan. Focused on Generative AI, Agentic AI systems, Cloud Native development, and modern Python stacks.",
+    color: "green",
+    desc: "Government-backed intensive program covering Generative AI, Agentic AI systems, and Cloud Native development with modern Python stacks.",
     highlights: [
       "Generative AI & Large Language Models (LLMs)",
-      "Agentic AI systems & Multi-agent orchestration",
+      "Agentic AI systems & multi-agent orchestration",
       "Cloud Native development with Docker & Kubernetes",
       "Python, FastAPI, and modern AI frameworks",
     ],
     tags: ["Python", "Generative AI", "Cloud Native", "LLMs", "FastAPI"],
   },
   {
-    id: 3,
+    id: 5,
     type: "education",
-    role: "Full Stack Web Developer",
+    role: "Full Stack Web & Mobile App Developer",
     company: "SMIT — Saylani Mass IT Training",
     location: "Karachi, Pakistan",
-    period: "2022 — 2024",
+    period: "2023 — 2025",
     current: false,
     icon: <GraduationCap size={18} />,
-    color: "green",
-    desc: "Comprehensive full-stack development bootcamp. Mastered the MERN stack, modern JavaScript frameworks, and industry-standard development practices.",
+    color: "orange",
+    desc: "Comprehensive full-stack bootcamp covering the MERN stack, modern JavaScript, and industry-standard development practices.",
     highlights: [
       "MERN Stack: MongoDB, Express, React, Node.js",
       "Modern JavaScript & TypeScript fundamentals",
       "RESTful API design & integration",
       "Version control with Git & GitHub",
     ],
-    tags: ["MongoDB", "Express", "React", "Node.js", "JavaScript"],
-  },
-  {
-    id: 4,
-    type: "work",
-    role: "Open Source Contributor & Builder",
-    company: "Personal Projects",
-    location: "GitHub",
-    period: "2022 — Present",
-    current: true,
-    icon: <Code2 size={18} />,
-    color: "cyan",
-    desc: "Continuously building and shipping side projects to sharpen skills, explore new technologies, and contribute back to the developer community.",
-    highlights: [
-      "6+ public repositories on GitHub",
-      "Music Academy, Blog, Expense Tracker — all live on Vercel",
-      "React Native weather & food review apps",
-      "Exploring Aceternity UI, Shadcn, and modern component ecosystems",
-    ],
-    tags: ["Open Source", "React Native", "Next.js", "Vercel"],
+    tags: ["Next.js", "React.js", "Tailwind CSS", "TypeScript", "JavaScript", "Firebase", "MongoDB", "Express.js", "Node.js", "React Native", "Expo"],
   },
 ];
 
-const achievements = [
-  { icon: <Star size={20} />, value: "6+", label: "Projects Shipped", color: "blue" },
-  { icon: <Briefcase size={20} />, value: "2+", label: "Years Experience", color: "purple" },
-  { icon: <GraduationCap size={20} />, value: "2", label: "Certifications", color: "green" },
-  { icon: <Code2 size={20} />, value: "18+", label: "Technologies", color: "cyan" },
-];
-
-const colorMap: Record<string, { border: string; bg: string; text: string; glow: string; dot: string }> = {
-  blue:   { border: "border-blue-500/30",   bg: "bg-blue-500/10",   text: "text-blue-400",   glow: "shadow-blue-500/20",   dot: "bg-blue-500"   },
-  purple: { border: "border-purple-500/30", bg: "bg-purple-500/10", text: "text-purple-400", glow: "shadow-purple-500/20", dot: "bg-purple-500" },
-  green:  { border: "border-emerald-500/30", bg: "bg-emerald-500/10", text: "text-emerald-400", glow: "shadow-emerald-500/20", dot: "bg-emerald-500" },
-  cyan:   { border: "border-cyan-500/30",   bg: "bg-cyan-500/10",   text: "text-cyan-400",   glow: "shadow-cyan-500/20",   dot: "bg-cyan-500"   },
+const colorMap: Record<string, {
+  border: string; bg: string; text: string; dot: string;
+  glow: string; badge: string;
+}> = {
+  cyan:   { border: "border-cyan-500/25",    bg: "bg-cyan-500/8",    text: "text-cyan-400",    dot: "bg-cyan-400",    glow: "shadow-cyan-500/30",    badge: "bg-cyan-500/15 text-cyan-300 border-cyan-500/25" },
+  purple: { border: "border-purple-500/25",  bg: "bg-purple-500/8",  text: "text-purple-400",  dot: "bg-purple-400",  glow: "shadow-purple-500/30",  badge: "bg-purple-500/15 text-purple-300 border-purple-500/25" },
+  blue:   { border: "border-blue-500/25",    bg: "bg-blue-500/8",    text: "text-blue-400",    dot: "bg-blue-400",    glow: "shadow-blue-500/30",    badge: "bg-blue-500/15 text-blue-300 border-blue-500/25" },
+  green:  { border: "border-emerald-500/25", bg: "bg-emerald-500/8", text: "text-emerald-400", dot: "bg-emerald-400", glow: "shadow-emerald-500/30", badge: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25" },
+  orange: { border: "border-orange-500/25",  bg: "bg-orange-500/8",  text: "text-orange-400",  dot: "bg-orange-400",  glow: "shadow-orange-500/30",  badge: "bg-orange-500/15 text-orange-300 border-orange-500/25" },
 };
 
-/* ─── Animated Timeline Line ─────────────────────────────── */
-function TimelineLine() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.8", "end 0.2"] });
-  const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+const typeLabel: Record<string, string> = {
+  internship: "Internship",
+  job:        "Full-Time",
+  contract:   "Contract",
+  education:  "Education",
+};
 
-  return (
-    <div ref={ref} className="absolute left-8 top-0 bottom-0 w-px bg-white/5">
-      <motion.div
-        style={{ height }}
-        className="w-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 origin-top"
-      />
-    </div>
-  );
-}
-
-/* ─── Single Entry ───────────────────────────────────────── */
+/* ─── Single card ────────────────────────────────────────── */
 function ExperienceCard({ exp, index }: { exp: (typeof experiences)[0]; index: number }) {
   const c = colorMap[exp.color];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-      className="relative pl-20"
-    >
-      {/* Timeline dot */}
-      <div className={`absolute left-[26px] top-6 w-5 h-5 rounded-full border-4 border-[#020817] ${c.dot} shadow-lg ${c.glow}`} />
+    <div className="flex items-start gap-4">
 
-      {/* Card */}
-      <div
-        className={`relative p-6 rounded-2xl border ${c.border} bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 group`}
+      {/* Left column — fixed 40px, dot sits in flow centered here */}
+      <div className="w-10 shrink-0 flex justify-center pt-5">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: index * 0.06, type: "spring", stiffness: 280, damping: 22 }}
+          className={`w-4 h-4 rounded-full border-[3px] border-[#020817] ${c.dot} shadow-lg ${c.glow} z-10`}
+        />
+      </div>
+
+      {/* Right column — card slides in */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.45, delay: index * 0.06 + 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
+        className={`flex-1 group p-5 rounded-2xl border ${c.border} bg-[#060d1a] hover:bg-[#080f1f] transition-colors duration-300`}
       >
-        {/* Subtle glow on hover */}
-        <div className={`absolute inset-0 rounded-2xl ${c.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
-
-        <div className="relative z-10">
-          {/* Header row */}
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
-            <div className="flex items-start gap-3">
-              {/* Type icon */}
-              <div className={`w-9 h-9 rounded-xl ${c.bg} ${c.border} border flex items-center justify-center ${c.text} shrink-0 mt-0.5`}>
-                {exp.icon}
-              </div>
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="text-lg font-bold text-white leading-tight">{exp.role}</h3>
-                  {exp.current && (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-500/15 text-green-400 border border-green-500/25">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      Active
-                    </span>
-                  )}
-                </div>
-                <p className={`text-sm font-medium ${c.text} mt-0.5`}>{exp.company}</p>
-              </div>
+        {/* Top row */}
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+          <div className="flex items-start gap-3">
+            <div className={`w-8 h-8 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center ${c.text} shrink-0 mt-0.5`}>
+              {exp.icon}
             </div>
-
-            {/* Meta */}
-            <div className="flex flex-col gap-1.5 sm:items-end shrink-0">
-              <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Calendar size={12} />
-                {exp.period}
+            <div>
+              <div className="flex items-center flex-wrap gap-2 mb-0.5">
+                <h3 className="text-base font-bold text-white leading-snug">{exp.role}</h3>
+                {exp.current && (
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-green-500/15 text-green-400 border border-green-500/25">
+                    <span className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
+                    Now
+                  </span>
+                )}
+                <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${c.badge}`}>
+                  {typeLabel[exp.type]}
+                </span>
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <MapPin size={12} />
-                {exp.location}
-              </div>
+              <p className={`text-sm font-semibold ${c.text}`}>{exp.company}</p>
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-slate-400 text-sm leading-relaxed mb-5">{exp.desc}</p>
-
-          {/* Highlights */}
-          <ul className="space-y-2 mb-5">
-            {exp.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-2.5 text-sm text-slate-300">
-                <span className={`w-1.5 h-1.5 rounded-full ${c.dot} mt-1.5 shrink-0`} />
-                {h}
-              </li>
-            ))}
-          </ul>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {exp.tags.map((tag) => (
-              <span
-                key={tag}
-                className={`px-3 py-1 rounded-lg text-xs font-medium ${c.bg} ${c.text} border ${c.border}`}
-              >
-                {tag}
-              </span>
-            ))}
+          {/* Meta */}
+          <div className="flex flex-col gap-1 sm:items-end shrink-0">
+            <span className="flex items-center gap-1.5 text-[11px] text-slate-500">
+              <Calendar size={11} /> {exp.period}
+            </span>
+            <span className="flex items-center gap-1.5 text-[11px] text-slate-500">
+              <MapPin size={11} /> {exp.location}
+            </span>
           </div>
         </div>
-      </div>
-    </motion.div>
+
+        {/* Desc */}
+        <p className="text-slate-400 text-sm leading-relaxed mb-4">{exp.desc}</p>
+
+        {/* Highlights */}
+        <ul className="space-y-1.5 mb-4">
+          {exp.highlights.map((h) => (
+            <li key={h} className="flex items-start gap-2 text-sm text-slate-300">
+              <span className={`w-1.5 h-1.5 rounded-full ${c.dot} mt-[6px] shrink-0`} />
+              {h}
+            </li>
+          ))}
+        </ul>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {exp.tags.map((tag) => (
+            <span key={tag} className={`px-2.5 py-1 rounded-lg text-[11px] font-medium ${c.bg} ${c.text} border ${c.border}`}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
-/* ─── Page ───────────────────────────────────────────────── */
+/* ─── Timeline with scroll-driven line ──────────────────── */
+function Timeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.85", "end 0.25"],
+  });
+  const rawHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const height = useSpring(rawHeight, { stiffness: 80, damping: 25 });
+
+  return (
+    <div ref={containerRef} className="relative">
+      {/* Track (static gray) — centered in the 40px left column = left-5 (20px) */}
+      <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-white/5 rounded-full" />
+      {/* Animated fill */}
+      <motion.div
+        style={{ height }}
+        className="absolute left-5 top-0 w-[2px] bg-gradient-to-b from-cyan-400 via-purple-500 via-blue-500 to-emerald-400 origin-top rounded-full"
+      />
+
+      <div className="space-y-6">
+        {experiences.map((exp, i) => (
+          <ExperienceCard key={exp.id} exp={exp} index={i} />
+        ))}
+      </div>
+
+      {/* Bottom cap */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="flex items-center gap-4 mt-6"
+      >
+        <div className="w-10 shrink-0 flex justify-center">
+          <div className="w-4 h-4 rounded-full border-[3px] border-[#020817] bg-slate-700" />
+        </div>
+        <div className="flex-1 p-4 rounded-2xl border border-white/5 bg-white/[0.01] text-center">
+          <p className="text-slate-600 text-sm">The journey begins here — 2023</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* ─── Page ──────────────────────────────────────────────── */
 export default function ExperienceContent() {
   return (
     <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
-      {/* ── Hero ── */}
-      <section className="relative pt-28 pb-16 px-4 overflow-hidden">
-        <Spotlight className="-top-40 left-0 md:left-60" fill="#8b5cf6" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(139,92,246,0.10),transparent)]" />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      {/* ── Hero ── */}
+      <section className="relative pt-28 pb-14 px-4 overflow-hidden">
+        <Spotlight className="-top-40 left-0 md:left-60" fill="#3b82f6" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.08),transparent)]" />
+
+        <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3">
+            <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-4">
               My Journey
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               Experience &{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Education
               </span>
             </h1>
-            <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              My path as a developer — from first lines of code to shipping production apps.
+            <p className="text-slate-400 text-lg max-w-lg mx-auto">
+              From bootcamp to AI company — the story so far.
             </p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* ── Stats Row ── */}
-      <section className="px-4 pb-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {achievements.map((a, i) => {
-            const c = colorMap[a.color];
-            return (
-              <motion.div
-                key={a.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`flex flex-col items-center gap-2 p-5 rounded-2xl border ${c.border} ${c.bg} text-center`}
-              >
-                <div className={`${c.text}`}>{a.icon}</div>
-                <div className={`text-2xl font-bold ${c.text}`}>{a.value}</div>
-                <div className="text-xs text-slate-400 font-medium">{a.label}</div>
-              </motion.div>
-            );
-          })}
+          {/* Quick stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4 mt-10"
+          >
+            {[
+              { label: "Companies", value: "2" },
+              { label: "Roles", value: "3" },
+              { label: "Technologies", value: "18+" },
+              { label: "Currently Active", value: "2" },
+            ].map((s) => (
+              <div key={s.label} className="px-5 py-3 rounded-2xl border border-white/8 bg-white/[0.03] text-center">
+                <div className="text-xl font-bold text-white">{s.value}</div>
+                <div className="text-xs text-slate-400 mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* ── Timeline ── */}
       <section className="px-4 pb-24">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-2xl font-bold text-slate-300">Timeline</h2>
-          </motion.div>
-
-          {/* Timeline container */}
-          <div className="relative">
-            <TimelineLine />
-
-            <div className="space-y-8">
-              {experiences.map((exp, i) => (
-                <ExperienceCard key={exp.id} exp={exp} index={i} />
-              ))}
-            </div>
-
-            {/* Start cap */}
-            <div className="relative pl-20 mt-8">
-              <div className="absolute left-[26px] top-1/2 -translate-y-1/2 w-5 h-5 rounded-full border-4 border-[#020817] bg-slate-600" />
-              <div className="p-4 rounded-2xl border border-white/5 bg-white/[0.01] text-center">
-                <p className="text-slate-500 text-sm">🚀 The journey begins here</p>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <Timeline />
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="px-4 pb-24">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative p-10 rounded-3xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-transparent text-center overflow-hidden"
+            className="relative p-8 md:p-10 rounded-3xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 to-transparent text-center overflow-hidden"
           >
-            {/* bg glow */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 space-y-4">
-              <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase">
-                Open for Work
-              </p>
-              <h3 className="text-3xl font-bold text-white">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-green-500/15 text-green-400 border border-green-500/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                Open to New Opportunities
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Let&apos;s Build Something{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                   Amazing
                 </span>
               </h3>
-              <p className="text-slate-400 max-w-md mx-auto">
-                I&apos;m currently available for freelance projects and full-time roles. Let&apos;s
-                connect and create something extraordinary together.
+              <p className="text-slate-400 max-w-md mx-auto text-sm leading-relaxed">
+                Available for freelance work and collaborations. If you have a project or opportunity that aligns with my skills, let&apos;s talk.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center pt-2">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-600/25"
-                >
-                  Get In Touch
-                  <ExternalLink size={16} />
-                </a>
-                <a
-                  href="/Roman_Resume.pdf"
-                  download
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all hover:scale-105"
-                >
-                  Download CV
-                </a>
+              <div className="flex flex-wrap gap-3 justify-center pt-2">
+                <Link href="/contact">
+                  <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-600/20 text-sm">
+                    Get In Touch <ExternalLink size={15} />
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

@@ -19,10 +19,15 @@ const skills = [
   { id: 12, name: "JavaScript", img: "/images/javascript.svg" },
   { id: 13, name: "TypeScript", img: "/images/typescript.svg" },
   { id: 14, name: "Python", img: "/images/python.svg" },
-  { id: 15, name: "HTML5", img: "/images/html5.svg" },
-  { id: 16, name: "CSS3", img: "/images/css3.svg" },
-  { id: 17, name: "Git", img: "/images/git.svg" },
-  { id: 18, name: "GitHub", img: "/images/github.svg" },
+  { id: 15, name: "FastAPI", img: "/images/fastapi.svg" },
+  { id: 16, name: "Livekit", img: "/images/livekit.svg" },
+  { id: 18, name: "PostgreSQL", img: "/images/postgresql.svg" },
+  { id: 19, name: "Docker", img: "/images/docker.svg" },
+  { id: 20, name: "Kubernetes", img: "/images/kubernetes.svg" },
+  { id: 23, name: "OpenAI", img: "/images/openai.svg" },
+  { id: 24, name: "MCP Servers", img: "/images/mcp.svg" },
+  { id: 25, name: "Git", img: "/images/git.svg" },
+  { id: 26, name: "GitHub", img: "/images/github.svg" },
 ];
 
 const interests = [
@@ -33,9 +38,9 @@ const interests = [
 ];
 
 const stats = [
-  { value: "2+", label: "Years Experience" },
-  { value: "10+", label: "Projects Built" },
-  { value: "18+", label: "Technologies" },
+  { value: "2+", label: "Years of Learning Experience" },
+  { value: "1+", label: "Years of Professional Experience" },
+  { value: "25+", label: "Technologies" },
   { value: "∞", label: "Coffee Cups" },
 ];
 
@@ -75,15 +80,30 @@ export default function AboutContent() {
                   from Karachi, Pakistan.
                 </p>
                 <p className="text-lg">
-                  A{" "}
-                  <span className="text-blue-400 font-semibold">Software Engineer</span>{" "}
-                  and proud student of{" "}
+                  An{" "}
+                  <span className="text-blue-400 font-semibold">Agentic AI & Full Stack Developer</span>{" "}
+                  specializing in{" "}
+                  <span className="text-blue-400 font-semibold">Voice AI Agents</span>,
+                  and a proud student of{" "}
                   <span className="text-blue-400 font-semibold">SMIT & PIAIC</span>.
                 </p>
                 <p className="text-slate-400">
-                  I specialize in building scalable web applications with modern
-                  technologies, and I&apos;m deeply passionate about the intersection
-                  of AI and software engineering.
+                  I build production-grade web applications, intelligent AI-powered
+                  agentic systems, and{" "}
+                  <span className="text-blue-400 font-semibold">Digital FTEs</span>{" "}
+                  — autonomous AI agents that operate as full-time digital workers.
+                  I also build and integrate{" "}
+                  <span className="text-blue-400 font-semibold">MCP Servers</span>{" "}
+                  to supercharge AI workflows with custom tools and context.
+                  Currently leveling up in cloud-native architecture —
+                  Kubernetes, Dapr, and distributed systems engineering.
+                </p>
+                <p className="text-slate-400">
+                  I integrate{" "}
+                  <span className="text-blue-400 font-semibold">advanced AI development tools</span>{" "}
+                  like Cursor, Claude Code & GitHub Copilot into my workflow — enabling
+                  faster iterations, cleaner architecture, and{" "}
+                  <span className="text-blue-400 font-semibold">10x development speed</span>.
                 </p>
               </div>
 

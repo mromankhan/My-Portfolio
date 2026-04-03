@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { motion } from "motion/react";
@@ -32,10 +32,10 @@ const socialLinks = [
 ];
 
 const introPoints = [
-  "Passionate developer turning ideas into impactful digital experiences.",
-  "Crafting modern web & mobile apps using JavaScript, React & React Native.",
-  "Exploring future-forward fields like Agentic AI and Natural Language Processing.",
-  "Building innovative, user-focused solutions with cutting-edge tools.",
+  "Building intelligent Agentic AI systems and Voice AI Agents for real-world automation.",
+  "Full stack engineer crafting scalable web apps with Next.js, React & Node.js.",
+  "Exploring cloud-native architecture — Kubernetes, Dapr, and distributed systems.",
+  "Turning cutting-edge AI research into production-ready, user-focused solutions.",
 ];
 
 export default function HomeContent() {
@@ -70,16 +70,6 @@ export default function HomeContent() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="space-y-8"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1, duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium"
-              >
-                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                Available for work
-              </motion.div>
 
               <div className="space-y-3">
                 <h2 className="text-5xl lg:text-6xl font-bold text-slate-300">
@@ -97,8 +87,8 @@ export default function HomeContent() {
               </div>
 
               <p className="text-slate-400 text-lg leading-relaxed max-w-md">
-                I build fast, scalable, and beautiful web & mobile applications
-                that create real-world impact.
+                I build intelligent AI agents, scalable web applications, and
+                cloud-native systems that create real-world impact.
               </p>
 
               {/* CTAs */}
@@ -109,12 +99,6 @@ export default function HomeContent() {
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </Link>
-                <a href="/Roman_Resume.pdf" download>
-                  <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all duration-200 hover:scale-105">
-                    <Download className="h-4 w-4" />
-                    Resume
-                  </button>
-                </a>
               </div>
 
               {/* Social links */}
@@ -217,9 +201,17 @@ export default function HomeContent() {
             <h3 className="text-2xl font-bold text-blue-400">Why Me?</h3>
             <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
               I don&apos;t just code — I{" "}
-              <span className="text-blue-400 font-semibold">create experiences</span>. Every line of
-              code is an opportunity to bring value, solve problems, and push the
-              boundaries of what&apos;s possible.
+              <span className="text-blue-400 font-semibold">engineer intelligent systems</span>. From
+              agentic AI pipelines to cloud-native infrastructure, every project
+              is an opportunity to push the boundaries of what&apos;s possible.
+            </p>
+            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              I leverage{" "}
+              <span className="text-blue-400 font-semibold">advanced AI-powered development tools</span>{" "}
+              — Cursor, Claude Code, and GitHub Copilot — to ship production-ready
+              features at{" "}
+              <span className="text-blue-400 font-semibold">10x speed</span>{" "}
+              without compromising on quality, security, or scalability.
             </p>
             <p className="text-blue-400 font-semibold text-lg">
               Let&apos;s build the future together!

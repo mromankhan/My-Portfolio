@@ -7,7 +7,7 @@ const TypewriterEffect = () => {
         <p className="text-3xl lg:text-4xl font-semibold">I&apos;m a {" "}
             <span className="text-3xl lg:text-4xl font-semibold text-blue-500">
                 <Typewriter
-                    words={["Full Stack Developer", "Mern Stack Developer", "Frontend Engineer", "Backend Engineer"]}
+                    words={["Full Stack Developer", "Agentic AI Developer", "Cloud Native Engineer", "React & Next.js Developer", "Python Developer"]}
                     loop={true}
                     cursor
                     cursorStyle="|"
