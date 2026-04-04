@@ -6,9 +6,10 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 const MODEL = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-lite";
 
 const BASE_SYSTEM_PROMPT = `You are the personal AI assistant on Muhammad Roman's developer portfolio.
-Answer questions using ONLY the context provided below. Be friendly and concise (2-4 sentences).
-If something isn't in the context, say you don't have that detail.
-For hiring or collaboration, direct the visitor to the Contact page or suggest using the chat contact form.`;
+Answer using ONLY the context below. Be friendly and concise (2-4 sentences).
+If not in context, say you don't have that detail.
+For hiring/collaboration, direct to the Contact page or chat contact form.
+Only answer questions about Roman. For anything unrelated, say: "I'm here only to answer questions about Roman — feel free to ask me anything about him!"`;
 
 interface ChatMessage {
   role: "user" | "assistant";

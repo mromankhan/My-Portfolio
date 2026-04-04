@@ -4,7 +4,6 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, Send, Bot, Trash2, Loader2, Mic, MicOff, CheckCircle2 } from "lucide-react";
 import { TbMessageChatbotFilled } from "react-icons/tb";
-import emailjs from "@emailjs/browser";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -51,7 +50,7 @@ declare global {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const STARTER_PROMPTS = [
-  "What are Roman's skills?",
+  "What are Roman's skills and experience?",
   "Tell me about his projects",
   "I want to contact Roman",
 ];
@@ -79,7 +78,7 @@ export default function ChatWidget() {
   const [contactData, setContactData] = useState<ContactData>({ name: "", email: "", message: "" });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
   // ── Effects ───────────────────────────────────────────────────────────────
@@ -193,16 +192,16 @@ export default function ChatWidget() {
       addAssistantMessage("Sending your message... ⏳");
 
       try {
-        await emailjs.send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
             name: finalData.name,
             email: finalData.email,
             message: finalData.message,
-          },
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-        );
+          }),
+        });
+        if (!res.ok) throw new Error();
         setContactStep("done");
         addAssistantMessage(
           `✅ Message sent, ${finalData.name}! Roman will get back to you at ${finalData.email} soon.\n\nIs there anything else I can help you with?`
@@ -519,7 +518,7 @@ export default function ChatWidget() {
                         </div>
                       )}
                       <div
-                        className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
+                        className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line break-words overflow-hidden ${
                           msg.role === "user"
                             ? "bg-blue-600 text-white rounded-tr-sm shadow-lg shadow-blue-600/20"
                             : "bg-white/[0.05] border border-white/8 text-slate-200 rounded-tl-sm"
@@ -549,7 +548,7 @@ export default function ChatWidget() {
                   e.preventDefault();
                   sendMessage(input);
                 }}
-                className="flex items-center gap-2"
+                className="flex items-end gap-2"
               >
                 {/* Voice button */}
                 <button
@@ -565,14 +564,27 @@ export default function ChatWidget() {
                   {isListening ? <MicOff size={16} /> : <Mic size={16} />}
                 </button>
 
-                <input
+                <textarea
                   ref={inputRef}
-                  type="text"
+                  rows={1}
                   value={input}
-                  onChange={(e) => setInput(e.target.value)}
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                    // auto-resize up to 5 lines
+                    e.target.style.height = "auto";
+                    e.target.style.height = Math.min(e.target.scrollHeight, 120) + "px";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      sendMessage(input);
+                      // reset height after send
+                      e.currentTarget.style.height = "auto";
+                    }
+                  }}
                   placeholder={placeholder}
                   disabled={isLoading || contactStep === "sending"}
-                  className="flex-1 bg-white/[0.05] border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all duration-200 disabled:opacity-50"
+                  className="flex-1 bg-white/[0.05] border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all duration-200 disabled:opacity-50 resize-none overflow-y-auto leading-5"
                 />
 
                 <button

@@ -41,7 +41,8 @@ const projects = [
     img: "/myp4.png",
     alt: "Todo",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/psql.svg", "/images/fapi.svg", "/images/tail.svg", "/images/ts.svg"],
-    githublink: "https://github.com/mromankhan/Chat-Web",
+    githublink: "https://github.com/mromankhan/Todo",
+    liveLink: "https://todo-one-iota-71.vercel.app",
   },
   {
     id: 5,

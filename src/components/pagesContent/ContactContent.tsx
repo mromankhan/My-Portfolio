@@ -1,7 +1,6 @@
 "use client";
 import { Loader2, Send, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "motion/react";
@@ -46,12 +45,12 @@ const ContactContent = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        { name, email, message },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error();
       toast.success("Message sent! I'll get back to you soon.");
       setName("");
       setEmail("");
