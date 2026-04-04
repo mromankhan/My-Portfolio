@@ -4,6 +4,8 @@ import { GraduationCap, Plane, Globe, Code2, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Spotlight } from "@/components/ui/spotlight";
 import GitHubStats from "@/components/GitHubStats";
+import ContributionGraph from "@/components/ContributionGraph";
+import StreakCard from "@/components/StreakCard";
 
 const skills = [
   { id: 1, name: "React", img: "/images/react.svg" },
@@ -167,66 +169,6 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── GitHub Stats Section ── */}
-      <section className="py-20 px-4 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(59,130,246,0.04),transparent)]" />
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-14"
-          >
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              GitHub Activity
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Open Source{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Contributions
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="flex flex-col items-center gap-6 w-full">
-            {/* Row 1 — Top Languages (native React) + Streak */}
-            <div className="flex flex-col md:flex-row gap-6 w-full justify-center items-start">
-              <GitHubStats />
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <img
-                  src="https://streak-stats.demolab.com?user=mromankhan&theme=tokyonight&background=0d1117&border=1e3a5f&ring=60a5fa&fire=60a5fa&currStreakLabel=60a5fa&sideLabels=94a3b8&dates=94a3b8&currStreakNum=ffffff&sideNums=ffffff&hide_border=false"
-                  alt="Muhammad Roman GitHub Streak"
-                  className="rounded-2xl border border-white/8 h-auto w-full max-w-[480px]"
-                />
-              </motion.div>
-            </div>
-
-            {/* Row 2 — Contribution Graph (the green boxes) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full"
-            >
-              <img
-                src="https://github-readme-activity-graph.vercel.app/graph?username=mromankhan&theme=tokyo-night&bg_color=0d1117&color=60a5fa&line=3b82f6&point=60a5fa&area=true&area_color=3b82f6&hide_border=false&border_color=1e3a5f&radius=6"
-                alt="Muhammad Roman GitHub Contribution Graph"
-                className="rounded-2xl border border-white/8 h-auto w-full"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Skills Section ── */}
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(59,130,246,0.05),transparent)]" />
@@ -274,6 +216,42 @@ export default function AboutContent() {
                 </span>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── GitHub Stats Section ── */}
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(59,130,246,0.04),transparent)]" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-14"
+          >
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
+              GitHub Activity
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Open Source{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                Contributions
+              </span>
+            </h2>
+          </motion.div>
+
+          <div className="flex flex-col items-center gap-6 w-full">
+            {/* Row 1 — Top Languages + Streak */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[984px] mx-auto">
+              <GitHubStats />
+              <StreakCard username="mromankhan" />
+            </div>
+
+            {/* Row 2 — Contribution Heatmap */}
+            <ContributionGraph username="mromankhan" />
           </div>
         </div>
       </section>

@@ -72,7 +72,7 @@ export default function GitHubStats() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6"
+      className="w-full max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col"
     >
       <p className="text-xs text-blue-400 font-semibold tracking-widest uppercase mb-5">
         Top Languages
@@ -93,7 +93,7 @@ export default function GitHubStats() {
         ))}
       </div>
 
-      <div className="space-y-3">
+      <div className="flex-1 flex flex-col justify-between">
         {langData.map(({ name, percent, color }, i) => (
           <motion.div
             key={name}
@@ -101,7 +101,7 @@ export default function GitHubStats() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: i * 0.06 }}
-            className="flex items-center justify-between"
+            className="flex items-center justify-between py-1"
           >
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: color }} />
