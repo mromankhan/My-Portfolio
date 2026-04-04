@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "chatkit-js": {
+      "source": "naimalarain13/hackathon-ii_the-evolution-of-todo",
+      "sourceType": "github",
+      "computedHash": "c240bc2fee1ca73cfce924ae4077512a1470608c594651e972f803f8f57444e8"
+    },
     "nextjs-seo": {
       "source": "laguagu/claude-code-nextjs-skills",
       "sourceType": "github",
