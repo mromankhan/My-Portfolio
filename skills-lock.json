@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "chatkit-js": {
+      "source": "naimalarain13/hackathon-ii_the-evolution-of-todo",
+      "sourceType": "github",
+      "computedHash": "c240bc2fee1ca73cfce924ae4077512a1470608c594651e972f803f8f57444e8"
+    },
+    "nextjs-seo": {
+      "source": "laguagu/claude-code-nextjs-skills",
+      "sourceType": "github",
+      "computedHash": "75dd113edabec85c5f0a176f39360ac8b521c408a7729e66c26605636d6d90c6"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "computedHash": "6337038fe1fe6bbe1b9f252ab678ee575859190bab6f0f246f4061824eb40875"
+    }
+  }
+}

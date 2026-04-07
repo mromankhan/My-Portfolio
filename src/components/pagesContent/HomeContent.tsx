@@ -1,102 +1,249 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/Button";
 import { ArrowRight } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { motion } from "motion/react";
 import TypewriterEffect from "@/components/TypewritingEffect";
+import { Spotlight } from "@/components/ui/spotlight";
+
+const socialLinks = [
+  {
+    href: "https://github.com/mromankhan",
+    icon: <FiGithub size={20} />,
+    label: "GitHub",
+  },
+  {
+    href: "https://x.com/RomanKhan00555",
+    icon: <FaXTwitter size={18} />,
+    label: "X (Twitter)",
+  },
+  {
+    href: "https://www.linkedin.com/in/mromankhan",
+    icon: <FiLinkedin size={20} />,
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:mromankhan005@gmail.com",
+    icon: <FiMail size={20} />,
+    label: "Email",
+  },
+];
+
+const introPoints = [
+  "Building intelligent Agentic AI systems and Voice AI Agents for real-world automation.",
+  "Full stack engineer crafting scalable web apps with Next.js, React & Node.js.",
+  "Exploring cloud-native architecture — Kubernetes, Dapr, and distributed systems.",
+  "Turning cutting-edge AI research into production-ready, user-focused solutions.",
+];
 
 export default function HomeContent() {
   return (
-    <main className="min-h-screen bg-[#020817] text-white pb-7 md:pb-3 lg:pb-3">
-      <div className="container mx-auto px-4 pt-32 lg:pt-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold">Hi There!</h2>
-              <h1 className="text-4xl lg:text-5xl font-bold">
-                It&apos;s <span className="text-blue-500">Muhammad Roman</span>
-              </h1>
-              <h2 className="text-3xl lg:text-4xl font-semibold">
-                <TypewriterEffect />
-              </h2>
-            </div>
-            <Link href="/contact">
-              <Button className="bg-blue-500 hover:bg-blue-600">
-                Let&apos;s Connect <ArrowRight className="ml-2 h-6 w-6" />
-              </Button>
-            </Link>
-          </div>
+    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
+      {/* ── Hero Section ── */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Spotlight */}
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="#3b82f6"
+        />
 
-          <div className="relative aspect-square w-3/4 max-w-md mx-auto lg:max-w-none">
-            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl"></div>
-            <div className="relative rounded-full overflow-hidden aspect-square">
-              <Image
-                src="/images/working.svg"
-                alt="Developer working illustration"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+        {/* Radial gradient background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.12),rgba(2,8,23,0))]" />
+
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
+            backgroundSize: "64px 64px",
+          }}
+        />
+
+        <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left — Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="space-y-8"
+            >
+
+              <div className="space-y-3">
+                <h2 className="text-5xl lg:text-6xl font-bold text-slate-300">
+                  Hi There! 👋
+                </h2>
+                <h1 className="text-5xl lg:text-6xl font-bold">
+                  I&apos;m{" "}
+                  <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                    Muhammad Roman
+                  </span>
+                </h1>
+                <div className="text-2xl lg:text-3xl font-semibold text-slate-300 min-h-[2.5rem]">
+                  <TypewriterEffect />
+                </div>
+              </div>
+
+              <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+                I build intelligent AI agents, scalable web applications, and
+                cloud-native systems that create real-world impact.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact">
+                  <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 hover:scale-105">
+                    Let&apos;s Connect
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map(({ href, icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("mailto") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200 hover:scale-110"
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right — Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="relative flex justify-center items-center"
+            >
+              {/* Glow rings */}
+              <div className="absolute w-80 h-80 rounded-full bg-blue-600/10 blur-3xl" />
+              <div className="absolute w-64 h-64 rounded-full border border-blue-500/10 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute w-80 h-80 rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
+
+              {/* Image container */}
+              <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent blur-2xl" />
+                <div className="relative rounded-full overflow-hidden w-full h-full border border-blue-500/20 bg-[#0f1729]">
+                  <Image
+                    src="/images/working.svg"
+                    alt="Developer working illustration"
+                    fill
+                    className="object-cover p-6"
+                    priority
+                  />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <section className="flex items-center justify-center mt-16 p-4 md:p-8">
-        <div className="max-w-2xl w-full space-y-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            LET ME <span className="text-blue-500">INTRODUCE</span> MYSELF
-          </h1>
+      {/* ── Introduce Section ── */}
+      <section className="relative py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.06),transparent)]" />
 
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 space-y-4">
-              <p className="text-lg">
-                I&apos;m <span className="text-blue-500">A Passionate Developer</span> with a love for turning ideas into <span className="text-blue-500">impactful digital experiences.</span>
-              </p>
+        <div className="max-w-4xl mx-auto relative z-10">
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
+              About Me
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Let Me{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                Introduce
+              </span>{" "}
+              Myself
+            </h2>
+          </motion.div>
 
-              <p className="text-lg">
-                Craft modern web and mobile applications using <span className="text-blue-500">JavaScript, ReactJs and React Native.</span>
-              </p>
-
-              <p className="text-lg">
-                Explore future-forward fields like <span className="text-blue-500">Agentic AI and Natural Language Processing.</span>
-              </p>
-
-              <p className="text-lg">
-                Build innovative, user-focused solutions with <span className="text-blue-500">cutting-edge tools and frameworks.</span>
-              </p>
-
-              <p className="text-lg">
-                For me, coding isn&apos;t just work it&apos;s an art. I thrive on <span className="text-blue-500">solving problems, creating value, and pushing boundaries.</span>
-              </p>
-              <br />
-
-              <p className="text-lg">
-                <span className="text-blue-500 font-bold text-[28px]">Why me?</span> <br />
-                I don&apos;t just code <span className="text-blue-500">I create experiences.</span> For me, every line of code is an opportunity to <span className="text-blue-500">bring value, solve problems, and push the boundaries of what&apos;s possible.</span>
-              </p>
-              <br />
-
-              <p className="text-lg">
-                <span className="text-blue-500 text-[20px] font-bold">Let&apos;s build the future together!</span> <br />
-                From crafting elegant user interfaces to designing seamless user experiences, <span className="text-blue-500">I&apos;m here to create, collaborate, and innovate with you.</span>
-              </p>
-            </div>
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+            {introPoints.map((point, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="flex items-start gap-4 p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-blue-500/20 transition-all duration-300"
+              >
+                <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0" />
+                <p className="text-slate-300 leading-relaxed">{point}</p>
+              </motion.div>
+            ))}
           </div>
 
-          <div className="pt-8">
-            <h2 className="text-2xl font-bold mb-4"><span className="text-blue-500">FIND ME</span> ON</h2>
-            <p className="mb-4">Feel free to <span className="text-blue-500">connect with me</span></p>
+          {/* Why me block */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="p-8 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 to-transparent text-center space-y-4"
+          >
+            <h3 className="text-2xl font-bold text-blue-400">Why Me?</h3>
+            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              I don&apos;t just code — I{" "}
+              <span className="text-blue-400 font-semibold">engineer intelligent systems</span>. From
+              agentic AI pipelines to cloud-native infrastructure, every project
+              is an opportunity to push the boundaries of what&apos;s possible.
+            </p>
+            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              I leverage{" "}
+              <span className="text-blue-400 font-semibold">advanced AI-powered development tools</span>{" "}
+              — Cursor, Claude Code, and GitHub Copilot — to ship production-ready
+              features at{" "}
+              <span className="text-blue-400 font-semibold">10x speed</span>{" "}
+              without compromising on quality, security, or scalability.
+            </p>
+            <p className="text-blue-400 font-semibold text-lg">
+              Let&apos;s build the future together!
+            </p>
+          </motion.div>
 
-            <div className="flex justify-center gap-5 mb-6 flex-wrap">
-              <a href="https://github.com/mromankhan" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-12 h-12 transition-all rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiGithub size={30} className="pt-1" /></a>
-              <a href="https://x.com/RomanKhan00555" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center transition-all text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FaXTwitter size={25} /></a>
-              <a href="https://www.linkedin.com/in/mromankhan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiLinkedin size={25} /></a>
-              <a href="mailto:mromankhan005@gmail.com" aria-label="Email" className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 hover:shadow-lg hover:shadow-blue-600"><FiMail size={25} /></a>
+          {/* Social footer */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-slate-400 mb-6 text-sm font-medium tracking-wide uppercase">
+              Find Me On
+            </p>
+            <div className="flex justify-center gap-4">
+              {socialLinks.map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("mailto") ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-12 h-12 flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
+                >
+                  {icon}
+                </a>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>
