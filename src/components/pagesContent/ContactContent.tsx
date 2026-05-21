@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "motion/react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Spotlight } from "@/components/ui/spotlight";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -62,9 +62,9 @@ const ContactContent = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#020817] flex items-center justify-center py-28 px-4 overflow-hidden">
-      {/* Background beams */}
-      <BackgroundBeams className="opacity-40" />
+    <div className="relative min-h-screen bg-[#020817] flex items-center justify-center py-20 sm:py-28 px-4 overflow-hidden">
+      <Spotlight className="-top-40 left-0 md:left-60" fill="#3b82f6" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.08),transparent)]" />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto">
         {/* Header */}
@@ -77,7 +77,7 @@ const ContactContent = () => {
           <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
             Get In Touch
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Let&apos;s Work{" "}
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
               Together
@@ -89,13 +89,13 @@ const ContactContent = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Left — Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-2 space-y-6"
+            className="md:col-span-2 space-y-6"
           >
             {/* Info cards */}
             <div className="space-y-4">
@@ -163,9 +163,9 @@ const ContactContent = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="lg:col-span-3"
+            className="md:col-span-3"
           >
-            <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+            <div className="p-5 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Name */}
                 <div className="space-y-2">

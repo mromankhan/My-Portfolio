@@ -49,14 +49,14 @@ const stats = [
 
 export default function AboutContent() {
   return (
-    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
       {/* ── Profile Section ── */}
       <section className="relative pt-28 pb-20 px-4 overflow-hidden">
         <Spotlight className="-top-40 left-0 md:left-40" fill="#3b82f6" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.10),transparent)]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
             {/* Left — Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -68,7 +68,7 @@ export default function AboutContent() {
                 <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
                   About Me
                 </p>
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                   Know{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                     Who I&apos;m
@@ -139,7 +139,7 @@ export default function AboutContent() {
               {/* Avatar */}
               <div className="relative">
                 <div className="absolute inset-0 rounded-full bg-blue-600/20 blur-3xl scale-110" />
-                <div className="relative w-64 h-64 rounded-full border-2 border-blue-500/30 overflow-hidden bg-[#0f1729]">
+                <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-2 border-blue-500/30 overflow-hidden bg-[#0f1729]">
                   <Image
                     src="/images/programmingboy.svg"
                     alt="Muhammad Roman — Programmer illustration"
