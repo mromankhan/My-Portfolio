@@ -40,8 +40,8 @@ const experiences = [
     role: "Full Stack Developer & Agentic AI Developer",
     company: "XponentialAI",
     location: "Remote",
-    period: "Oct 2025 — Present",
-    current: true,
+    period: "Oct 2025 — May 2026",
+    current: false,
     icon: <Briefcase size={18} />,
     color: "purple",
     desc: "Full-time role building modern web applications and Voice AI Agents & Agentic AI features. Contributing to both frontend and backend systems while exploring the forefront of AI product development.",
@@ -82,7 +82,7 @@ const experiences = [
     current: true,
     icon: <GraduationCap size={18} />,
     color: "green",
-    desc: "Government-backed intensive program covering Generative AI, Agentic AI systems, and Cloud Native development with modern Python stacks.",
+    desc: "Intensive training program covering Generative AI, Agentic AI systems, and Cloud Native development with modern Python stacks.",
     highlights: [
       "Generative AI & Large Language Models (LLMs)",
       "Agentic AI systems & multi-agent orchestration",
@@ -101,7 +101,7 @@ const experiences = [
     current: false,
     icon: <GraduationCap size={18} />,
     color: "orange",
-    desc: "Comprehensive full-stack bootcamp covering the MERN stack, modern JavaScript, and industry-standard development practices.",
+    desc: "Comprehensive full-stack course covering the MERN stack, modern JavaScript, and industry-standard development practices.",
     highlights: [
       "MERN Stack: MongoDB, Express, React, Node.js",
       "Modern JavaScript & TypeScript fundamentals",
