@@ -145,6 +145,8 @@ export default function AboutContent() {
                     alt="Muhammad Roman — Programmer illustration"
                     fill
                     className="object-cover p-4"
+                    unoptimized
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, 256px"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center border-4 border-[#020817]">
@@ -209,6 +211,8 @@ export default function AboutContent() {
                     alt={skill.name}
                     fill
                     className="object-contain"
+                    unoptimized
+                    sizes="48px"
                   />
                 </div>
                 <span className="text-xs text-slate-400 group-hover:text-blue-300 text-center font-medium transition-colors leading-tight">

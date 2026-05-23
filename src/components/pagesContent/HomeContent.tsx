@@ -42,7 +42,7 @@ export default function HomeContent() {
   return (
     <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
       {/* ── Hero Section ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Spotlight */}
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
@@ -61,7 +61,7 @@ export default function HomeContent() {
           }}
         />
 
-        <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
+        <div className="max-w-6xl mx-auto w-full relative z-10 pt-24 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left — Text */}
             <motion.div
@@ -140,6 +140,8 @@ export default function HomeContent() {
                     fill
                     className="object-cover p-6"
                     priority
+                    unoptimized
+                    sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 384px"
                   />
                 </div>
               </div>
@@ -152,7 +154,7 @@ export default function HomeContent() {
       <section className="relative py-14 sm:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.06),transparent)]" />
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

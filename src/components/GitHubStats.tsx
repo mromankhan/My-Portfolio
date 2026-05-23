@@ -23,6 +23,7 @@ const LANG_COLORS: Record<string, string> = {
 export default function GitHubStats() {
   const [langData, setLangData] = useState<{ name: string; percent: number; color: string }[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -49,7 +50,7 @@ export default function GitHubStats() {
 
         setLangData(sorted);
       } catch {
-        // silently fail
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -64,7 +65,13 @@ export default function GitHubStats() {
     );
   }
 
-  if (!langData.length) return null;
+  if (error || !langData.length) {
+    return (
+      <div className="w-full max-w-[480px] min-h-[192px] rounded-2xl border border-white/8 bg-white/[0.03] flex items-center justify-center p-6">
+        <p className="text-slate-500 text-sm text-center">Language data unavailable</p>
+      </div>
+    );
+  }
 
   return (
     <motion.div
