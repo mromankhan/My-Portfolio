@@ -66,8 +66,8 @@ const projects = [
 
 export default function ProjectsContent() {
   return (
-    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
-      <section className="relative pt-28 pb-24 px-4">
+    <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
+      <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-24 px-4">
         <Spotlight className="-top-40 left-20" fill="#3b82f6" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(59,130,246,0.08),transparent)]" />
 
@@ -95,7 +95,7 @@ export default function ProjectsContent() {
           </motion.div>
 
           {/* Cards */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map(({ id, title, desc, img, alt, iconsList, githublink, liveLink }, i) => (
               <motion.div
                 key={id}

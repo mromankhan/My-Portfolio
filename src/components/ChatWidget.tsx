@@ -348,7 +348,7 @@ export default function ChatWidget() {
   return (
     <>
       {/* ── Floating Toggle Button ── */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <AnimatePresence>
           {hasUnread && !isOpen && (
             <motion.div
@@ -404,7 +404,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 28 }}
-            className="fixed bottom-24 right-6 z-50 w-[340px] sm:w-[380px] h-[520px] flex flex-col rounded-2xl border border-white/10 bg-[#0a1628]/95 backdrop-blur-2xl shadow-2xl shadow-black/60 overflow-hidden"
+            className="fixed z-50 flex flex-col rounded-2xl border border-white/10 bg-[#0a1628]/95 backdrop-blur-2xl shadow-2xl shadow-black/60 overflow-hidden left-3 right-3 bottom-20 sm:left-auto sm:right-6 sm:bottom-24 sm:w-[380px] h-[min(520px,72vh)]"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-gradient-to-r from-blue-600/15 to-transparent shrink-0">

@@ -264,7 +264,7 @@ function Timeline() {
 /* ─── Page ──────────────────────────────────────────────── */
 export default function ExperienceContent() {
   return (
-    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
 
       {/* ── Hero ── */}
       <section className="relative pt-28 pb-14 px-4 overflow-hidden">
@@ -280,7 +280,7 @@ export default function ExperienceContent() {
             <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-4">
               My Journey
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               Experience &{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Education
