@@ -40,9 +40,9 @@ const introPoints = [
 
 export default function HomeContent() {
   return (
-    <main className="min-h-screen bg-[#020817] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
       {/* ── Hero Section ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
         {/* Spotlight */}
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
@@ -61,8 +61,8 @@ export default function HomeContent() {
           }}
         />
 
-        <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto w-full relative z-10 pt-24 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left — Text */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -72,16 +72,16 @@ export default function HomeContent() {
             >
 
               <div className="space-y-3">
-                <h2 className="text-5xl lg:text-6xl font-bold text-slate-300">
+                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-300">
                   Hi There! 👋
                 </h2>
-                <h1 className="text-5xl lg:text-6xl font-bold">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
                   I&apos;m{" "}
                   <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                     Muhammad Roman
                   </span>
                 </h1>
-                <div className="text-2xl lg:text-3xl font-semibold text-slate-300 min-h-[2.5rem]">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-semibold text-slate-300 min-h-[2.5rem]">
                   <TypewriterEffect />
                 </div>
               </div>
@@ -126,12 +126,12 @@ export default function HomeContent() {
               className="relative flex justify-center items-center"
             >
               {/* Glow rings */}
-              <div className="absolute w-80 h-80 rounded-full bg-blue-600/10 blur-3xl" />
-              <div className="absolute w-64 h-64 rounded-full border border-blue-500/10 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute w-80 h-80 rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
+              <div className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-blue-600/10 blur-3xl" />
+              <div className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full border border-blue-500/10 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
 
               {/* Image container */}
-              <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent blur-2xl" />
                 <div className="relative rounded-full overflow-hidden w-full h-full border border-blue-500/20 bg-[#0f1729]">
                   <Image
@@ -149,10 +149,10 @@ export default function HomeContent() {
       </section>
 
       {/* ── Introduce Section ── */}
-      <section className="relative py-24 px-4 overflow-hidden">
+      <section className="relative py-14 sm:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.06),transparent)]" />
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -16,13 +16,14 @@ interface CardProps {
 const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: CardProps) => {
   return (
     <BackgroundGradient className="rounded-[22px] bg-[#0a1628]">
-      <div className="w-[350px] rounded-[22px] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+      <div className="w-full rounded-[22px] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
         {/* Image */}
         <div className="relative w-full h-[200px] overflow-hidden">
           <Image
             src={img}
             alt={alt}
             fill
+            sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 380px"
             className="object-cover transition-transform duration-700 hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
@@ -47,6 +48,7 @@ const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: CardProps) =
                   src={icon}
                   alt={`${title} tech`}
                   fill
+                  sizes="32px"
                   className="p-1.5 object-contain rounded-full"
                 />
               </div>
