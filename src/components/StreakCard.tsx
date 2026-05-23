@@ -86,12 +86,12 @@ export default function StreakCard({ username }: { username: string }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="w-full md:max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col"
+      className="w-full md:max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col isolate overflow-hidden"
     >
       {/* Current Streak — top center */}
       <div className="flex-1 flex flex-col items-center justify-center gap-3 py-6">
-        <div className="relative">
-          <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full scale-150" />
+        <div className="relative w-16 h-16 flex items-center justify-center">
+          <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full" />
           <Flame size={40} className="relative text-blue-400" />
         </div>
         <motion.span
