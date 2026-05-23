@@ -61,13 +61,13 @@ export default function GitHubStats() {
 
   if (loading) {
     return (
-      <div className="animate-pulse h-48 rounded-2xl bg-white/[0.04] border border-white/8 w-full max-w-[480px]" />
+      <div className="animate-pulse h-48 rounded-2xl bg-white/[0.04] border border-white/8 w-full md:max-w-[480px] mx-auto" />
     );
   }
 
   if (error || !langData.length) {
     return (
-      <div className="w-full max-w-[480px] min-h-[192px] rounded-2xl border border-white/8 bg-white/[0.03] flex items-center justify-center p-6">
+      <div className="w-full md:max-w-[480px] mx-auto min-h-[192px] rounded-2xl border border-white/8 bg-white/[0.03] flex items-center justify-center p-6">
         <p className="text-slate-500 text-sm text-center">Language data unavailable</p>
       </div>
     );
@@ -79,7 +79,7 @@ export default function GitHubStats() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col"
+      className="w-full md:max-w-[480px] mx-auto rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col"
     >
       <p className="text-xs text-blue-400 font-semibold tracking-widest uppercase mb-5">
         Top Languages
