@@ -72,7 +72,7 @@ export const experienceChunk = `
 - Tags: Agentic AI, LangGraph, LLMs, Python, FastAPI, N8N, Automation
 
 ### Full Stack Developer & Agentic AI Developer — XponentialAI (Full-Time, Remote)
-- Period: Oct 2025 — Present (Current)
+- Period: Oct 2025 — May 2026
 - Developed production Next.js apps with TypeScript & Tailwind CSS
 - Built Full Stack AI Web Apps & Voice AI Agents using Python & Livekit
 - Worked on FastAPI & REST API integrations

@@ -140,6 +140,8 @@ export default function HomeContent() {
                     fill
                     className="object-cover p-6"
                     priority
+                    unoptimized
+                    sizes="(max-width: 640px) 208px, (max-width: 1024px) 256px, 384px"
                   />
                 </div>
               </div>

@@ -68,11 +68,17 @@ export default function StreakCard({ username }: { username: string }) {
 
   if (loading) {
     return (
-      <div className="animate-pulse w-full md:max-w-[480px] h-full rounded-2xl bg-white/[0.04] border border-white/8" />
+      <div className="animate-pulse w-full md:max-w-[480px] min-h-[220px] rounded-2xl bg-white/[0.04] border border-white/8" />
     );
   }
 
-  if (!stats) return null;
+  if (!stats) {
+    return (
+      <div className="w-full md:max-w-[480px] min-h-[220px] rounded-2xl border border-white/8 bg-white/[0.03] flex items-center justify-center p-6">
+        <p className="text-slate-500 text-sm text-center">Streak data unavailable</p>
+      </div>
+    );
+  }
 
   return (
     <motion.div
