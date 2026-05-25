@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 
 interface Repo {
   language: string | null;
@@ -74,12 +73,8 @@ export default function GitHubStats() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="w-full md:max-w-[480px] mx-auto rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col"
+    <div
+      className="overflow-hidden transform-gpu will-change-transform w-full md:max-w-[480px] mx-auto rounded-2xl border border-white/8 bg-[#0d1117] p-6 flex flex-col"
     >
       <p className="text-xs text-blue-400 font-semibold tracking-widest uppercase mb-5">
         Top Languages
@@ -88,26 +83,18 @@ export default function GitHubStats() {
       {/* Color bar */}
       <div className="flex h-3 rounded-full overflow-hidden mb-5 gap-[2px]">
         {langData.map(({ name, percent, color }) => (
-          <motion.div
+          <div
             key={name}
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ width: `${percent}%`, backgroundColor: color, transformOrigin: "left" }}
+            style={{ width: `${percent}%`, backgroundColor: color }}
             className="rounded-full"
           />
         ))}
       </div>
 
       <div className="flex-1 flex flex-col justify-between">
-        {langData.map(({ name, percent, color }, i) => (
-          <motion.div
+        {langData.map(({ name, percent, color }) => (
+          <div
             key={name}
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: i * 0.06 }}
             className="flex items-center justify-between py-1"
           >
             <div className="flex items-center gap-2">
@@ -115,9 +102,9 @@ export default function GitHubStats() {
               <span className="text-sm text-slate-300">{name}</span>
             </div>
             <span className="text-sm font-semibold text-blue-400">{percent}%</span>
-          </motion.div>
+          </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

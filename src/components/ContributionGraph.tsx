@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
 
 interface Contribution {
   date: string;
@@ -95,12 +94,8 @@ export default function ContributionGraph({ username }: { username: string }) {
   const col = boxSize + GAP;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="w-full rounded-2xl border border-white/8 bg-[#0d1117] p-6"
+    <div
+      className="overflow-hidden transform-gpu will-change-transform w-full rounded-2xl border border-white/8 bg-[#0d1117] p-6"
     >
       <div className="flex items-center justify-between mb-5">
         <p className="text-xs text-blue-400 font-semibold tracking-widest uppercase">
@@ -182,6 +177,6 @@ export default function ContributionGraph({ username }: { username: string }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

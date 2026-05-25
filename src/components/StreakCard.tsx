@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 import { Flame, GitCommitHorizontal, Trophy } from "lucide-react";
 
 interface Contribution {
@@ -81,28 +80,17 @@ export default function StreakCard({ username }: { username: string }) {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-      className="w-full md:max-w-[480px] rounded-2xl border border-white/8 bg-white/[0.03] p-6 flex flex-col isolate overflow-hidden"
+    <div
+      className="overflow-hidden transform-gpu will-change-transform w-full md:max-w-[480px] rounded-2xl border border-white/8 bg-[#0d1117] p-6 flex flex-col"
     >
       {/* Current Streak — top center */}
       <div className="flex-1 flex flex-col items-center justify-center gap-3 py-6">
         <div className="relative w-16 h-16 flex items-center justify-center">
-          <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full" />
           <Flame size={40} className="relative text-blue-400" />
         </div>
-        <motion.span
-          initial={{ scale: 0.5, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-          className="text-6xl font-bold text-white leading-none"
-        >
+        <span className="text-6xl font-bold text-white leading-none">
           {stats.currentStreak}
-        </motion.span>
+        </span>
         <span className="text-sm font-semibold text-blue-400 tracking-widest uppercase">
           Current Streak
         </span>
@@ -125,6 +113,6 @@ export default function StreakCard({ username }: { username: string }) {
           <span className="text-xs text-slate-400 text-center">Longest Streak</span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
