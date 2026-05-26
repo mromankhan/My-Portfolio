@@ -209,7 +209,7 @@ export default function ChatWidget() {
       } catch {
         setContactStep(null);
         addAssistantMessage(
-          "❌ Something went wrong while sending. Please try the Contact page directly or email mromankhan005@gmail.com"
+          "❌ Something went wrong while sending. Please try the Contact page directly or email contact@mromankhan.com"
         );
       }
       return;

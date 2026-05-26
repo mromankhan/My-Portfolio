@@ -2,7 +2,9 @@ import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.zoho.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -176,15 +178,15 @@ export async function POST(req: NextRequest) {
     await Promise.all([
       // 1. Notification to Roman
       transporter.sendMail({
-        from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-        to: process.env.EMAIL_USER,
+        from: `"Portfolio Contact" <${process.env.EMAIL_FROM}>`,
+        to: process.env.EMAIL_FROM,
         replyTo: email,
         subject: `📬 New message from ${name} — Portfolio`,
         html: notificationEmail(name, email, message),
       }),
       // 2. Confirmation to visitor
       transporter.sendMail({
-        from: `"Muhammad Roman" <${process.env.EMAIL_USER}>`,
+        from: `"Muhammad Roman" <${process.env.EMAIL_FROM}>`,
         to: email,
         subject: `Got your message, ${name}! ✅`,
         html: confirmationEmail(name, message),
