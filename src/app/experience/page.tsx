@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Experience",
   description:
     "Muhammad Roman's professional journey — AI Developer at XponentialAI & AIByTec, freelance full-stack development, PIAIC AI engineering, and SMIT training.",
-  alternates: { canonical: "/experience" },
+  alternates: { canonical: "https://www.mromankhan.com/experience" },
   openGraph: {
     title: "Experience | Muhammad Roman",
     description:
       "AI Developer at XponentialAI & AIByTec — freelance development, PIAIC AI engineering, cloud-native systems.",
-    url: "/experience",
+    url: "https://www.mromankhan.com/experience",
   },
 };
 

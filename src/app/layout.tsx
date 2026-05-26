@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mromankhan.vercel.app"),
+  metadataBase: new URL("https://www.mromankhan.com"),
   title: {
     default: "Muhammad Roman | Full Stack & AI Developer",
     template: "%s | Muhammad Roman",
@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     "Muhammad Roman — Full Stack Developer & Agentic AI Engineer from Karachi. Building intelligent AI systems, scalable web apps with Next.js, React & Node.js, and cloud-native solutions.",
   keywords: [
     "Muhammad Roman",
+    "Muhammad Roman portfolio",
+    "Roman portfolio",
+    "mroman developer",
+    "mromankhan",
+    "Roman Khan developer",
     "Full Stack Developer",
     "Agentic AI Developer",
     "Next.js Developer",
@@ -43,8 +48,10 @@ export const metadata: Metadata = {
     "MERN Stack",
     "Web Developer Pakistan",
     "Karachi Developer",
+    "Full Stack Developer Karachi",
+    "AI Developer Pakistan",
   ],
-  authors: [{ name: "Muhammad Roman", url: "https://mromankhan.vercel.app" }],
+  authors: [{ name: "Muhammad Roman", url: "https://www.mromankhan.com" }],
   creator: "Muhammad Roman",
   openGraph: {
     title: "Muhammad Roman | Full Stack & AI Developer",
@@ -52,7 +59,7 @@ export const metadata: Metadata = {
       "Muhammad Roman — Full Stack Developer & Agentic AI Engineer from Karachi. Building intelligent AI systems, scalable web apps with Next.js, React & Node.js.",
     type: "website",
     locale: "en_US",
-    url: "https://mromankhan.vercel.app",
+    url: "https://www.mromankhan.com",
     siteName: "Muhammad Roman Portfolio",
     images: [
       {
@@ -72,11 +79,17 @@ export const metadata: Metadata = {
     creator: "@RomanKhan00555",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://www.mromankhan.com",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

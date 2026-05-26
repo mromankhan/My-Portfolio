@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Muhammad Roman — a Full Stack Developer & Agentic AI Engineer from Karachi, Pakistan. Skilled in Next.js, React, Node.js, Firebase, and cloud-native systems.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "https://www.mromankhan.com/about" },
   openGraph: {
     title: "About | Muhammad Roman",
     description:
       "Full Stack Developer & Agentic AI Engineer from Karachi. Skilled in Next.js, React, Node.js, Firebase, and cloud-native systems.",
-    url: "/about",
+    url: "https://www.mromankhan.com/about",
   },
 };
 

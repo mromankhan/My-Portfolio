@@ -3,8 +3,8 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Muhammad Roman",
-    url: "https://mromankhan.vercel.app",
-    image: "https://mromankhan.vercel.app/og-image.png",
+    url: "https://www.mromankhan.com",
+    image: "https://www.mromankhan.com/og-image.png",
     jobTitle: "Full Stack Developer & Agentic AI Engineer",
     description:
       "Full Stack Developer & Agentic AI Engineer from Karachi, Pakistan. Building intelligent AI systems, scalable web apps, and cloud-native solutions.",
