@@ -25,7 +25,7 @@ const socialLinks = [
     label: "LinkedIn",
   },
   {
-    href: "mailto:mromankhan005@gmail.com",
+    href: "mailto:contact@mromankhan.com",
     icon: <FiMail size={20} />,
     label: "Email",
   },

@@ -19,7 +19,7 @@ const experiences = [
     id: 1,
     type: "contract",
     role: "Agentic AI & Automation Developer",
-    company: "AIByTech",
+    company: "AIByTec",
     location: "Remote",
     period: "Jan 2026 — Present",
     current: true,

@@ -64,7 +64,7 @@ export const projectsChunk = `
 export const experienceChunk = `
 ## Work Experience & Education
 
-### Agentic AI & Automation Developer — AIByTech (Contract, Remote)
+### Agentic AI & Automation Developer — AIByTec (Contract, Remote)
 - Period: Jan 2026 — Present (Current)
 - Built multi-agent AI systems using LangChain & LangGraph
 - Reduced manual workflows by 80% through automation pipelines
@@ -114,7 +114,7 @@ const keywordMap: { keywords: RegExp; chunk: Chunk }[] = [
   },
   {
     keywords:
-      /\b(experience|job|career|company|work|xponential|aibytech|intern|role|education|hire|available|freelance|opportunity|salary)\b/i,
+      /\b(experience|job|career|company|work|xponential|aibytec|intern|role|education|hire|available|freelance|opportunity|salary)\b/i,
     chunk: "experience",
   },
 ];

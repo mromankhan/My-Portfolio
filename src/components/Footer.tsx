@@ -6,7 +6,7 @@ const socialLinks = [
   { href: "https://github.com/mromankhan", icon: <FiGithub size={16} />, label: "GitHub" },
   { href: "https://x.com/RomanKhan00555", icon: <FaXTwitter size={15} />, label: "X" },
   { href: "https://www.linkedin.com/in/mromankhan", icon: <FiLinkedin size={16} />, label: "LinkedIn" },
-  { href: "mailto:mromankhan005@gmail.com", icon: <FiMail size={16} />, label: "Email" },
+  { href: "mailto:contact@mromankhan.com", icon: <FiMail size={16} />, label: "Email" },
 ];
 
 const navLinks = [
