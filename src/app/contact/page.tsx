@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Muhammad Roman. Available for freelance projects, collaborations, and full-time opportunities in AI development and full-stack engineering.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "https://www.mromankhan.com/contact" },
   openGraph: {
     title: "Contact | Muhammad Roman",
     description:
       "Available for freelance, collaborations, and full-time opportunities in AI development and full-stack engineering.",
-    url: "/contact",
+    url: "https://www.mromankhan.com/contact",
   },
 };
 
