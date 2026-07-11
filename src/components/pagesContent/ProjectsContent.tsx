@@ -140,6 +140,7 @@ export default function ProjectsContent() {
                   iconsList={iconsList}
                   link={githublink}
                   liveLink={liveLink}
+                  caseStudyLink={caseStudyLink}
                 />
               </motion.div>
             ))}
