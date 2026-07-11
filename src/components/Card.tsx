@@ -1,6 +1,7 @@
 "use client";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 interface CardProps {
@@ -9,11 +10,17 @@ interface CardProps {
   title: string;
   desc: string | undefined;
   iconsList: string[];
-  link: string;
+  link?: string;
   liveLink?: string;
+  caseStudyLink?: string;
 }
 
-const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: CardProps) => {
+const primaryBtn =
+  "flex items-center justify-center gap-2 flex-1 min-w-[120px] px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-blue-600/20";
+const secondaryBtn =
+  "flex items-center justify-center gap-2 flex-1 min-w-[110px] px-4 py-2.5 rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white text-sm font-medium transition-all duration-200";
+
+const Card = ({ img, alt, title, desc, iconsList, link, liveLink, caseStudyLink }: CardProps) => {
   return (
     <BackgroundGradient className="rounded-[22px] bg-[#0a1628]">
       <div className="w-full rounded-[22px] overflow-hidden transition-transform duration-300 hover:-translate-y-1">
@@ -56,28 +63,38 @@ const Card = ({ img, alt, title, desc, iconsList, link, liveLink }: CardProps) =
           </div>
 
           {/* Buttons */}
-          <div className={`flex gap-3 ${liveLink ? "justify-between" : ""}`}>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-white text-sm font-medium transition-all duration-200 ${!liveLink ? "w-full justify-center" : ""}`}
-            >
-              <Github size={16} />
-              Code
-            </a>
-            {liveLink && (
-              <a
-                href={liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-blue-600/20"
-              >
-                <ExternalLink size={16} />
-                Live Site
-              </a>
-            )}
-          </div>
+          {(caseStudyLink || link || liveLink) && (
+            <div className="flex flex-wrap gap-3">
+              {caseStudyLink && (
+                <Link href={caseStudyLink} className={primaryBtn}>
+                  Case Study
+                  <ArrowRight size={16} />
+                </Link>
+              )}
+              {liveLink && (
+                <a
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={caseStudyLink ? secondaryBtn : primaryBtn}
+                >
+                  <ExternalLink size={16} />
+                  Live Site
+                </a>
+              )}
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={secondaryBtn}
+                >
+                  <Github size={16} />
+                  Code
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </BackgroundGradient>
