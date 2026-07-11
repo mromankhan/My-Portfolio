@@ -27,35 +27,55 @@ DevOps/Cloud: Docker, Kubernetes, Vercel, Git, GitHub
 export const projectsChunk = `
 ## Projects
 
-1. **Personal Blog Web**
+### Featured / Professional Work
+
+1. **BarberBook — Barbershop Booking & Queue SaaS**
+   - Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Prisma, PostgreSQL (Neon), Better Auth, Pusher, Twilio (WhatsApp/SMS), Resend, Recharts
+   - Multi-tenant B2B SaaS: 24/7 online booking, real-time walk-in queue, staff & service management, automated reminders, subscription billing, and analytics
+   - Installable PWA; role-based access; solo full-stack build (architecture → backend → frontend → DevOps)
+   - Live: https://barber-book-beryl.vercel.app
+
+2. **AsianInspection Chat — Internal Company Messenger**
+   - Stack: React Native 0.85, Expo SDK 56, TypeScript, Supabase (Postgres, Auth, Realtime, Edge Functions), Cloudflare R2, expo-sqlite
+   - WhatsApp-class private messenger for a company: real-time DMs & groups, read receipts, typing/presence, voice/image/video, offline-first (outbox + SQLite + FTS5 search), admin monitoring
+   - Security-first: append-only messages enforced at the DB, Row-Level Security everywhere, encrypted token storage, biometric lock; sole engineer end-to-end
+
+3. **FBR Digital Invoice App — Tax Invoicing Desktop Software**
+   - Stack: Tauri v2 (Rust), React 18, TypeScript, Vite, Tailwind CSS, SQLite (rusqlite, WAL), React Query, React Hook Form + Zod
+   - Government-compliant (Pakistan FBR) offline-first desktop app: correct tax math, validate-then-post FBR gateway integration, QR codes, print-ready PDF export, templates
+   - Migrated from Electron to Rust/Tauri — cut install size ~300 MB → ~12 MB with identical UI; AES-256-GCM encryption, Windows Credential Manager key binding; sole engineer
+
+### Other Projects
+
+4. **Personal Blog Web**
    - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAi Agents SDK
    - AI-Powered blog platform
    - Live: https://roman-blog.vercel.app
    - GitHub: https://github.com/mromankhan/Personal-Blog-Web
 
-2. **Expense Tracker**
+5. **Expense Tracker**
    - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAi Agents SDK
    - AI PoweredReal-time expense tracking with Firebase sync
    - Live: https://expenses-tracker-beta-three.vercel.app
    - GitHub: https://github.com/mromankhan/Expense-Tracker-Web
 
-3. **Modern Music Academy**
+6. **Modern Music Academy**
    - Stack: Next.js, TypeScript, Tailwind CSS, Framer Motion, Aceternity UI
    - Online music academy platform
    - Live: https://music-academy-web-olive.vercel.app
    - GitHub: https://github.com/mromankhan/Music-Academy-Web
 
-4. **Todo App (AI-integrated)**
+7. **Todo App (AI-integrated)**
    - Stack: Next.js, React, TypeScript, Tailwind CSS, FastAPI, PostgreSQL, OpenAi Agents SDK
    - AI-integrated task manager with Next.js frontend & FastAPI backend
    - GitHub: https://github.com/mromankhan/Chat-Web
 
-5. **Weather Application** (React Native)
+8. **Weather Application** (React Native)
    - Stack: React Native, Expo, TypeScript, Tailwind CSS
    - Real-time weather updates with dynamic UI
    - GitHub: https://github.com/mromankhan/Weather-Application
 
-6. **Food Review App** (React Native)
+9. **Food Review App** (React Native)
    - Stack: React Native, Expo, TypeScript, Tailwind CSS
    - Modern food review UI concept
    - GitHub: https://github.com/mromankhan/Food-Review-Application

@@ -5,6 +5,34 @@ import { Spotlight } from "@/components/ui/spotlight";
 
 const projects = [
   {
+    id: 101,
+    title: "BarberBook — Barbershop SaaS",
+    desc: "Multi-tenant SaaS for barbershops: 24/7 online booking, a real-time walk-in queue, staff scheduling, automated WhatsApp/SMS reminders & revenue analytics.",
+    img: "/portfolio1.png",
+    alt: "BarberBook barbershop booking SaaS dashboard",
+    iconsList: ["/images/next.svg", "/images/re.svg", "/images/ts.svg", "/images/tail.svg", "/images/psql.svg", "/images/shadcnui.svg"],
+    caseStudyLink: "/projects/barberbook",
+    liveLink: "https://barber-book-beryl.vercel.app/",
+  },
+  {
+    id: 102,
+    title: "AsianInspection Chat",
+    desc: "WhatsApp-class internal company messenger built with React Native & Supabase — real-time chat, voice/media, offline-first sync, read receipts & admin monitoring.",
+    img: "/portfolio2.jpeg",
+    alt: "AsianInspection Chat internal messaging app",
+    iconsList: ["/expo.png", "/images/re.svg", "/images/ts.svg", "/images/psql.svg", "/images/tail.svg"],
+    caseStudyLink: "/projects/asianinspection-chat",
+  },
+  {
+    id: 103,
+    title: "FBR Digital Invoice App",
+    desc: "Government-compliant tax invoicing desktop app (Tauri + Rust) — offline-first, AES-256 encrypted SQLite, FBR gateway integration & a tiny ~12 MB install.",
+    img: "/portfolio3.png",
+    alt: "FBR Digital Invoice desktop application dashboard",
+    iconsList: ["/images/re.svg", "/images/ts.svg", "/images/tail.svg"],
+    caseStudyLink: "/projects/fbr-invoice-app",
+  },
+  {
     id: 1,
     title: "Personal Blog Web",
     desc: "A modern blog platform with AI-enhanced content experience, built on Next.js & Firebase.",
@@ -96,7 +124,7 @@ export default function ProjectsContent() {
 
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map(({ id, title, desc, img, alt, iconsList, githublink, liveLink }, i) => (
+            {projects.map(({ id, title, desc, img, alt, iconsList, githublink, liveLink, caseStudyLink }, i) => (
               <motion.div
                 key={id}
                 initial={{ opacity: 0, y: 30 }}

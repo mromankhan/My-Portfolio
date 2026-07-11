@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { projectSlugs } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.mromankhan.com";
+
+  const projectRoutes: MetadataRoute.Sitemap = projectSlugs.map((slug) => ({
+    url: `${baseUrl}/projects/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   return [
     {
@@ -34,5 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    ...projectRoutes,
   ];
 }
