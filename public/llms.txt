@@ -9,13 +9,14 @@
 >
 > Industry-agnostic by evidence, not by claim: shipped for personal services,
 > tax and financial compliance, and industrial inspection. The industry changes,
-> the pattern does not — people repeating steps a system should own.
+> the pattern does not: people repeating steps a system should own.
 
 - Website: https://www.mromankhan.com
 - Email: contact@mromankhan.com
 - GitHub: https://github.com/mromankhan
 - LinkedIn: https://www.linkedin.com/in/mromankhan
-- Location: Karachi, Pakistan — available worldwide (remote)
+- Location: Karachi, Pakistan - available worldwide (remote)
+- Current role: Forward Deployed Engineer at MP Pvt Ltd (contract, onsite Karachi, since Aug 2026)
 - Status: Available for freelance and full-time work
 
 ## Core stack
@@ -62,30 +63,36 @@ Infra: Docker, Kubernetes, Google Cloud, Vercel, Cloudflare R2
 
 ## Services
 
-1. Booking & Operations SaaS — multi-tenant platforms with real-time availability or
+1. Booking & Operations SaaS: multi-tenant platforms with real-time availability or
    queue engines, role-based access, subscription billing and analytics. 4–8 weeks.
-2. Agentic AI Workflows & MCP Integration — LangGraph / OpenAI Agents SDK workflows,
+2. Agentic AI Workflows & MCP Integration: LangGraph / OpenAI Agents SDK workflows,
    custom MCP servers, RAG over client data, human-in-the-loop checkpoints. 2–5 weeks.
-3. Voice AI Agents — LiveKit + WebRTC pipelines, Twilio/SIP telephony, STT → LLM → TTS
+3. Voice AI Agents: LiveKit + WebRTC pipelines, Twilio/SIP telephony, STT → LLM → TTS
    orchestration with backend tools and transcripts. 3–6 weeks.
-4. Offline-First Desktop Software — Tauri v2 (Rust) Windows apps, encrypted local
+4. Offline-First Desktop Software: Tauri v2 (Rust) Windows apps, encrypted local
    databases, gateway integrations, print-ready PDF export. 4–8 weeks.
-5. Cross-Platform Mobile Apps — React Native + Expo, Supabase/Postgres with Row-Level
+5. Cross-Platform Mobile Apps: React Native + Expo, Supabase/Postgres with Row-Level
    Security, offline-first storage and search, admin console. 5–10 weeks.
-6. Full Stack MVP for Founders — Next.js interface, FastAPI/Next.js API, PostgreSQL,
+6. Full Stack MVP for Founders: Next.js interface, FastAPI/Next.js API, PostgreSQL,
    auth, payments, deployment and handover. 3–6 weeks.
 
 Details: https://www.mromankhan.com/services
 
 ## Experience
 
-- Agentic AI & Automation Developer — AIByTec (Contract, Remote), Jan 2026 – Present.
+- Forward Deployed Engineer, MP Pvt Ltd (Contract, onsite Karachi), Aug 2026 – Present.
+  Client-facing engineering: maps how a customer's operations actually run, deploys and
+  configures the product inside their own environment, builds the custom integrations and
+  automation it needs to fit their stack, and owns it after go-live through monitoring,
+  debugging and iteration on client feedback.
+- Agentic AI & Automation Developer, AIByTec (Contract, Remote), Jan 2026 – Present
+  (concurrent with the MP Pvt Ltd contract).
   Multi-agent systems with LangChain and LangGraph; automation pipelines that removed
   ~80% of a manual workflow; OpenAI, Anthropic and open-source LLM integrations.
-- Full Stack & Agentic AI Developer — XponentialAI (Remote), Oct 2025 – May 2026.
+- Full Stack & Agentic AI Developer, XponentialAI (Remote), Oct 2025 – May 2026.
   Production Next.js applications, full stack AI web apps and voice AI agents with
   Python and LiveKit, FastAPI and REST integrations.
-- Full Stack Developer, Intern — XponentialAI (Remote), Jul 2025 – Sep 2025.
+- Full Stack Developer (Intern), XponentialAI (Remote), Jul 2025 – Sep 2025.
   Promoted to full-time during the internship.
 
 ## Education

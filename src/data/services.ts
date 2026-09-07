@@ -10,6 +10,10 @@ export const positioning =
 export const positioningShort =
   "Good software that removes manual work. I map the workflow people are doing by hand, then build the production system that runs it.";
 
+/** How the work is delivered. Backs the end-to-end claim with a current role. */
+export const deliveryLine =
+  "I work as a Forward Deployed Engineer at MP Pvt Ltd: mapping how a client's operations actually run, deploying inside their own environment, building the integrations it needs, and owning it after go-live. Projects here run the same way.";
+
 /** Industry-agnostic proof line. Names real, shipped verticals. */
 export const industriesLine =
   "The industry changes, the pattern does not. I have shipped for personal services, tax and financial compliance, and industrial inspection. In each one the problem was the same: people repeating steps a system should own.";
@@ -67,7 +71,7 @@ export const services: Service[] = [
     slug: "saas-platform",
     title: "Booking & Operations SaaS",
     summary:
-      "Multi-tenant web platforms that run daily operations — scheduling, queues, staff, billing and analytics — for businesses that currently do it manually.",
+      "Multi-tenant web platforms that run daily operations (scheduling, queues, staff, billing and analytics) for businesses that currently do it manually.",
     bestFor: "Service businesses, agencies and founders replacing manual ops",
     deliverables: [
       "Multi-tenant data model with role-based access",
@@ -77,7 +81,7 @@ export const services: Service[] = [
     ],
     timeline: "4–8 weeks to a usable v1",
     outcome:
-      "A platform customers can book on 24/7 and owners can run the business from — not a prototype.",
+      "A platform customers can book on 24/7 and owners can run the business from, not a prototype.",
   },
   {
     slug: "agentic-ai",
@@ -93,7 +97,7 @@ export const services: Service[] = [
     ],
     timeline: "2–5 weeks",
     outcome:
-      "An agent that reads your data, calls your tools and updates your systems — with a trail you can audit.",
+      "An agent that reads your data, calls your tools and updates your systems, with a trail you can audit.",
   },
   {
     slug: "voice-ai",
@@ -115,7 +119,7 @@ export const services: Service[] = [
     slug: "desktop-software",
     title: "Offline-First Desktop Software",
     summary:
-      "Native desktop applications for compliance, invoicing and field work that keep running when the internet doesn't — built in Rust/Tauri, not Electron.",
+      "Native desktop applications for compliance, invoicing and field work that keep running when the internet doesn't. Built in Rust/Tauri, not Electron.",
     bestFor: "Compliance, accounting and regulated business workflows",
     deliverables: [
       "Tauri v2 (Rust) desktop app for Windows",
@@ -125,13 +129,13 @@ export const services: Service[] = [
     ],
     timeline: "4–8 weeks",
     outcome:
-      "Software that installs in seconds, works offline, and stays compliant — a ~12 MB installer instead of ~300 MB.",
+      "Software that installs in seconds, works offline, and stays compliant: a ~12 MB installer instead of ~300 MB.",
   },
   {
     slug: "mobile-app",
     title: "Cross-Platform Mobile Apps",
     summary:
-      "React Native apps with real-time sync, offline support and security enforced at the database layer — iOS and Android from one codebase.",
+      "React Native apps with real-time sync, offline support and security enforced at the database layer. iOS and Android from one codebase.",
     bestFor: "Internal tools, messaging and field-team apps",
     deliverables: [
       "React Native + Expo app for iOS and Android",
@@ -147,7 +151,7 @@ export const services: Service[] = [
     slug: "mvp",
     title: "Full Stack MVP for Founders",
     summary:
-      "From idea to a deployed product with auth, database, payments and a UI you can put in front of real users — built by one engineer who owns the whole stack.",
+      "From idea to a deployed product with auth, database, payments and a UI you can put in front of real users, built by one engineer who owns the whole stack.",
     bestFor: "Founders who need a shippable v1, not a design mockup",
     deliverables: [
       "Next.js + TypeScript product interface",
@@ -157,7 +161,7 @@ export const services: Service[] = [
     ],
     timeline: "3–6 weeks",
     outcome:
-      "A live product you can test with customers, charge for, and extend — with clean code you own.",
+      "A live product you can test with customers, charge for, and extend, with clean code you own.",
   },
 ];
 
@@ -172,7 +176,7 @@ export const process = [
   {
     step: "02",
     title: "Design the system",
-    body: "Data model, architecture, integrations and the deployment path — decided upfront so the build doesn't get rewritten halfway.",
+    body: "Data model, architecture, integrations and the deployment path, decided upfront so the build doesn't get rewritten halfway.",
   },
   {
     step: "03",
@@ -190,7 +194,7 @@ export const faqs = [
   },
   {
     q: "Do you work solo or with a team?",
-    a: "Both. BarberBook, the FBR Invoice App and AsianInspection Chat were built solo end-to-end — architecture, backend, frontend and deployment. I also work inside product teams as a full stack and agentic AI engineer.",
+    a: "Both. BarberBook, the FBR Invoice App and AsianInspection Chat were built solo end-to-end: architecture, backend, frontend and deployment. I also work inside product teams as a full stack and agentic AI engineer.",
   },
   {
     q: "Can you handle frontend, backend and deployment?",
@@ -198,7 +202,7 @@ export const faqs = [
   },
   {
     q: "What makes your AI work different from a demo?",
-    a: "I build the product around the model — tools, retrieval, state, error handling, auth, interfaces and monitoring. The AI assistant on this site is one example: it answers from a real retrieval pipeline over my own portfolio data.",
+    a: "I build the product around the model: tools, retrieval, state, error handling, auth, interfaces and monitoring. The AI assistant on this site is one example: it answers from a real retrieval pipeline over my own portfolio data.",
   },
   {
     q: "How long does a typical project take?",
@@ -206,6 +210,6 @@ export const faqs = [
   },
   {
     q: "How do we start?",
-    a: "Send a short brief — the business problem, who uses it, and which systems it has to talk to. I'll come back with the technical approach, scope and timeline before any commitment.",
+    a: "Send a short brief: the business problem, who uses it, and which systems it has to talk to. I'll come back with the technical approach, scope and timeline before any commitment.",
   },
 ];

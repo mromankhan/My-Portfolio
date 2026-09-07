@@ -57,7 +57,7 @@ export default function AboutContent() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-            {/* Left — Content */}
+            {/* Left: Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -80,9 +80,21 @@ export default function AboutContent() {
                 <p className="text-lg">
                   Hi! I am{" "}
                   <span className="text-blue-400 font-semibold">Muhammad Roman</span>{" "}
-                  — a{" "}
+                  is a{" "}
+                  <span className="text-blue-400 font-semibold">Forward Deployed Engineer</span>{" "}
+                  and{" "}
                   <span className="text-blue-400 font-semibold">Full Stack &amp; Agentic AI Engineer</span>{" "}
                   based in Karachi, Pakistan.
+                </p>
+                <p className="text-slate-400">
+                  At{" "}
+                  <span className="text-slate-300">MP Pvt Ltd</span> I work as a
+                  Forward Deployed Engineer: sitting with clients to understand
+                  how their operations actually run, then deploying and
+                  integrating the product inside their own environment, building
+                  the custom connectors it needs, and owning it after go-live.
+                  It is the same job as the rest of my work, done closer to the
+                  customer.
                 </p>
                 <p className="text-slate-400">
                   I build well-engineered software that takes manual work off a
@@ -103,7 +115,7 @@ export default function AboutContent() {
                   retrieval pipelines over real business data, and{" "}
                   <span className="text-blue-400 font-semibold">voice AI agents</span>{" "}
                   on LiveKit and Twilio. The assistant on this site is one of
-                  them — a working retrieval system over my own portfolio data.
+                  them, a working retrieval system over my own portfolio data.
                 </p>
                 <p className="text-slate-400">
                   My background is a full stack bootcamp at{" "}
@@ -111,7 +123,7 @@ export default function AboutContent() {
                   government-backed AI program at{" "}
                   <span className="text-slate-300">PIAIC</span>, but the stronger
                   signal is the architecture and deployment behind the projects.
-                  Currently going deeper into cloud-native systems — Kubernetes,
+                  Currently going deeper into cloud-native systems: Kubernetes,
                   Dapr and distributed architecture.
                 </p>
               </div>
@@ -135,7 +147,7 @@ export default function AboutContent() {
               </div>
             </motion.div>
 
-            {/* Right — Image + Stats */}
+            {/* Right: Image + Stats */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -148,7 +160,7 @@ export default function AboutContent() {
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-2 border-blue-500/30 overflow-hidden bg-[#0f1729]">
                   <Image
                     src="/images/programmingboy.svg"
-                    alt="Muhammad Roman — Programmer illustration"
+                    alt="Muhammad Roman, programmer illustration"
                     fill
                     className="object-cover p-4"
                     unoptimized
@@ -254,13 +266,13 @@ export default function AboutContent() {
           </motion.div>
 
           <div className="flex flex-col items-center gap-6 w-full">
-            {/* Row 1 — Top Languages + Streak */}
+            {/* Row 1: Top Languages + Streak */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[984px] mx-auto">
               <GitHubStats />
               <StreakCard username="mromankhan" />
             </div>
 
-            {/* Row 2 — Contribution Heatmap */}
+            {/* Row 2: Contribution Heatmap */}
             <ContributionGraph username="mromankhan" />
           </div>
         </div>

@@ -4,7 +4,7 @@
 
 export const aboutChunk = `
 ## About Muhammad Roman
-- Full Stack Developer & Agentic AI Engineer from Karachi, Pakistan
+- Forward Deployed Engineer at MP Pvt Ltd (contract, onsite Karachi, Aug 2026 - Present), and a Full Stack Developer & Agentic AI Engineer
 - Positioning: builds well-engineered software that automates work teams are still doing by hand. Maps the manual workflow first, then designs, builds and ships the production system that runs it, end to end.
 - Industry-agnostic: has shipped for personal services (barbershops), tax and financial compliance, and industrial inspection. The pattern repeats even when the industry changes.
 - Student of SMIT (Saylani Mass IT Training) & PIAIC (Presidential Initiative for AI & Computing)
@@ -30,24 +30,24 @@ export const projectsChunk = `
 
 ### Featured / Professional Work
 
-1. **BarberBook — Barbershop Booking & Queue SaaS**
+1. **BarberBook, Barbershop Booking & Queue SaaS**
    - Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Prisma, PostgreSQL (Neon), Better Auth, Pusher, Twilio (WhatsApp/SMS), Resend, Recharts
    - Replaced: a front desk answering calls, a paper walk-in register, reminder calls by hand, revenue tracked from memory
    - Multi-tenant B2B SaaS: 24/7 online booking, real-time walk-in queue, staff & service management, automated reminders, subscription billing, and analytics
    - Installable PWA; role-based access; solo full-stack build (architecture → backend → frontend → DevOps)
    - Live: https://barber-book-beryl.vercel.app
 
-2. **AsianInspection Chat — Internal Company Messenger**
+2. **AsianInspection Chat, Internal Company Messenger**
    - Stack: React Native 0.85, Expo SDK 56, TypeScript, Supabase (Postgres, Auth, Realtime, Edge Functions), Cloudflare R2, expo-sqlite
    - Replaced: staff coordinating on personal WhatsApp accounts with no audit trail and no admin visibility
    - WhatsApp-class private messenger for a company: real-time DMs & groups, read receipts, typing/presence, voice/image/video, offline-first (outbox + SQLite + FTS5 search), admin monitoring
    - Security-first: append-only messages enforced at the DB, Row-Level Security everywhere, encrypted token storage, biometric lock; sole engineer end-to-end
 
-3. **FBR Digital Invoice App — Tax Invoicing Desktop Software**
+3. **FBR Digital Invoice App, Tax Invoicing Desktop Software**
    - Stack: Tauri v2 (Rust), React 18, TypeScript, Vite, Tailwind CSS, SQLite (rusqlite, WAL), React Query, React Hook Form + Zod
    - Replaced: invoices typed into spreadsheets, tax worked out by hand, every record re-keyed into the FBR portal
    - Government-compliant (Pakistan FBR) offline-first desktop app: correct tax math, validate-then-post FBR gateway integration, QR codes, print-ready PDF export, templates
-   - Built the original app in Electron, then rebuilt it in Rust/Tauri after the client found the ~300 MB install too heavy — cut to ~12 MB with an identical UI; AES-256-GCM encryption, Windows Credential Manager key binding; sole engineer on both versions
+   - Built the original app in Electron, then rebuilt it in Rust/Tauri after the client found the ~300 MB install too heavy, cut to ~12 MB with an identical UI; AES-256-GCM encryption, Windows Credential Manager key binding; sole engineer on both versions
 
 ### Other Projects
 
@@ -103,31 +103,39 @@ To start: send a short brief with the business problem, the users, and the syste
 export const experienceChunk = `
 ## Work Experience & Education
 
-### Agentic AI & Automation Developer — AIByTec (Contract, Remote)
-- Period: Jan 2026 — Present (Current)
+### Forward Deployed Engineer, MP Pvt Ltd (Contract, Onsite Karachi)
+- Period: Aug 2026 - Present (Current)
+- Client-facing engineering: works directly with customer teams to map how their operations run before designing a solution
+- Deploys and configures the product inside each client's own environment, connected to their real data and tools
+- Builds custom integrations, connectors and automation so the system fits the client's existing stack
+- Owns the deployment after go-live: monitoring, debugging, performance tuning and iterating on client feedback
+- Tags: Forward Deployed Engineering, Solution Design, Client Integration, Automation, Deployment, Post-Deployment Support
+
+### Agentic AI & Automation Developer, AIByTec (Contract, Remote)
+- Period: Jan 2026 - Present (Current, concurrent with the MP Pvt Ltd contract)
 - Built multi-agent AI systems using LangChain & LangGraph
 - Reduced manual workflows by 80% through automation pipelines
 - Integrated OpenAI, Anthropic & open-source LLMs into products
 - Tags: Agentic AI, LangGraph, LLMs, Python, FastAPI, N8N, Automation
 
-### Full Stack Developer & Agentic AI Developer — XponentialAI (Full-Time, Remote)
-- Period: Oct 2025 — May 2026
+### Full Stack Developer & Agentic AI Developer, XponentialAI (Full-Time, Remote)
+- Period: Oct 2025 - May 2026
 - Developed production Next.js apps with TypeScript & Tailwind CSS
 - Built Full Stack AI Web Apps & Voice AI Agents using Python & Livekit
 - Worked on FastAPI & REST API integrations
 - Tags: Next.js, React, TypeScript, Python, FastAPI, Livekit, Twilio, PostgreSQL, Docker, RAG, OpenAI Agents SDK
 
-### Full Stack Developer (Intern) — XponentialAI (Remote)
-- Period: Jul 2025 — Sep 2025
+### Full Stack Developer (Intern), XponentialAI (Remote)
+- Period: Jul 2025 - Sep 2025
 - Built UI components and full-page features in Next.js & React
 - Worked on Agentic AI prototypes, promoted to full-time within internship
 
-### Education — PIAIC (Presidential Initiative for AI & Computing)
-- Period: 2024 — Present
+### Education: PIAIC (Presidential Initiative for AI & Computing)
+- Period: 2024 - Present
 - Government-backed AI program: Generative AI, Agentic AI, Cloud Native, Python, FastAPI, LLMs, Kubernetes
 
-### Education — SMIT (Saylani Mass IT Training)
-- Period: 2023 — 2025
+### Education: SMIT (Saylani Mass IT Training)
+- Period: 2023 - 2025
 - Full Stack bootcamp: MERN, Next.js, React Native, TypeScript, Firebase, Mobile Applications, Frontend Development, Backend Development
 `;
 

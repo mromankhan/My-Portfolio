@@ -84,13 +84,18 @@ const ContactContent = () => {
             </span>
           </h1>
           <p className="text-slate-400 max-w-lg mx-auto">
-            Have a project in mind? I&apos;d love to hear about it. Send me a
-            message and let&apos;s build something amazing.
+            Have a project in mind? Tell me the workflow, who uses it and the
+            systems involved. I&apos;ll come back with the technical approach,
+            scope and a realistic timeline.
+          </p>
+          <p className="text-slate-500 text-sm max-w-lg mx-auto mt-3">
+            Currently a Forward Deployed Engineer at MP Pvt Ltd in Karachi,
+            deploying and integrating systems inside client environments.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Left — Contact Info */}
+          {/* Left: Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -152,13 +157,13 @@ const ContactContent = () => {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <p className="text-green-400 text-sm font-medium">
-                  Currently available for freelance work
+                  Available for freelance projects and contracts
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Right — Form */}
+          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

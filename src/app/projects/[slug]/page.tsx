@@ -23,7 +23,7 @@ export async function generateMetadata({
   const description = `${project.tagline}. ${project.summary}`.slice(0, 300);
 
   return {
-    title: `${project.title} — Case Study`,
+    title: `${project.title} Case Study`,
     description,
     alternates: { canonical: url },
     openGraph: {

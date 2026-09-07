@@ -8,7 +8,13 @@ import { motion } from "motion/react";
 import TypewriterEffect from "@/components/TypewritingEffect";
 import { Spotlight } from "@/components/ui/spotlight";
 import { projects } from "@/data/projects";
-import { problems, services, faqs, industriesLine } from "@/data/services";
+import {
+  problems,
+  services,
+  faqs,
+  industriesLine,
+  deliveryLine,
+} from "@/data/services";
 
 const socialLinks = [
   {
@@ -37,7 +43,7 @@ const socialLinks = [
 const caseResults: Record<string, string[]> = {
   barberbook: [
     "24/7 booking engine where double-bookings are mathematically impossible",
-    "Live walk-in queue over WebSockets — customers track their position in real time",
+    "Live walk-in queue over WebSockets, so customers track their position in real time",
     "Automated WhatsApp → SMS → email reminders that cut no-shows by up to 40%",
   ],
   "fbr-invoice-app": [
@@ -46,7 +52,7 @@ const caseResults: Record<string, string[]> = {
     "Validate-then-post FBR gateway handshake with per-invoice tax snapshots",
   ],
   "asianinspection-chat": [
-    "Append-only messages enforced by Postgres Row-Level Security — full auditability",
+    "Append-only messages enforced by Postgres Row-Level Security, giving full auditability",
     "True offline-first: outbox, SQLite history and FTS5 search on a weak connection",
     "Admin console for onboarding, group management and read-only monitoring",
   ],
@@ -75,7 +81,7 @@ export default function HomeContent() {
 
         <div className="max-w-6xl mx-auto w-full relative z-10 pt-24 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left — Text */}
+            {/* Left: Text */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -88,7 +94,7 @@ export default function HomeContent() {
                   <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
                 </span>
-                Available for freelance & full-time work
+                Forward Deployed Engineer at MP Pvt Ltd · open to new projects
               </div>
 
               <div className="space-y-3">
@@ -144,7 +150,7 @@ export default function HomeContent() {
               </div>
             </motion.div>
 
-            {/* Right — Illustration */}
+            {/* Right: Illustration */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -160,7 +166,7 @@ export default function HomeContent() {
                 <div className="relative rounded-full overflow-hidden w-full h-full border border-blue-500/20 bg-[#0f1729]">
                   <Image
                     src="/images/working.svg"
-                    alt="Muhammad Roman — full stack and agentic AI engineer"
+                    alt="Muhammad Roman, full stack and agentic AI engineer"
                     fill
                     className="object-cover p-6"
                     priority
@@ -392,9 +398,12 @@ export default function HomeContent() {
                 work with you
               </span>
             </h2>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-slate-400 leading-relaxed mb-4">
               Each one is a scoped engagement with defined deliverables and a
-              realistic timeline not an open-ended hourly arrangement.
+              realistic timeline, not an open-ended hourly arrangement.
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed border-l-2 border-blue-500/30 pl-4">
+              {deliveryLine}
             </p>
           </motion.div>
 
@@ -517,7 +526,7 @@ export default function HomeContent() {
               Have a system that needs building?
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Send a short brief — the business problem, who uses it, and which
+              Send a short brief: the business problem, who uses it, and which
               systems it has to talk to. You&apos;ll get the technical approach,
               scope and timeline back before any commitment.
             </p>

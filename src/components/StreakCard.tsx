@@ -83,7 +83,7 @@ export default function StreakCard({ username }: { username: string }) {
     <div
       className="overflow-hidden transform-gpu will-change-transform w-full md:max-w-[480px] rounded-2xl border border-white/8 bg-[#0d1117] p-6 flex flex-col"
     >
-      {/* Current Streak — top center */}
+      {/* Current Streak: top center */}
       <div className="flex-1 flex flex-col items-center justify-center gap-3 py-6">
         <div className="relative w-16 h-16 flex items-center justify-center">
           <Flame size={40} className="relative text-blue-400" />
@@ -100,7 +100,7 @@ export default function StreakCard({ username }: { username: string }) {
       {/* Divider */}
       <div className="h-px bg-white/8 mx-2 mb-5" />
 
-      {/* Bottom — Total + Longest */}
+      {/* Bottom: Total + Longest */}
       <div className="grid grid-cols-2 gap-4">
         <div className="flex flex-col items-center gap-2 p-4 rounded-xl border border-white/6 bg-white/[0.02]">
           <GitCommitHorizontal size={18} className="text-blue-400" />

@@ -8,9 +8,10 @@ const TypewriterEffect = () => {
             <span className="text-2xl lg:text-3xl font-semibold text-blue-500">
                 <Typewriter
                     words={[
-                        "Full Stack Engineer",
+                        "Forward Deployed Engineer",
+                        "Full Stack Developer",
                         "Agentic AI Engineer",
-                        "Voice AI Developer",
+                        "Voice AI Agents Engineer",
                     ]}
                     loop={true}
                     cursor

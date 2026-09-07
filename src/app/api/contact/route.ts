@@ -100,7 +100,7 @@ function confirmationEmail(name: string, message: string) {
           <tr><td style="background:#ffffff;padding:36px 40px;">
 
             <p style="margin:0 0 24px;color:#475569;font-size:15px;line-height:1.8;">
-              Hey <strong style="color:#1e293b;">${name}</strong>, I've received your message and will get back to you as soon as possible — usually within <strong style="color:#2563eb;">24–48 hours</strong>.
+              Hey <strong style="color:#1e293b;">${name}</strong>, I've received your message and will get back to you as soon as possible, usually within <strong style="color:#2563eb;">24–48 hours</strong>.
             </p>
 
             <!-- Message recap -->
@@ -181,7 +181,7 @@ export async function POST(req: NextRequest) {
         from: `"Portfolio Contact" <${process.env.EMAIL_FROM}>`,
         to: process.env.EMAIL_FROM,
         replyTo: email,
-        subject: `📬 New message from ${name} — Portfolio`,
+        subject: `📬 New message from ${name} (Portfolio)`,
         html: notificationEmail(name, email, message),
       }),
       // 2. Confirmation to visitor

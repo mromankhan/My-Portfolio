@@ -144,7 +144,7 @@ export default function ProjectDetailContent({ project }: { project: ProjectDeta
             <div className="flex items-center gap-3 mb-5">
               <h2 className="text-xl font-semibold">Case Study</h2>
               <span className="text-xs text-slate-500">
-                Swipe through the full walkthrough — click any slide to enlarge
+                Swipe through the full walkthrough. Click any slide to enlarge
               </span>
             </div>
             <ProjectCarousel slides={gallery} />

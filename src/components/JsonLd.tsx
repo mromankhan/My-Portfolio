@@ -11,7 +11,15 @@ const person = {
   alternateName: "mromankhan",
   url: SITE,
   image: `${SITE}/og-image.png`,
-  jobTitle: "Full Stack Developer & Agentic AI Engineer",
+  jobTitle: [
+    "Forward Deployed Engineer",
+    "Full Stack Developer",
+    "Agentic AI Engineer",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "MP Pvt Ltd",
+  },
   description: positioning,
   address: {
     "@type": "PostalAddress",
@@ -24,6 +32,9 @@ const person = {
     "https://x.com/RomanKhan00555",
   ],
   knowsAbout: [
+    "Forward Deployed Engineering",
+    "Client Solution Design",
+    "System Integration",
     "Next.js",
     "React",
     "React Native",
@@ -62,7 +73,7 @@ const professionalService = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${SITE}/#service`,
-  name: "Muhammad Roman — Full Stack & Agentic AI Engineering",
+  name: "Muhammad Roman, Full Stack & Agentic AI Engineering",
   url: `${SITE}/services`,
   image: `${SITE}/og-image.png`,
   description: positioning,

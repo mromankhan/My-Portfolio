@@ -215,7 +215,7 @@ export default function ChatWidget() {
       return;
     }
 
-    // After done — back to normal chat
+    // After done: back to normal chat
     setContactStep(null);
     sendToAI(text);
   }
@@ -305,7 +305,7 @@ export default function ChatWidget() {
     if (!trimmed || isLoading) return;
     setInput("");
 
-    // In contact flow — handle steps locally
+    // In contact flow: handle steps locally
     if (contactStep && contactStep !== "done") {
       handleContactStep(trimmed);
       return;

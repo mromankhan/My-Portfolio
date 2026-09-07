@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Roman",
   },
   description:
-    "Muhammad Roman — Full Stack & Agentic AI Engineer in Karachi. I build well-engineered software that automates manual business workflows: multi-tenant SaaS, agentic AI and voice agents, offline-first desktop software and React Native apps, shipped end-to-end.",
+    "Muhammad Roman, Forward Deployed Engineer at MP Pvt Ltd, Full Stack & Agentic AI Engineer in Karachi. I build well-engineered software that automates manual business workflows: multi-tenant SaaS, agentic AI and voice agents, offline-first desktop software and React Native apps, shipped end-to-end.",
   authors: [{ name: "Muhammad Roman", url: "https://www.mromankhan.com" }],
   creator: "Muhammad Roman",
   openGraph: {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Muhammad Roman — Full Stack & Agentic AI Engineer",
+        alt: "Muhammad Roman, Full Stack & Agentic AI Engineer",
       },
     ],
   },

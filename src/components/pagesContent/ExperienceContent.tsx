@@ -9,6 +9,7 @@ import {
   MapPin,
   Code2,
   Zap,
+  Rocket,
 } from "lucide-react";
 import { Spotlight } from "@/components/ui/spotlight";
 import Link from "next/link";
@@ -18,14 +19,33 @@ const experiences = [
   {
     id: 1,
     type: "contract",
+    role: "Forward Deployed Engineer",
+    company: "MP Pvt Ltd",
+    location: "Karachi, Pakistan",
+    period: "Aug 2026 - Present",
+    current: true,
+    icon: <Rocket size={18} />,
+    color: "indigo",
+    desc: "Client-facing engineering role: sitting with customers to understand how their operations actually run, then designing, deploying and integrating the product inside their own environment. The work runs from discovery through custom integration to post-deployment support.",
+    highlights: [
+      "Work directly with client teams to map their existing workflow, constraints and systems before any solution is designed",
+      "Deploy and configure the product inside each client's own environment, connected to their real data and tools",
+      "Build custom integrations, connectors and automation so the system fits the client's existing stack instead of replacing it",
+      "Own the deployment after go-live: monitoring, debugging, performance tuning and iterating on client feedback",
+    ],
+    tags: ["Forward Deployed", "Solution Design", "Client Integration", "Automation", "Python", "APIs", "Deployment", "Post-Deployment Support"],
+  },
+  {
+    id: 2,
+    type: "contract",
     role: "Agentic AI & Automation Developer",
     company: "AIByTec",
     location: "Remote",
-    period: "Jan 2026 — Present",
+    period: "Jan 2026 - Present",
     current: true,
     icon: <Zap size={18} />,
     color: "cyan",
-    desc: "Building cutting-edge Agentic AI systems and intelligent automation pipelines for clients. Architecting multi-agent orchestration workflows and integrating LLMs into production-grade products.",
+    desc: "Concurrent contract alongside the Forward Deployed Engineer role. Building Agentic AI systems and intelligent automation pipelines for clients. Architecting multi-agent orchestration workflows and integrating LLMs into production-grade products.",
     highlights: [
       "Designed and deployed multi-agent AI systems using LangChain & LangGraph",
       "Built end-to-end automation pipelines reducing manual workflows by 80%",
@@ -35,12 +55,12 @@ const experiences = [
     tags: ["Agentic AI", "LangGraph", "LLMs", "Python", "Automation", "FastAPI", "N8N"],
   },
   {
-    id: 2,
+    id: 3,
     type: "job",
     role: "Full Stack Developer & Agentic AI Developer",
     company: "XponentialAI",
     location: "Remote",
-    period: "Oct 2025 — May 2026",
+    period: "Oct 2025 - May 2026",
     current: false,
     icon: <Briefcase size={18} />,
     color: "purple",
@@ -54,12 +74,12 @@ const experiences = [
     tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "Livekit", "Twilio", "PostgreSQL", "Docker", "RAG", "OpenAI Agents SDK"],
   },
   {
-    id: 3,
+    id: 4,
     type: "internship",
     role: "Full Stack Developer & Agentic AI Developer",
     company: "XponentialAI",
     location: "Remote",
-    period: "Jul 2025 — Sep 2025",
+    period: "Jul 2025 - Sep 2025",
     current: false,
     icon: <Code2 size={18} />,
     color: "blue",
@@ -73,12 +93,12 @@ const experiences = [
     tags: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Python", "FastAPI"],
   },
   {
-    id: 4,
+    id: 5,
     type: "education",
     role: "Certified Cloud Applied Generative AI & Agentic AI Engineer",
-    company: "PIAIC — Presidential Initiative for AI & Computing",
+    company: "PIAIC (Presidential Initiative for AI & Computing)",
     location: "Karachi, Pakistan",
-    period: "2024 — Present",
+    period: "2024 - Present",
     current: true,
     icon: <GraduationCap size={18} />,
     color: "green",
@@ -92,12 +112,12 @@ const experiences = [
     tags: ["Python", "Generative AI", "Cloud Native", "LLMs", "FastAPI"],
   },
   {
-    id: 5,
+    id: 6,
     type: "education",
     role: "Full Stack Web & Mobile App Developer",
-    company: "SMIT — Saylani Mass IT Training",
+    company: "SMIT (Saylani Mass IT Training)",
     location: "Karachi, Pakistan",
-    period: "2023 — 2025",
+    period: "2023 - 2025",
     current: false,
     icon: <GraduationCap size={18} />,
     color: "orange",
@@ -120,6 +140,7 @@ const colorMap: Record<string, {
   purple: { border: "border-purple-500/25",  bg: "bg-purple-500/8",  text: "text-purple-400",  dot: "bg-purple-400",  glow: "shadow-purple-500/30",  badge: "bg-purple-500/15 text-purple-300 border-purple-500/25" },
   blue:   { border: "border-blue-500/25",    bg: "bg-blue-500/8",    text: "text-blue-400",    dot: "bg-blue-400",    glow: "shadow-blue-500/30",    badge: "bg-blue-500/15 text-blue-300 border-blue-500/25" },
   green:  { border: "border-emerald-500/25", bg: "bg-emerald-500/8", text: "text-emerald-400", dot: "bg-emerald-400", glow: "shadow-emerald-500/30", badge: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25" },
+  indigo: { border: "border-indigo-500/25",  bg: "bg-indigo-500/8",  text: "text-indigo-400",  dot: "bg-indigo-400",  glow: "shadow-indigo-500/30",  badge: "bg-indigo-500/15 text-indigo-300 border-indigo-500/25" },
   orange: { border: "border-orange-500/25",  bg: "bg-orange-500/8",  text: "text-orange-400",  dot: "bg-orange-400",  glow: "shadow-orange-500/30",  badge: "bg-orange-500/15 text-orange-300 border-orange-500/25" },
 };
 
@@ -137,7 +158,7 @@ function ExperienceCard({ exp, index }: { exp: (typeof experiences)[0]; index: n
   return (
     <div className="flex items-start gap-4">
 
-      {/* Left column — fixed 40px, dot sits in flow centered here */}
+      {/* Left column: fixed 40px, dot sits in flow centered here */}
       <div className="w-10 shrink-0 flex justify-center pt-5">
         <motion.div
           initial={{ scale: 0 }}
@@ -148,7 +169,7 @@ function ExperienceCard({ exp, index }: { exp: (typeof experiences)[0]; index: n
         />
       </div>
 
-      {/* Right column — card slides in */}
+      {/* Right column: card slides in */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -228,7 +249,7 @@ function Timeline() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Track (static gray) — centered in the 40px left column = left-5 (20px) */}
+      {/* Track (static gray): centered in the 40px left column = left-5 (20px) */}
       <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-white/5 rounded-full" />
       {/* Animated fill */}
       <motion.div
@@ -254,7 +275,7 @@ function Timeline() {
           <div className="w-4 h-4 rounded-full border-[3px] border-[#020817] bg-slate-700" />
         </div>
         <div className="flex-1 p-4 rounded-2xl border border-white/5 bg-white/[0.01] text-center">
-          <p className="text-slate-600 text-sm">The journey begins here — 2023</p>
+          <p className="text-slate-600 text-sm">The journey begins here: 2023</p>
         </div>
       </motion.div>
     </div>
@@ -287,7 +308,7 @@ export default function ExperienceContent() {
               </span>
             </h1>
             <p className="text-slate-400 text-lg max-w-lg mx-auto">
-              From bootcamp to AI company — the story so far.
+              From bootcamp to AI company. The story so far.
             </p>
           </motion.div>
 

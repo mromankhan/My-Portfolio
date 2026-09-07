@@ -1,7 +1,7 @@
 // ── Featured project case studies ──────────────────────────────────────────
 // Rich detail data for the top 3 projects, rendered on /projects/[slug].
 // The gallery images are full Canva case-study slides (1280×800) that already
-// contain their own annotations — the page shows a short intro + a carousel.
+// contain their own annotations, so the page shows a short intro + a carousel.
 
 export interface ProjectSlide {
   src: string;
@@ -20,7 +20,7 @@ export interface ProjectDetail {
   role: string;
   year: string;
   type: string;
-  /** Tech chips — icon paths live in /public/images. */
+  /** Tech chips. Icon paths live in /public/images. */
   tech: { name: string; icon: string }[];
   /** Small tech-icon list reused by the grid card. */
   cardIcons: string[];
@@ -44,7 +44,7 @@ export const projects: ProjectDetail[] = [
     title: "BarberBook",
     tagline: "Multi-Tenant SaaS for Barbershop Booking & Queue Management",
     summary:
-      "A production-grade B2B SaaS that lets barbershops accept 24/7 online bookings, run a live walk-in queue, manage staff & services, send automated WhatsApp/SMS reminders, and track revenue — all behind a subscription billing system. Designed and built end-to-end as the sole engineer.",
+      "A production-grade B2B SaaS that lets barbershops accept 24/7 online bookings, run a live walk-in queue, manage staff & services, send automated WhatsApp/SMS reminders, and track revenue, all behind a subscription billing system. Designed and built end-to-end as the sole engineer.",
     cardImage: "/portfolio1.png",
     cardAlt: "BarberBook barbershop booking SaaS landing page",
     role: "Solo Full-Stack Engineer",
@@ -76,7 +76,7 @@ export const projects: ProjectDetail[] = [
     },
     highlights: [
       "24/7 public booking backed by a real-time availability engine that makes double-bookings mathematically impossible.",
-      "Live walk-in queue over Pusher WebSockets — customers track their position from their phone in real time.",
+      "Live walk-in queue over Pusher WebSockets, so customers track their position from their phone in real time.",
       "Automated WhatsApp → SMS → email reminders that cut no-shows by up to 40%.",
       "Multi-tenant architecture with role-based access, revenue analytics, and tiered subscription billing.",
       "Installable, offline-capable PWA with server-first data fetching for a lean client bundle.",
@@ -102,7 +102,7 @@ export const projects: ProjectDetail[] = [
     title: "AsianInspection Chat",
     tagline: "WhatsApp-class Internal Company Messenger",
     summary:
-      "A full-featured private messaging app for a company's employees that doubles as a compliant, admin-monitored, append-only communication system — the polish of a consumer chat app with enterprise-grade security enforced at the database layer. Built solo, end-to-end.",
+      "A full-featured private messaging app for a company's employees that doubles as a compliant, admin-monitored, append-only communication system, the polish of a consumer chat app with enterprise-grade security enforced at the database layer. Built solo, end-to-end.",
     cardImage: "/portfolio2.jpeg",
     cardAlt: "AsianInspection Chat internal messaging app",
     role: "Sole Mobile & Backend Engineer",
@@ -132,9 +132,9 @@ export const projects: ProjectDetail[] = [
     },
     highlights: [
       "Real-time 1-to-1 & group messaging with WhatsApp-style read receipts, typing indicators and online/last-seen presence.",
-      "Rich media — image, voice and video — via Cloudflare R2 presigned URLs with zero egress cost.",
+      "Rich media (image, voice and video) via Cloudflare R2 presigned URLs with zero egress cost.",
       "True offline-first: persistent outbox, full SQLite history with FTS5 search, LRU media cache and auto-retry on reconnect.",
-      "Append-only messages enforced by Postgres Row-Level Security — no edits, no deletes, full auditability.",
+      "Append-only messages enforced by Postgres Row-Level Security: no edits, no deletes, full auditability.",
       "In-app admin console to onboard/offboard staff, manage groups, and monitor any conversation read-only.",
     ],
     gallery: dir("MessageApp", [
@@ -157,7 +157,7 @@ export const projects: ProjectDetail[] = [
     title: "FBR Digital Invoice App",
     tagline: "Government-Compliant Tax Invoicing Desktop Software (Pakistan)",
     summary:
-      "A native desktop app that lets Pakistani businesses submit FBR-compliant sales invoices offline-first — correct tax math, a validate-then-post gateway handshake, QR codes and print-ready PDFs. Built first in Electron, then rebuilt in Rust/Tauri after the client flagged the install size, taking it from ~300 MB to ~12 MB with an identical UI.",
+      "A native desktop app that lets Pakistani businesses submit FBR-compliant sales invoices offline-first: correct tax math, a validate-then-post gateway handshake, QR codes and print-ready PDFs. Built first in Electron, then rebuilt in Rust/Tauri after the client flagged the install size, taking it from ~300 MB to ~12 MB with an identical UI.",
     cardImage: "/portfolio3.png",
     cardAlt: "FBR Digital Invoice desktop application dashboard",
     role: "Sole Full-Stack & Desktop Engineer",
@@ -179,7 +179,7 @@ export const projects: ProjectDetail[] = [
         "A multi-step compliance workflow reduced to a single action a clerk can complete in seconds.",
     },
     highlights: [
-      "Fully offline — all data (auth, settings, invoices, templates) lives in a local AES-256-GCM encrypted SQLite database.",
+      "Fully offline. All data (auth, settings, invoices, templates) lives in a local AES-256-GCM encrypted SQLite database.",
       "Validate-then-post FBR gateway handshake with exact tax math snapshotted per invoice so historical records never drift.",
       "Compliant output: 96×96 FBR-spec QR codes and print-ready A4 PDF export.",
       "Shipped the first version in Electron, then rebuilt the shell in Rust/Tauri when the client found ~300 MB too heavy: ~96% smaller install, native performance, zero UI rewrite.",

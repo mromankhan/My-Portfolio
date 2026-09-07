@@ -6,7 +6,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 const projects = [
   {
     id: 101,
-    title: "BarberBook — Barbershop SaaS",
+    title: "BarberBook: Barbershop SaaS",
     desc: "Multi-tenant SaaS for barbershops: 24/7 online booking, a real-time walk-in queue, staff scheduling, automated WhatsApp/SMS reminders & revenue analytics.",
     img: "/portfolio1.png",
     alt: "BarberBook barbershop booking SaaS dashboard",
@@ -17,7 +17,7 @@ const projects = [
   {
     id: 102,
     title: "AsianInspection Chat",
-    desc: "WhatsApp-class internal company messenger built with React Native & Supabase — real-time chat, voice/media, offline-first sync, read receipts & admin monitoring.",
+    desc: "WhatsApp-class internal company messenger built with React Native and Supabase. Real-time chat, voice/media, offline-first sync, read receipts & admin monitoring.",
     img: "/portfolio2.jpeg",
     alt: "AsianInspection Chat internal messaging app",
     iconsList: ["/expo.png", "/images/re.svg", "/images/ts.svg", "/images/psql.svg", "/images/tail.svg"],
@@ -26,7 +26,7 @@ const projects = [
   {
     id: 103,
     title: "FBR Digital Invoice App",
-    desc: "Government-compliant tax invoicing desktop app (Tauri + Rust) — offline-first, AES-256 encrypted SQLite, FBR gateway integration & a tiny ~12 MB install.",
+    desc: "Government-compliant tax invoicing desktop app (Tauri + Rust). Offline-first, AES-256 encrypted SQLite, FBR gateway integration & a tiny ~12 MB install.",
     img: "/portfolio3.png",
     alt: "FBR Digital Invoice desktop application dashboard",
     iconsList: ["/images/re.svg", "/images/ts.svg", "/images/tail.svg"],
@@ -45,7 +45,7 @@ const projects = [
   {
     id: 2,
     title: "Expense Tracker",
-    desc: "Smart expense tracker with real-time Firebase sync — AI-ready for spending insights.",
+    desc: "Smart expense tracker with real-time Firebase sync, AI-ready for spending insights.",
     img: "/myp3.png",
     alt: "Expense Tracker Web",
     iconsList: ["/images/next.svg", "/images/re.svg", "/images/tail.svg", "/images/ts.svg", "/images/firebaseicon.svg", "/cn.jpg"],
@@ -118,7 +118,7 @@ export default function ProjectsContent() {
               Works
             </h1>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              A collection of projects I&apos;ve built — from web apps to mobile experiences.
+              A collection of projects I&apos;ve built, from web apps to mobile experiences.
             </p>
           </motion.div>
 

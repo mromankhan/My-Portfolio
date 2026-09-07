@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "motion/react";
 import { Spotlight } from "@/components/ui/spotlight";
-import { services, process, faqs } from "@/data/services";
+import { services, process, faqs, deliveryLine } from "@/data/services";
 
 const sectionLabel =
   "text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3";
@@ -35,6 +35,9 @@ export default function ServicesContent() {
               a well-engineered system your customers and staff use every day.
               Architecture, backend, interface and deployment included. One
               engineer, full ownership, defined deliverables.
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed max-w-2xl mx-auto">
+              {deliveryLine}
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <Link href="/contact">
@@ -103,7 +106,7 @@ export default function ServicesContent() {
                   </span>
                 </div>
                 <p className="text-slate-300 text-sm leading-relaxed">
-                  <span className="text-slate-500">Outcome — </span>
+                  <span className="text-slate-500">Outcome: </span>
                   {service.outcome}
                 </p>
               </div>
