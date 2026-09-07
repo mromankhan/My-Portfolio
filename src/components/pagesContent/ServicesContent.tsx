@@ -25,16 +25,16 @@ export default function ServicesContent() {
           >
             <p className={sectionLabel}>Services</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Scoped engagements that end in{" "}
+              Manual work in,{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                shipped software
+                shipped software out
               </span>
             </h1>
             <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-              I take a business workflow and turn it into a system your
-              customers and staff use every day architecture, backend,
-              interface and deployment included. One engineer, full ownership,
-              defined deliverables.
+              I take the workflow your team is running by hand and turn it into
+              a well-engineered system your customers and staff use every day.
+              Architecture, backend, interface and deployment included. One
+              engineer, full ownership, defined deliverables.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-2">
               <Link href="/contact">
@@ -132,8 +132,9 @@ export default function ServicesContent() {
               </span>
             </h2>
             <p className="text-slate-400 leading-relaxed">
-              Most projects fail on scope and architecture, not on syntax. Here
-              is the order I work in.
+              Most projects fail on scope and architecture, not on syntax. The
+              workflow gets mapped before anything gets built. Here is the order
+              I work in.
             </p>
           </motion.div>
 

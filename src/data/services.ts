@@ -4,7 +4,15 @@
 
 /** One-line positioning statement. Used in hero, metadata and schema. */
 export const positioning =
-  "I build production systems businesses actually run on — booking SaaS, offline-first desktop software, real-time mobile apps, and agentic AI workflows. Designed, built and shipped end-to-end, mostly as the sole engineer.";
+  "I build well-engineered software that automates the work people are still doing by hand. Booking and scheduling, compliance filing, internal operations: I map the manual workflow, then design, build and ship the production system that runs it. End to end, mostly as the sole engineer.";
+
+/** Short form for hero and cards. */
+export const positioningShort =
+  "Good software that removes manual work. I map the workflow people are doing by hand, then build the production system that runs it.";
+
+/** Industry-agnostic proof line. Names real, shipped verticals. */
+export const industriesLine =
+  "The industry changes, the pattern does not. I have shipped for personal services, tax and financial compliance, and industrial inspection. In each one the problem was the same: people repeating steps a system should own.";
 
 // ── Problems (buyer language, not tech language) ───────────────────────────
 
@@ -17,26 +25,26 @@ export interface Problem {
 
 export const problems: Problem[] = [
   {
-    title: "Bookings run on phone calls and no-shows eat the revenue",
-    body: "Staff manage appointments in a notebook or WhatsApp, double-bookings happen, and nobody knows what a slot is actually worth.",
+    title: "A person is the booking system",
+    body: "Appointments live in a notebook or a WhatsApp thread, someone answers every call, reminders go out by hand, and nobody knows what a slot is actually worth.",
     proof: "Solved in BarberBook",
     href: "/projects/barberbook",
   },
   {
-    title: "Business-critical software has to work without internet",
-    body: "Compliance software can't fail when the connection drops, and a 300 MB installer is a non-starter on the machines it needs to run on.",
+    title: "Compliance work is retyped into three places",
+    body: "The same figures get keyed into a spreadsheet, recalculated by hand, then re-entered into a government portal. It has to be exact, and it cannot stop when the connection drops.",
     proof: "Solved in FBR Invoice App",
     href: "/projects/fbr-invoice-app",
   },
   {
-    title: "Company communication lives on apps you don't control",
-    body: "No audit trail, no admin visibility, no way to prove a message was never edited or deleted after the fact.",
+    title: "Operations run on tools you do not control",
+    body: "Staff coordinate on personal accounts. No audit trail, no admin visibility, and no way to prove a record was never edited or deleted after the fact.",
     proof: "Solved in AsianInspection Chat",
     href: "/projects/asianinspection-chat",
   },
   {
-    title: "The AI demo worked — the product never shipped",
-    body: "A prompt in a notebook isn't a product. It needs tools, state, a backend, an interface, error handling and a deployment path.",
+    title: "The AI demo worked, the product never shipped",
+    body: "A prompt in a notebook is not a system. Automating real work needs tools, state, a backend, an interface, error handling and a deployment path.",
     proof: "Agentic workflows & MCP servers",
     href: "/services",
   },

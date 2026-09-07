@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 import TypewriterEffect from "@/components/TypewritingEffect";
 import { Spotlight } from "@/components/ui/spotlight";
 import { projects } from "@/data/projects";
-import { problems, services, faqs } from "@/data/services";
+import { problems, services, faqs, industriesLine } from "@/data/services";
 
 const socialLinks = [
   {
@@ -41,7 +41,7 @@ const caseResults: Record<string, string[]> = {
     "Automated WhatsApp → SMS → email reminders that cut no-shows by up to 40%",
   ],
   "fbr-invoice-app": [
-    "Electron → Rust/Tauri migration: ~300 MB install down to ~12 MB, identical UI",
+    "Shipped in Electron, then rebuilt in Rust/Tauri on client feedback: ~300 MB down to ~12 MB, same UI",
     "Fully offline operation on an AES-256-GCM encrypted local database",
     "Validate-then-post FBR gateway handshake with per-invoice tax snapshots",
   ],
@@ -103,11 +103,11 @@ export default function HomeContent() {
               </div>
 
               <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
-                I build production systems businesses actually run on booking
-                SaaS, offline-first desktop software, real time mobile apps and
-                agentic AI workflows.{" "}
+                I build well-engineered software that automates the work people
+                are still doing by hand.{" "}
                 <span className="text-slate-300">
-                  Designed, built and shipped end-to-end, mostly as the sole
+                  I map the manual workflow, then design, build and ship the
+                  production system that runs it. End to end, mostly as the sole
                   engineer.
                 </span>
               </p>
@@ -188,15 +188,19 @@ export default function HomeContent() {
           >
             <p className={sectionLabel}>Problems I Solve</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Businesses don&apos;t buy code.{" "}
+              Businesses don&apos;t buy software.{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                They buy a fixed workflow.
+                They buy the work it removes.
               </span>
             </h2>
-            <p className="text-slate-400 leading-relaxed">
-              Every system on this site started as an operational problem
-              someone was living with. Here are four I&apos;ve already shipped
-              solutions for.
+            <p className="text-slate-400 leading-relaxed mb-4">
+              Every system on this site started as manual work someone was
+              living with: a person answering calls, a clerk retyping figures, a
+              team coordinating in a chat app nobody owned. Here are four I have
+              already replaced with software.
+            </p>
+            <p className="text-slate-500 text-sm leading-relaxed border-l-2 border-blue-500/30 pl-4">
+              {industriesLine}
             </p>
           </motion.div>
 
@@ -298,6 +302,26 @@ export default function HomeContent() {
                   <p className="text-slate-400 text-sm mt-1 mb-4">
                     {project.tagline}
                   </p>
+
+                  {/* The manual workflow this system replaced */}
+                  <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                    <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                      <p className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                        Before
+                      </p>
+                      <p className="text-slate-400 text-xs leading-relaxed">
+                        {project.workflow.before}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-blue-500/[0.06] border border-blue-500/20">
+                      <p className="text-[11px] font-semibold text-blue-400 uppercase tracking-wide mb-1.5">
+                        After
+                      </p>
+                      <p className="text-slate-300 text-xs leading-relaxed">
+                        {project.workflow.after}
+                      </p>
+                    </div>
+                  </div>
 
                   <ul className="space-y-2 mb-5">
                     {(caseResults[project.slug] ?? project.highlights).map(

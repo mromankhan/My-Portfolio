@@ -1,9 +1,15 @@
 # Muhammad Roman
 
-> Full Stack & Agentic AI Engineer based in Karachi, Pakistan. I build production
-> systems businesses actually run on — multi-tenant SaaS platforms, agentic AI and
-> voice AI workflows, offline-first desktop software, and cross-platform mobile
-> apps. Designed, built and deployed end-to-end, mostly as the sole engineer.
+> Full Stack & Agentic AI Engineer based in Karachi, Pakistan. I build
+> well-engineered software that automates the work people are still doing by hand.
+> I map the manual workflow first, then design, build and ship the production
+> system that runs it: multi-tenant SaaS platforms, agentic AI and voice AI
+> workflows, offline-first desktop software, and cross-platform mobile apps.
+> End to end, mostly as the sole engineer.
+>
+> Industry-agnostic by evidence, not by claim: shipped for personal services,
+> tax and financial compliance, and industrial inspection. The industry changes,
+> the pattern does not — people repeating steps a system should own.
 
 - Website: https://www.mromankhan.com
 - Email: contact@mromankhan.com
@@ -23,8 +29,10 @@ Infra: Docker, Kubernetes, Google Cloud, Vercel, Cloudflare R2
 
 ## Featured case studies
 
-- [BarberBook](https://www.mromankhan.com/projects/barberbook): Multi-tenant B2B SaaS
-  for barbershop booking and queue management. Real-time availability engine that makes
+- [BarberBook](https://www.mromankhan.com/projects/barberbook):
+  REPLACED: a front desk answering calls, a paper walk-in register, reminder calls made
+  by hand, and revenue tracked from memory.
+  Multi-tenant B2B SaaS for barbershop booking and queue management. Real-time availability engine that makes
   double-bookings impossible, live walk-in queue over Pusher WebSockets, automated
   WhatsApp → SMS → email reminders that cut no-shows by up to 40%, subscription billing
   and revenue analytics. Installable PWA. Solo full-stack build.
@@ -32,14 +40,19 @@ Infra: Docker, Kubernetes, Google Cloud, Vercel, Cloudflare R2
   Better Auth, Pusher, Twilio, Resend. Live: https://barber-book-beryl.vercel.app
 
 - [FBR Digital Invoice App](https://www.mromankhan.com/projects/fbr-invoice-app):
+  REPLACED: invoices typed into spreadsheets, tax worked out by hand, and every record
+  re-keyed into the FBR portal.
   Government-compliant (Pakistan FBR) offline-first desktop invoicing software.
   Validate-then-post gateway handshake, per-invoice tax snapshots, FBR-spec QR codes,
-  print-ready PDF export. Migrated from Electron to Rust/Tauri — install size cut from
-  ~300 MB to ~12 MB with an identical UI. AES-256-GCM encrypted local SQLite, secrets
+  print-ready PDF export. Originally built in Electron; rebuilt in Rust/Tauri after the
+  client found the ~300 MB install too heavy, cutting it to ~12 MB with an identical UI.
+  Sole engineer on both versions. AES-256-GCM encrypted local SQLite, secrets
   bound to the machine via Windows Credential Manager. Sole engineer.
   Stack: Tauri v2 (Rust), React 18, TypeScript, Vite, SQLite, React Query, Zod.
 
 - [AsianInspection Chat](https://www.mromankhan.com/projects/asianinspection-chat):
+  REPLACED: staff coordinating on personal WhatsApp accounts, with no audit trail and no
+  admin visibility.
   WhatsApp-class private company messenger. Real-time DMs and groups, read receipts,
   typing and presence, voice/image/video over Cloudflare R2. True offline-first with a
   persistent outbox, SQLite history and FTS5 search. Append-only messages enforced by

@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Roman",
   },
   description:
-    "Muhammad Roman — Full Stack & Agentic AI Engineer in Karachi. I build production systems businesses run on: multi-tenant SaaS, agentic AI and voice agents, offline-first desktop software, and React Native apps — shipped end-to-end.",
+    "Muhammad Roman — Full Stack & Agentic AI Engineer in Karachi. I build well-engineered software that automates manual business workflows: multi-tenant SaaS, agentic AI and voice agents, offline-first desktop software and React Native apps, shipped end-to-end.",
   authors: [{ name: "Muhammad Roman", url: "https://www.mromankhan.com" }],
   creator: "Muhammad Roman",
   openGraph: {
     title: "Muhammad Roman | Full Stack & Agentic AI Engineer",
     description:
-      "I build production systems businesses run on — multi-tenant SaaS, agentic AI and voice agents, offline-first desktop software, and React Native apps. Shipped end-to-end, mostly solo.",
+      "I build well-engineered software that automates the work teams are still doing by hand: multi-tenant SaaS, agentic AI and voice agents, offline-first desktop apps. Shipped end-to-end, mostly solo.",
     type: "website",
     locale: "en_US",
     url: "https://www.mromankhan.com",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Muhammad Roman | Full Stack & Agentic AI Engineer",
     description:
-      "Production SaaS, agentic AI workflows, voice agents and offline-first desktop software — built end-to-end.",
+      "Software that removes manual work: production SaaS, agentic AI workflows, voice agents and offline-first desktop apps. Built end-to-end.",
     images: ["/og-image.png"],
     creator: "@RomanKhan00555",
   },

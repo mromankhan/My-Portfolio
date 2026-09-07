@@ -5,6 +5,8 @@
 export const aboutChunk = `
 ## About Muhammad Roman
 - Full Stack Developer & Agentic AI Engineer from Karachi, Pakistan
+- Positioning: builds well-engineered software that automates work teams are still doing by hand. Maps the manual workflow first, then designs, builds and ships the production system that runs it, end to end.
+- Industry-agnostic: has shipped for personal services (barbershops), tax and financial compliance, and industrial inspection. The pattern repeats even when the industry changes.
 - Student of SMIT (Saylani Mass IT Training) & PIAIC (Presidential Initiative for AI & Computing)
 - Specializes in Voice AI Agents, Agentic AI systems, and Digital FTEs (autonomous AI agents)
 - Builds and integrates MCP Servers to supercharge AI workflows
@@ -30,19 +32,22 @@ export const projectsChunk = `
 
 1. **BarberBook — Barbershop Booking & Queue SaaS**
    - Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Prisma, PostgreSQL (Neon), Better Auth, Pusher, Twilio (WhatsApp/SMS), Resend, Recharts
+   - Replaced: a front desk answering calls, a paper walk-in register, reminder calls by hand, revenue tracked from memory
    - Multi-tenant B2B SaaS: 24/7 online booking, real-time walk-in queue, staff & service management, automated reminders, subscription billing, and analytics
    - Installable PWA; role-based access; solo full-stack build (architecture → backend → frontend → DevOps)
    - Live: https://barber-book-beryl.vercel.app
 
 2. **AsianInspection Chat — Internal Company Messenger**
    - Stack: React Native 0.85, Expo SDK 56, TypeScript, Supabase (Postgres, Auth, Realtime, Edge Functions), Cloudflare R2, expo-sqlite
+   - Replaced: staff coordinating on personal WhatsApp accounts with no audit trail and no admin visibility
    - WhatsApp-class private messenger for a company: real-time DMs & groups, read receipts, typing/presence, voice/image/video, offline-first (outbox + SQLite + FTS5 search), admin monitoring
    - Security-first: append-only messages enforced at the DB, Row-Level Security everywhere, encrypted token storage, biometric lock; sole engineer end-to-end
 
 3. **FBR Digital Invoice App — Tax Invoicing Desktop Software**
    - Stack: Tauri v2 (Rust), React 18, TypeScript, Vite, Tailwind CSS, SQLite (rusqlite, WAL), React Query, React Hook Form + Zod
+   - Replaced: invoices typed into spreadsheets, tax worked out by hand, every record re-keyed into the FBR portal
    - Government-compliant (Pakistan FBR) offline-first desktop app: correct tax math, validate-then-post FBR gateway integration, QR codes, print-ready PDF export, templates
-   - Migrated from Electron to Rust/Tauri — cut install size ~300 MB → ~12 MB with identical UI; AES-256-GCM encryption, Windows Credential Manager key binding; sole engineer
+   - Built the original app in Electron, then rebuilt it in Rust/Tauri after the client found the ~300 MB install too heavy — cut to ~12 MB with an identical UI; AES-256-GCM encryption, Windows Credential Manager key binding; sole engineer on both versions
 
 ### Other Projects
 

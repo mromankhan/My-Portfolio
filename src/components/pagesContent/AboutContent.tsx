@@ -85,19 +85,20 @@ export default function AboutContent() {
                   based in Karachi, Pakistan.
                 </p>
                 <p className="text-slate-400">
-                  I build the systems businesses actually run on. A multi-tenant
-                  booking SaaS with a real-time queue and subscription billing.
-                  A government-compliant invoicing desktop app that works fully
-                  offline. A company messenger with append-only, audit-safe
-                  messaging enforced at the database layer. Each one was
-                  designed, built and deployed end-to-end — two of them as the
-                  sole engineer.
+                  I build well-engineered software that takes manual work off a
+                  business. A multi-tenant booking SaaS that replaced a front
+                  desk answering calls and keeping a paper queue. A
+                  government-compliant invoicing app that turned a three-step
+                  retyping routine into one offline-capable action. A company
+                  messenger that moved staff coordination off personal accounts
+                  into an auditable internal system. Each one designed, built and
+                  deployed end-to-end, two of them as the sole engineer.
                 </p>
                 <p className="text-slate-400">
                   On the AI side I build{" "}
                   <span className="text-blue-400 font-semibold">agentic systems</span>{" "}
-                  that do more than answer questions: tool-calling workflows,
-                  custom{" "}
+                  that carry out work rather than just answer questions:
+                  tool-calling workflows, custom{" "}
                   <span className="text-blue-400 font-semibold">MCP servers</span>,
                   retrieval pipelines over real business data, and{" "}
                   <span className="text-blue-400 font-semibold">voice AI agents</span>{" "}

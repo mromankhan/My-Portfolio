@@ -9,7 +9,7 @@ import ProjectCarousel from "@/components/ProjectCarousel";
 import type { ProjectDetail } from "@/data/projects";
 
 export default function ProjectDetailContent({ project }: { project: ProjectDetail }) {
-  const { title, tagline, summary, role, year, type, tech, highlights, liveLink, githubLink, gallery } = project;
+  const { title, tagline, summary, role, year, type, tech, workflow, highlights, liveLink, githubLink, gallery } = project;
 
   return (
     <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
@@ -103,6 +103,37 @@ export default function ProjectDetailContent({ project }: { project: ProjectDeta
             )}
           </motion.div>
 
+          {/* What this replaced */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-14"
+          >
+            <h2 className="text-xl font-semibold mb-5">What this replaced</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-5 rounded-2xl bg-[#0a1628] border border-white/10">
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                  The manual workflow
+                </p>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {workflow.before}
+                </p>
+              </div>
+              <div className="p-5 rounded-2xl bg-blue-500/[0.07] border border-blue-500/20">
+                <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-2">
+                  What the system does now
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {workflow.after}
+                </p>
+              </div>
+            </div>
+            <p className="text-slate-300 text-sm mt-4 pl-4 border-l-2 border-blue-500/40">
+              {workflow.impact}
+            </p>
+          </motion.div>
+
           {/* Case study carousel */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -154,7 +185,7 @@ export default function ProjectDetailContent({ project }: { project: ProjectDeta
             <div>
               <h3 className="text-lg font-semibold text-white">Like what you see?</h3>
               <p className="text-slate-400 text-sm mt-1">
-                I build production-grade full-stack products end-to-end. Let&apos;s talk.
+I build production-grade software that takes manual work off your team. Let&apos;s talk.
               </p>
             </div>
             <Link
