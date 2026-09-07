@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { motion } from "motion/react";
 import TypewriterEffect from "@/components/TypewritingEffect";
 import { Spotlight } from "@/components/ui/spotlight";
+import { projects } from "@/data/projects";
+import { problems, services, faqs } from "@/data/services";
 
 const socialLinks = [
   {
@@ -31,28 +33,38 @@ const socialLinks = [
   },
 ];
 
-const introPoints = [
-  "Building intelligent Agentic AI systems and Voice AI Agents for real-world automation.",
-  "Full stack engineer crafting scalable web apps with Next.js, React & Node.js.",
-  "Exploring cloud-native architecture — Kubernetes, Dapr, and distributed systems.",
-  "Turning cutting-edge AI research into production-ready, user-focused solutions.",
-];
+/** Short, outcome-first result lines shown on each featured case study card. */
+const caseResults: Record<string, string[]> = {
+  barberbook: [
+    "24/7 booking engine where double-bookings are mathematically impossible",
+    "Live walk-in queue over WebSockets — customers track their position in real time",
+    "Automated WhatsApp → SMS → email reminders that cut no-shows by up to 40%",
+  ],
+  "fbr-invoice-app": [
+    "Electron → Rust/Tauri migration: ~300 MB install down to ~12 MB, identical UI",
+    "Fully offline operation on an AES-256-GCM encrypted local database",
+    "Validate-then-post FBR gateway handshake with per-invoice tax snapshots",
+  ],
+  "asianinspection-chat": [
+    "Append-only messages enforced by Postgres Row-Level Security — full auditability",
+    "True offline-first: outbox, SQLite history and FTS5 search on a weak connection",
+    "Admin console for onboarding, group management and read-only monitoring",
+  ],
+};
+
+const sectionLabel =
+  "text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3";
 
 export default function HomeContent() {
   return (
     <main className="relative min-h-screen bg-[#020817] text-white overflow-hidden">
-      {/* ── Hero Section ── */}
+      {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        {/* Spotlight */}
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="#3b82f6"
         />
-
-        {/* Radial gradient background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.12),rgba(2,8,23,0))]" />
-
-        {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -70,13 +82,17 @@ export default function HomeContent() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="space-y-8"
             >
+              {/* Availability badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/25 bg-blue-500/10 text-blue-300 text-xs font-medium">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
+                </span>
+                Available for freelance & full-time work
+              </div>
 
               <div className="space-y-3">
-                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-slate-300">
-                  Hi There! 👋
-                </h2>
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
-                  I&apos;m{" "}
                   <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                     Muhammad Roman
                   </span>
@@ -86,17 +102,27 @@ export default function HomeContent() {
                 </div>
               </div>
 
-              <p className="text-slate-400 text-lg leading-relaxed max-w-md">
-                I build intelligent AI agents, scalable web applications, and
-                cloud-native systems that create real-world impact.
+              <p className="text-slate-400 text-lg leading-relaxed max-w-lg">
+                I build production systems businesses actually run on booking
+                SaaS, offline-first desktop software, real time mobile apps and
+                agentic AI workflows.{" "}
+                <span className="text-slate-300">
+                  Designed, built and shipped end-to-end, mostly as the sole
+                  engineer.
+                </span>
               </p>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact">
+                <Link href="/projects">
                   <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25 hover:shadow-blue-500/40 hover:scale-105">
-                    Let&apos;s Connect
+                    View Case Studies
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 hover:border-blue-500/30 text-white font-semibold transition-all duration-200">
+                    Work With Me
                   </button>
                 </Link>
               </div>
@@ -125,18 +151,16 @@ export default function HomeContent() {
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               className="relative flex justify-center items-center"
             >
-              {/* Glow rings */}
               <div className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full bg-blue-600/10 blur-3xl" />
               <div className="absolute w-48 h-48 sm:w-64 sm:h-64 rounded-full border border-blue-500/10 animate-[spin_20s_linear_infinite]" />
               <div className="absolute w-56 h-56 sm:w-80 sm:h-80 rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
 
-              {/* Image container */}
               <div className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-96 lg:h-96">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/20 to-transparent blur-2xl" />
                 <div className="relative rounded-full overflow-hidden w-full h-full border border-blue-500/20 bg-[#0f1729]">
                   <Image
                     src="/images/working.svg"
-                    alt="Developer working illustration"
+                    alt="Muhammad Roman — full stack and agentic AI engineer"
                     fill
                     className="object-cover p-6"
                     priority
@@ -150,100 +174,341 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ── Introduce Section ── */}
-      <section className="relative py-14 sm:py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.06),transparent)]" />
+      {/* ── Problems I Solve ── */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.05),transparent)]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
-          {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="max-w-2xl mb-12"
           >
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              About Me
-            </p>
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Let Me{" "}
+            <p className={sectionLabel}>Problems I Solve</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Businesses don&apos;t buy code.{" "}
               <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                Introduce
-              </span>{" "}
-              Myself
+                They buy a fixed workflow.
+              </span>
             </h2>
+            <p className="text-slate-400 leading-relaxed">
+              Every system on this site started as an operational problem
+              someone was living with. Here are four I&apos;ve already shipped
+              solutions for.
+            </p>
           </motion.div>
 
-          {/* Cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
-            {introPoints.map((point, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {problems.map(({ title, body, proof, href }, i) => (
               <motion.div
-                key={i}
+                key={title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-start gap-4 p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-blue-500/20 transition-all duration-300"
+                transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 shrink-0" />
-                <p className="text-slate-300 leading-relaxed">{point}</p>
+                <Link
+                  href={href}
+                  className="group flex flex-col h-full p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-blue-500/25 transition-all duration-300"
+                >
+                  <h3 className="text-lg font-semibold text-white mb-3 leading-snug">
+                    {title}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                    {body}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400">
+                    {proof}
+                    <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Why me block */}
+      {/* ── Featured Case Studies ── */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="p-8 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 to-transparent text-center space-y-4"
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mb-12"
           >
-            <h3 className="text-2xl font-bold text-blue-400">Why Me?</h3>
-            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              I don&apos;t just code — I{" "}
-              <span className="text-blue-400 font-semibold">engineer intelligent systems</span>. From
-              agentic AI pipelines to cloud-native infrastructure, every project
-              is an opportunity to push the boundaries of what&apos;s possible.
-            </p>
-            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              I leverage{" "}
-              <span className="text-blue-400 font-semibold">advanced AI-powered development tools</span>{" "}
-              — Cursor, Claude Code, and GitHub Copilot — to ship production-ready
-              features at{" "}
-              <span className="text-blue-400 font-semibold">10x speed</span>{" "}
-              without compromising on quality, security, or scalability.
-            </p>
-            <p className="text-blue-400 font-semibold text-lg">
-              Let&apos;s build the future together!
+            <p className={sectionLabel}>Featured Work</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Three systems,{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                three platforms
+              </span>
+              , all in production
+            </h2>
+            <p className="text-slate-400 leading-relaxed">
+              A multi-tenant web SaaS, a native desktop application, and a
+              cross-platform mobile app each built end-to-end from
+              architecture to deployment.
             </p>
           </motion.div>
 
-          {/* Social footer */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-slate-400 mb-6 text-sm font-medium tracking-wide uppercase">
-              Find Me On
-            </p>
-            <div className="flex justify-center gap-4">
-              {socialLinks.map(({ href, icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-12 h-12 flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
+          <div className="space-y-6">
+            {projects.map((project, i) => (
+              <motion.article
+                key={project.slug}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group grid grid-cols-1 lg:grid-cols-5 gap-6 p-5 sm:p-6 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-blue-500/25 transition-all duration-300"
+              >
+                {/* Image */}
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="lg:col-span-2 relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/8 bg-[#0f1729]"
                 >
-                  {icon}
-                </a>
-              ))}
+                  <Image
+                    src={project.cardImage}
+                    alt={project.cardAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </Link>
+
+                {/* Content */}
+                <div className="lg:col-span-3 flex flex-col">
+                  <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
+                    <span className="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 font-medium">
+                      {project.role}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-lg bg-white/5 text-slate-400 border border-white/8">
+                      {project.type}
+                    </span>
+                  </div>
+
+                  <Link href={`/projects/${project.slug}`}>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+                      {project.title}
+                    </h3>
+                  </Link>
+                  <p className="text-slate-400 text-sm mt-1 mb-4">
+                    {project.tagline}
+                  </p>
+
+                  <ul className="space-y-2 mb-5">
+                    {(caseResults[project.slug] ?? project.highlights).map(
+                      (line) => (
+                        <li key={line} className="flex gap-2.5 items-start">
+                          <Check className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
+                          <span className="text-slate-300 text-sm leading-relaxed">
+                            {line}
+                          </span>
+                        </li>
+                      )
+                    )}
+                  </ul>
+
+                  <div className="mt-auto flex flex-wrap items-center gap-4">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      Read the case study
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                      >
+                        Live demo
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 hover:border-blue-500/30 text-white font-semibold transition-all duration-200"
+            >
+              View all projects
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── What I Build (services teaser) ── */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.05),transparent)]" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mb-12"
+          >
+            <p className={sectionLabel}>What I Build</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Six ways I can{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                work with you
+              </span>
+            </h2>
+            <p className="text-slate-400 leading-relaxed">
+              Each one is a scoped engagement with defined deliverables and a
+              realistic timeline not an open-ended hourly arrangement.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="flex flex-col p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-blue-500/25 transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-white mb-2 leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">
+                  {service.summary}
+                </p>
+                <p className="mt-4 pt-4 border-t border-white/5 text-xs text-blue-300 font-medium">
+                  {service.timeline}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25"
+            >
+              See detailed services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Try the AI assistant ── */}
+      <section className="relative py-16 px-4">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="p-8 rounded-3xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 to-transparent text-center space-y-3"
+          >
+            <p className={sectionLabel}>Live Proof</p>
+            <h2 className="text-2xl md:text-3xl font-bold">
+              The assistant in the corner is a working RAG system
+            </h2>
+            <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              It retrieves from a structured knowledge base of my work and
+              answers only from that context the same retrieval pattern I
+              build into client products. Ask it about the FBR migration, the
+              queue engine, or my stack.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <p className={sectionLabel}>FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Questions clients ask{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                before we start
+              </span>
+            </h2>
+          </motion.div>
+
+          <div className="space-y-3">
+            {faqs.map(({ q, a }, i) => (
+              <motion.details
+                key={q}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.05 }}
+                className="group p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-blue-500/20 transition-all duration-300"
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none text-white font-medium">
+                  {q}
+                  <span className="text-blue-400 shrink-0 transition-transform duration-200 group-open:rotate-45 text-xl leading-none">
+                    +
+                  </span>
+                </summary>
+                <p className="text-slate-400 text-sm leading-relaxed mt-3">
+                  {a}
+                </p>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section className="relative py-20 px-4">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(59,130,246,0.08),transparent)]" />
+
+        <div className="max-w-3xl mx-auto relative z-10 text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Have a system that needs building?
+            </h2>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              Send a short brief — the business problem, who uses it, and which
+              systems it has to talk to. You&apos;ll get the technical approach,
+              scope and timeline back before any commitment.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/contact">
+                <button className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-blue-600/25 hover:scale-105">
+                  Start a project
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <a href="/Roman_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 hover:border-blue-500/30 text-white font-semibold transition-all duration-200">
+                  Download resume
+                </button>
+              </a>
             </div>
           </motion.div>
         </div>

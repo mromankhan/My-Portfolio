@@ -4,16 +4,20 @@ import { Typewriter } from "react-simple-typewriter";
 
 const TypewriterEffect = () => {
     return (
-        <p className="text-3xl lg:text-4xl font-semibold">I&apos;m a {" "}
-            <span className="text-3xl lg:text-4xl font-semibold text-blue-500">
+        <p className="text-2xl lg:text-3xl font-semibold">
+            <span className="text-2xl lg:text-3xl font-semibold text-blue-500">
                 <Typewriter
-                    words={["Full Stack Developer", "Cloud Native Agentic AI Engineer", "DevOps Engineer", "React & Next.js Expert", "Python Developer"]}
+                    words={[
+                        "Full Stack Engineer",
+                        "Agentic AI Engineer",
+                        "Voice AI Developer",
+                    ]}
                     loop={true}
                     cursor
                     cursorStyle="|"
-                    typeSpeed={180}
-                    deleteSpeed={100}
-                    delaySpeed={2000}
+                    typeSpeed={90}
+                    deleteSpeed={50}
+                    delaySpeed={2200}
                 />
             </span>
         </p>

@@ -9,8 +9,7 @@ export const aboutChunk = `
 - Specializes in Voice AI Agents, Agentic AI systems, and Digital FTEs (autonomous AI agents)
 - Builds and integrates MCP Servers to supercharge AI workflows
 - Currently leveling up in cloud-native: Kubernetes, Dapr, distributed systems
-- Uses Cursor, Claude Code & GitHub Copilot for 10x development speed
-- Stats: 2+ years learning, 1+ year professional experience, 25+ technologies
+- Proof: 3 production systems shipped across web, mobile and desktop; 2 built solo end-to-end
 - Interests: Exploring tech, teaching, travelling, open source
 `;
 
@@ -20,7 +19,7 @@ Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, Bootstrap, shadc
 Backend: Node.js, Express.js, FastAPI, Python
 Databases: MongoDB, PostgreSQL, Firebase (Firestore, Auth, Storage)
 Mobile: React Native (Expo)
-AI/Agentic-AI: OpenAI, Anthropic, OpenAI Agents SDK, Google ADK, Livekit, MCP Servers, RAG, OpenAI Agents SDK
+AI/Agentic-AI: OpenAI, Anthropic, OpenAI Agents SDK, LangChain, LangGraph, Google ADK, LiveKit, MCP Servers, RAG
 DevOps/Cloud: Docker, Kubernetes, Vercel, Git, GitHub
 `;
 
@@ -48,14 +47,14 @@ export const projectsChunk = `
 ### Other Projects
 
 4. **Personal Blog Web**
-   - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAi Agents SDK
+   - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAI Agents SDK
    - AI-Powered blog platform
    - Live: https://roman-blog.vercel.app
    - GitHub: https://github.com/mromankhan/Personal-Blog-Web
 
 5. **Expense Tracker**
-   - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAi Agents SDK
-   - AI PoweredReal-time expense tracking with Firebase sync
+   - Stack: Next.js, React, TypeScript, Tailwind CSS, Firebase, shadcn/ui, OpenAI Agents SDK
+   - AI-powered real-time expense tracking with Firebase sync
    - Live: https://expenses-tracker-beta-three.vercel.app
    - GitHub: https://github.com/mromankhan/Expense-Tracker-Web
 
@@ -66,7 +65,7 @@ export const projectsChunk = `
    - GitHub: https://github.com/mromankhan/Music-Academy-Web
 
 7. **Todo App (AI-integrated)**
-   - Stack: Next.js, React, TypeScript, Tailwind CSS, FastAPI, PostgreSQL, OpenAi Agents SDK
+   - Stack: Next.js, React, TypeScript, Tailwind CSS, FastAPI, PostgreSQL, OpenAI Agents SDK
    - AI-integrated task manager with Next.js frontend & FastAPI backend
    - GitHub: https://github.com/mromankhan/Chat-Web
 
@@ -79,6 +78,21 @@ export const projectsChunk = `
    - Stack: React Native, Expo, TypeScript, Tailwind CSS
    - Modern food review UI concept
    - GitHub: https://github.com/mromankhan/Food-Review-Application
+`;
+
+export const servicesChunk = `
+## Services & Engagements
+
+1. **Booking & Operations SaaS** - multi-tenant platforms with real-time availability/queue engines, role-based access, subscription billing, analytics and automated WhatsApp/SMS/email notifications. 4-8 weeks to a usable v1.
+2. **Agentic AI Workflows & MCP Integration** - LangGraph / OpenAI Agents SDK workflows, custom MCP servers, RAG over client data, human-in-the-loop checkpoints and logging. 2-5 weeks.
+3. **Voice AI Agents** - LiveKit + WebRTC realtime pipelines, Twilio/SIP telephony, STT -> LLM -> TTS orchestration with backend tools, transcripts and monitoring. 3-6 weeks.
+4. **Offline-First Desktop Software** - Tauri v2 (Rust) Windows apps, encrypted local databases, government/third-party gateway integration, print-ready PDF export. 4-8 weeks.
+5. **Cross-Platform Mobile Apps** - React Native + Expo, Supabase/Postgres with Row-Level Security, offline-first storage and search, push notifications, admin console. 5-10 weeks.
+6. **Full Stack MVP for Founders** - Next.js + TypeScript interface, FastAPI/Next.js API, PostgreSQL, auth, payments, deployment and handover. 3-6 weeks.
+
+Process: (1) understand the workflow and constraints, (2) design the data model, architecture and deployment path, (3) build and ship in weekly slices with full ownership of frontend, backend, infra and handover.
+
+To start: send a short brief with the business problem, the users, and the systems it must connect to. Reply includes technical approach, scope and timeline before any commitment.
 `;
 
 export const experienceChunk = `
@@ -114,7 +128,7 @@ export const experienceChunk = `
 
 // ── Keyword → chunk mapping ────────────────────────────────────────────────
 
-type Chunk = "about" | "skills" | "projects" | "experience";
+type Chunk = "about" | "skills" | "projects" | "experience" | "services";
 
 const keywordMap: { keywords: RegExp; chunk: Chunk }[] = [
   {
@@ -137,6 +151,11 @@ const keywordMap: { keywords: RegExp; chunk: Chunk }[] = [
       /\b(experience|job|career|company|work|xponential|aibytec|intern|role|education|hire|available|freelance|opportunity|salary)\b/i,
     chunk: "experience",
   },
+  {
+    keywords:
+      /\b(service|services|hire|cost|price|pricing|budget|rate|timeline|engage|contract|offer|scope|deliverable|consult|brief|saas|mvp|voice agent|automation)\b/i,
+    chunk: "services",
+  },
 ];
 
 const chunkMap: Record<Chunk, string> = {
@@ -144,6 +163,7 @@ const chunkMap: Record<Chunk, string> = {
   skills: skillsChunk,
   projects: projectsChunk,
   experience: experienceChunk,
+  services: servicesChunk,
 };
 
 /**

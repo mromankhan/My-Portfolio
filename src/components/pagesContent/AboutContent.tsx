@@ -71,7 +71,7 @@ export default function AboutContent() {
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                   Know{" "}
                   <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                    Who I&apos;m
+                    Who I Am
                   </span>
                 </h1>
               </div>
@@ -80,33 +80,38 @@ export default function AboutContent() {
                 <p className="text-lg">
                   Hi! I am{" "}
                   <span className="text-blue-400 font-semibold">Muhammad Roman</span>{" "}
-                  from Karachi, Pakistan.
-                </p>
-                <p className="text-lg">
-                  An{" "}
-                  <span className="text-blue-400 font-semibold">Agentic AI & Full Stack Developer</span>{" "}
-                  specializing in{" "}
-                  <span className="text-blue-400 font-semibold">Voice AI Agents</span>,
-                  and a proud student of{" "}
-                  <span className="text-blue-400 font-semibold">SMIT & PIAIC</span>.
+                  — a{" "}
+                  <span className="text-blue-400 font-semibold">Full Stack &amp; Agentic AI Engineer</span>{" "}
+                  based in Karachi, Pakistan.
                 </p>
                 <p className="text-slate-400">
-                  I build production-grade web applications, intelligent AI-powered
-                  agentic systems, and{" "}
-                  <span className="text-blue-400 font-semibold">Digital FTEs</span>{" "}
-                  — autonomous AI agents that operate as full-time digital workers.
-                  I also build and integrate{" "}
-                  <span className="text-blue-400 font-semibold">MCP Servers</span>{" "}
-                  to supercharge AI workflows with custom tools and context.
-                  Currently leveling up in cloud-native architecture —
-                  Kubernetes, Dapr, and distributed systems engineering.
+                  I build the systems businesses actually run on. A multi-tenant
+                  booking SaaS with a real-time queue and subscription billing.
+                  A government-compliant invoicing desktop app that works fully
+                  offline. A company messenger with append-only, audit-safe
+                  messaging enforced at the database layer. Each one was
+                  designed, built and deployed end-to-end — two of them as the
+                  sole engineer.
                 </p>
                 <p className="text-slate-400">
-                  I integrate{" "}
-                  <span className="text-blue-400 font-semibold">advanced AI development tools</span>{" "}
-                  like Cursor, Claude Code & GitHub Copilot into my workflow — enabling
-                  faster iterations, cleaner architecture, and{" "}
-                  <span className="text-blue-400 font-semibold">10x development speed</span>.
+                  On the AI side I build{" "}
+                  <span className="text-blue-400 font-semibold">agentic systems</span>{" "}
+                  that do more than answer questions: tool-calling workflows,
+                  custom{" "}
+                  <span className="text-blue-400 font-semibold">MCP servers</span>,
+                  retrieval pipelines over real business data, and{" "}
+                  <span className="text-blue-400 font-semibold">voice AI agents</span>{" "}
+                  on LiveKit and Twilio. The assistant on this site is one of
+                  them — a working retrieval system over my own portfolio data.
+                </p>
+                <p className="text-slate-400">
+                  My background is a full stack bootcamp at{" "}
+                  <span className="text-slate-300">SMIT</span> and the
+                  government-backed AI program at{" "}
+                  <span className="text-slate-300">PIAIC</span>, but the stronger
+                  signal is the architecture and deployment behind the projects.
+                  Currently going deeper into cloud-native systems — Kubernetes,
+                  Dapr and distributed architecture.
                 </p>
               </div>
 

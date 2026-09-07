@@ -6,12 +6,13 @@ import { Menu, X } from "lucide-react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { TbMessageChatbotFilled } from "react-icons/tb";
 import { FaHome, FaProjectDiagram } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
+import { MdWork, MdDesignServices } from "react-icons/md";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home", icon: <FaHome /> },
   { href: "/about", label: "About", icon: <BsFillPersonFill /> },
+  { href: "/services", label: "Services", icon: <MdDesignServices /> },
   { href: "/experience", label: "Experience", icon: <MdWork /> },
   { href: "/projects", label: "Projects", icon: <FaProjectDiagram /> },
   { href: "/contact", label: "Contact", icon: <TbMessageChatbotFilled /> },

@@ -1,0 +1,98 @@
+# Muhammad Roman
+
+> Full Stack & Agentic AI Engineer based in Karachi, Pakistan. I build production
+> systems businesses actually run on — multi-tenant SaaS platforms, agentic AI and
+> voice AI workflows, offline-first desktop software, and cross-platform mobile
+> apps. Designed, built and deployed end-to-end, mostly as the sole engineer.
+
+- Website: https://www.mromankhan.com
+- Email: contact@mromankhan.com
+- GitHub: https://github.com/mromankhan
+- LinkedIn: https://www.linkedin.com/in/mromankhan
+- Location: Karachi, Pakistan — available worldwide (remote)
+- Status: Available for freelance and full-time work
+
+## Core stack
+
+Frontend: Next.js, React, React Native (Expo), TypeScript, Tailwind CSS, shadcn/ui
+Backend: Python, FastAPI, Node.js, Express, REST APIs
+Data: PostgreSQL, Neon, Supabase, MongoDB, Firebase, SQLite
+AI: OpenAI Agents SDK, Anthropic, LangChain, LangGraph, MCP servers, RAG, LiveKit
+Desktop: Rust, Tauri v2
+Infra: Docker, Kubernetes, Google Cloud, Vercel, Cloudflare R2
+
+## Featured case studies
+
+- [BarberBook](https://www.mromankhan.com/projects/barberbook): Multi-tenant B2B SaaS
+  for barbershop booking and queue management. Real-time availability engine that makes
+  double-bookings impossible, live walk-in queue over Pusher WebSockets, automated
+  WhatsApp → SMS → email reminders that cut no-shows by up to 40%, subscription billing
+  and revenue analytics. Installable PWA. Solo full-stack build.
+  Stack: Next.js 16, React 19, TypeScript, Tailwind v4, Prisma, PostgreSQL (Neon),
+  Better Auth, Pusher, Twilio, Resend. Live: https://barber-book-beryl.vercel.app
+
+- [FBR Digital Invoice App](https://www.mromankhan.com/projects/fbr-invoice-app):
+  Government-compliant (Pakistan FBR) offline-first desktop invoicing software.
+  Validate-then-post gateway handshake, per-invoice tax snapshots, FBR-spec QR codes,
+  print-ready PDF export. Migrated from Electron to Rust/Tauri — install size cut from
+  ~300 MB to ~12 MB with an identical UI. AES-256-GCM encrypted local SQLite, secrets
+  bound to the machine via Windows Credential Manager. Sole engineer.
+  Stack: Tauri v2 (Rust), React 18, TypeScript, Vite, SQLite, React Query, Zod.
+
+- [AsianInspection Chat](https://www.mromankhan.com/projects/asianinspection-chat):
+  WhatsApp-class private company messenger. Real-time DMs and groups, read receipts,
+  typing and presence, voice/image/video over Cloudflare R2. True offline-first with a
+  persistent outbox, SQLite history and FTS5 search. Append-only messages enforced by
+  Postgres Row-Level Security for full auditability, plus an admin monitoring console.
+  Sole mobile and backend engineer.
+  Stack: React Native 0.85, Expo SDK 56, TypeScript, Supabase, Cloudflare R2, expo-sqlite.
+
+## Services
+
+1. Booking & Operations SaaS — multi-tenant platforms with real-time availability or
+   queue engines, role-based access, subscription billing and analytics. 4–8 weeks.
+2. Agentic AI Workflows & MCP Integration — LangGraph / OpenAI Agents SDK workflows,
+   custom MCP servers, RAG over client data, human-in-the-loop checkpoints. 2–5 weeks.
+3. Voice AI Agents — LiveKit + WebRTC pipelines, Twilio/SIP telephony, STT → LLM → TTS
+   orchestration with backend tools and transcripts. 3–6 weeks.
+4. Offline-First Desktop Software — Tauri v2 (Rust) Windows apps, encrypted local
+   databases, gateway integrations, print-ready PDF export. 4–8 weeks.
+5. Cross-Platform Mobile Apps — React Native + Expo, Supabase/Postgres with Row-Level
+   Security, offline-first storage and search, admin console. 5–10 weeks.
+6. Full Stack MVP for Founders — Next.js interface, FastAPI/Next.js API, PostgreSQL,
+   auth, payments, deployment and handover. 3–6 weeks.
+
+Details: https://www.mromankhan.com/services
+
+## Experience
+
+- Agentic AI & Automation Developer — AIByTec (Contract, Remote), Jan 2026 – Present.
+  Multi-agent systems with LangChain and LangGraph; automation pipelines that removed
+  ~80% of a manual workflow; OpenAI, Anthropic and open-source LLM integrations.
+- Full Stack & Agentic AI Developer — XponentialAI (Remote), Oct 2025 – May 2026.
+  Production Next.js applications, full stack AI web apps and voice AI agents with
+  Python and LiveKit, FastAPI and REST integrations.
+- Full Stack Developer, Intern — XponentialAI (Remote), Jul 2025 – Sep 2025.
+  Promoted to full-time during the internship.
+
+## Education
+
+- PIAIC (Presidential Initiative for AI & Computing), 2024 – Present. Generative AI,
+  Agentic AI, cloud-native, Python, FastAPI, LLMs, Kubernetes.
+- SMIT (Saylani Mass IT Training), 2023 – 2025. Full stack: MERN, Next.js, React
+  Native, TypeScript, Firebase.
+
+## Pages
+
+- Home: https://www.mromankhan.com
+- Services: https://www.mromankhan.com/services
+- Projects: https://www.mromankhan.com/projects
+- Experience: https://www.mromankhan.com/experience
+- About: https://www.mromankhan.com/about
+- Contact: https://www.mromankhan.com/contact
+
+## Working with me
+
+Send a short brief with the business problem, who uses the system, and which tools or
+data it must connect to. You get the technical approach, scope and a realistic timeline
+back before any commitment.
